@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started &mdash; PyPEEC</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Included Examples" href="examples.html" />
+    <link rel="prev" title="Gallery" href="gallery.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            PyPEEC
+              <img src="../_static/header.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                4.0.1.dev20+g32863a9
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tools">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#entry-points-and-scripts">Entry Points and Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-output-file-description">Input/Output File Description</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Included Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html">Technical Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">File Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPEEC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/content/tutorial.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
+<section id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p><strong>mesher</strong></p>
+<ul class="simple">
+<li><p>Create the voxel structure</p></li>
+<li><p>Import the geometry from voxel files</p></li>
+<li><p>Import the geometry from STL files</p></li>
+<li><p>Create the geometry with stacked PNG files</p></li>
+<li><p>Draw the geometry with stacked 2D vector shapes</p></li>
+<li><p>Assign different domain names to the voxels</p></li>
+<li><p>Resampling (refine) the voxel structure</p></li>
+<li><p>Construct the graph of the structure and detect connected components</p></li>
+</ul>
+</li>
+<li><p><strong>viewer</strong></p>
+<ul class="simple">
+<li><p>Visualization of the different domains composing the voxel structure</p></li>
+<li><p>Visualization of the connected components composing the voxel structure</p></li>
+<li><p>Comparison of the voxelized and original geometries</p></li>
+</ul>
+</li>
+<li><p><strong>solver</strong></p>
+<ul class="simple">
+<li><p>Computation of the incidence matrix</p></li>
+<li><p>Computation of the Green and coupling tensors</p></li>
+<li><p>Computation of the resistance, inductance, and potential matrices</p></li>
+<li><p>Computation of the electric-magnetic coupling matrices</p></li>
+<li><p>Creation of the equation system</p></li>
+<li><p>Extraction of a sparse pre-conditioner</p></li>
+<li><p>Extraction of a matrix-vector linear operator for the full system</p></li>
+<li><p>Check the condition number of the system</p></li>
+<li><p>Solve the equation system with the pre-conditioner and the linear operator</p></li>
+<li><p>Extract the solution (terminal voltages and currents, scalar fields, and vector fields)</p></li>
+</ul>
+</li>
+<li><p><strong>plotter</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Plot the material description (materials and sources)</p></li>
+<li><p>Plot the scalar and vector fields of the different voxels</p></li>
+<li><p>Plot the magnetic field generated by the voxels</p></li>
+<li><p>Plot the solver convergence and residuum</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading"></a></h2>
+<img alt="PyPEEC Workflow" src="../_images/workflow.png" />
+</section>
+<section id="entry-points-and-scripts">
+<h2>Entry Points and Scripts<a class="headerlink" href="#entry-points-and-scripts" title="Permalink to this heading"></a></h2>
+<p>PyPEEC can be install from PyPi with the following command: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pypeec</span></code>.</p>
+<p>The entry points of the different tools are located in the <code class="docutils literal notranslate"><span class="pre">pypeec.main</span></code></p>
+<ul class="simple">
+<li><p>Running the tools with files as input/ouput:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_mesher_file</span></code> for running the <strong>mesher</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_viewer_file</span></code> for running the <strong>viewer</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_solver_file</span></code> for running the <strong>solver</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_plotter_file</span></code> for running the <strong>plotter</strong></p></li>
+</ul>
+</li>
+<li><p>Running the tools with data as input/ouput:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_mesher_data</span></code> for running the <strong>mesher</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_viewer_data</span></code> for running the <strong>viewer</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_solver_data</span></code> for running the <strong>solver</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_plotter_data</span></code> for running the <strong>plotter</strong></p></li>
+</ul>
+</li>
+</ul>
+<p>Additionally, a command line tool is located in the <code class="docutils literal notranslate"><span class="pre">pypeec.script</span></code> module:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">--help</span></code> for displaying the command line options</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">mesher</span></code> for running the <strong>mesher</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">viewer</span></code> for running the <strong>viewer</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">solver</span></code> for running the <strong>solver</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">plotter</span></code> for running the <strong>plotter</strong></p></li>
+</ul>
+</section>
+<section id="input-output-file-description">
+<h2>Input/Output File Description<a class="headerlink" href="#input-output-file-description" title="Permalink to this heading"></a></h2>
+<p>The following input files (JSON or YAML format) are used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">file_geometry</span></code> (JSON or YAML, input file): description of the geometry</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_problem</span></code> (JSON or YAML, input file): description of the magnetic problem</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_tolerance</span></code> (JSON or YAML, input file): description of the solver numerical options</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_point</span></code> (JSON or YAML, input file): point cloud for evaluating the magnetic field</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_viewer</span></code> (JSON or YAML, input file): options for the plots generated by the viewer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_plotter</span></code> (JSON or YAML, input file): options for the plots generated by the plotter</p></li>
+</ul>
+<p>The following files (Pickle format) are generated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">file_voxel</span></code> (Pickle, output file): file with the definition of the voxel structure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_solution</span></code> (Pickle, output file): file with the solution of the magnetic problem</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gallery.html" class="btn btn-neutral float-left" title="Gallery" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Included Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Thomas Guillod.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

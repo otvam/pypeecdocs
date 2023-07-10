@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pypeec.main &mdash; PyPEEC</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pypeec.script" href="pypeec.script.html" />
+    <link rel="prev" title="API" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            PyPEEC
+              <img src="../_static/header.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                4.0.1.dev20+g32863a9
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorial.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/examples.html">Included Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/technical.html">Technical Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/format.html">File Formats</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pypeec.main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypeec.script.html">pypeec.script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypeec.error.html">pypeec.error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypeec.config.html">pypeec.config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypeec.log.html">pypeec.log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypeec.io.html">pypeec.io</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPEEC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="api.html">API</a></li>
+      <li class="breadcrumb-item active">pypeec.main</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/pypeec.main.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pypeec.main">
+<span id="pypeec-main"></span><h1>pypeec.main<a class="headerlink" href="#module-pypeec.main" title="Permalink to this heading"></a></h1>
+<dl class="simple">
+<dt>Module containing the program entry points.</dt><dd><ul class="simple">
+<li><p>Used for calling the mesher, solver, viewer, and plotter.</p></li>
+<li><p>Files can be used for the input and output data.</p></li>
+<li><p>Data structure can be used for the input and output data.</p></li>
+<li><p>The import statements for the different modules are located inside the code.</p></li>
+<li><p>This allows for a minimization of the loaded dependencies.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_display_logo">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_display_logo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_display_logo" title="Permalink to this definition"></a></dt>
+<dd><p>Display the logo as a splash screen</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_hide_logo">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_hide_logo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_hide_logo" title="Permalink to this definition"></a></dt>
+<dd><p>Prevent the display of the splash screen.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_mesher_data">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_mesher_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_geometry</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_mesher_data" title="Permalink to this definition"></a></dt>
+<dd><p>Main script for meshing the geometry and generating a 3D voxel structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_geometry</strong> (<em>data</em>) – The dict describes the geometry, meshing and resampling process.</p></li>
+<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If true, the results are truncated to save space.
+If false, the complete results are returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
+False if problems are encountered.</p></li>
+<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
+None if the termination is successful.</p></li>
+<li><p><strong>data_voxel</strong> (<em>data</em>) – The dict describes the voxel structure.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_mesher_file">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_mesher_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_mesher_file" title="Permalink to this definition"></a></dt>
+<dd><p>Main script for meshing the geometry and generating a 3D voxel structure.</p>
+<p>Load the geometry data from a file.
+Write the created voxel data in a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_geometry</strong> (<em>filename</em>) – The file content describes the geometry, meshing and resampling process.
+This input file is loaded by this function (JSON or YAML format).</p></li>
+<li><p><strong>file_voxel</strong> (<em>filename</em>) – The file content describes the voxel structure.
+This output file is written by this function (Pickle format).</p></li>
+<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If true, the results are truncated to save space.
+If false, the complete results are returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
+False if problems are encountered.</p></li>
+<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
+None if the termination is successful.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_viewer_data">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_viewer_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_viewer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_viewer_data" title="Permalink to this definition"></a></dt>
+<dd><p>Main script for visualizing a 3D voxel structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_voxel</strong> (<em>data</em>) – The dict describes the voxel structure.</p></li>
+<li><p><strong>data_point</strong> (<em>data</em>) – The array describes the point cloud used for field evaluation.</p></li>
+<li><p><strong>data_viewer</strong> (<em>data</em>) – The dict describes the different plots to be created.</p></li>
+<li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
+If None, all the plots are shown.</p></li>
+<li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
+If “nb”, the plots are rendered within the Jupyter notebook.
+If “save”, the plots are not shown but saved as screenshots.
+If “none”, the plots are not shown (test mode).</p></li>
+<li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
+The current directory is used as the default directory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
+False if problems are encountered.</p></li>
+<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
+None if the termination is successful.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_viewer_file">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_viewer_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_viewer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_viewer_file" title="Permalink to this definition"></a></dt>
+<dd><p>Main script for visualizing a 3D voxel structure.</p>
+<p>Load the voxel data from a file.
+Load the point data from a file.
+Load the viewer data from a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_voxel</strong> (<em>filename</em>) – The file content describes the voxel structure.
+This input file is loaded by this function (Pickle format).</p></li>
+<li><p><strong>file_point</strong> (<em>filename</em>) – The file content describes the point cloud used for field evaluation.
+This input file is loaded by this function (JSON or YAML format).</p></li>
+<li><p><strong>file_viewer</strong> (<em>filename</em>) – The file content describes the different plots to be created.
+This input file is loaded by this function (JSON or YAML format).</p></li>
+<li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
+If None, all the plots are shown.</p></li>
+<li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
+If “nb”, the plots are rendered within the Jupyter notebook.
+If “save”, the plots are not shown but saved as screenshots.
+If “none”, the plots are not shown (test mode).</p></li>
+<li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
+The current directory is used as the default directory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
+False if problems are encountered.</p></li>
+<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
+None if the termination is successful.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_solver_data">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_solver_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_tolerance</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_solver_data" title="Permalink to this definition"></a></dt>
+<dd><p>Main script for solving a problem with the PEEC solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_voxel</strong> (<em>data</em>) – The dict describes the voxel structure.</p></li>
+<li><p><strong>data_problem</strong> (<em>data</em>) – The dict describes the problem to be solved.</p></li>
+<li><p><strong>data_tolerance</strong> (<em>data</em>) – The dict describes the numerical options.</p></li>
+<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If true, the results are truncated to save space.
+If false, the complete results are returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
+False if problems are encountered.</p></li>
+<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
+None if the termination is successful.</p></li>
+<li><p><strong>data_solution</strong> (<em>data</em>) – The dict describes the problem solution.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_solver_file">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_solver_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_solution</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_solver_file" title="Permalink to this definition"></a></dt>
+<dd><p>Main script for solving a problem with the PEEC solver.</p>
+<p>Load the voxel data from a file.
+Load the problem data from a file.
+Load the tolerance data from a file.
+Write the created solution data in a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_voxel</strong> (<em>filename</em>) – The file content describes the voxel structure.
+This input file is loaded by this function (Pickle format).</p></li>
+<li><p><strong>file_problem</strong> (<em>filename</em>) – The file content describes the problem to be solved.
+This input file is loaded by this function (JSON or YAML format).</p></li>
+<li><p><strong>file_tolerance</strong> (<em>filename</em>) – The file content describes the numerical options.
+This input file is loaded by this function (JSON or YAML format).</p></li>
+<li><p><strong>file_solution</strong> (<em>filename</em>) – The file content describes the problem solution.
+This output file is written by this function (Pickle format).</p></li>
+<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If true, the results are truncated to save space.
+If false, the complete results are returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
+False if problems are encountered.</p></li>
+<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
+None if the termination is successful.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_plotter_data">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_plotter_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_plotter</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_plotter_data" title="Permalink to this definition"></a></dt>
+<dd><p>Main script for plotting the solution of a PEEC problem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_solution</strong> (<em>data</em>) – The dict describes the problem solution.</p></li>
+<li><p><strong>data_point</strong> (<em>data</em>) – The array describes the point cloud used for field evaluation.</p></li>
+<li><p><strong>data_plotter</strong> (<em>data</em>) – The dict describes the different plots to be created.</p></li>
+<li><p><strong>tag_sweep</strong> (<em>list</em>) – The list describes sweeps to be shown.
+If None, all the sweeps are shown.</p></li>
+<li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
+If None, all the plots are shown.</p></li>
+<li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
+If “nb”, the plots are rendered within the Jupyter notebook.
+If “save”, the plots are not shown but saved as screenshots.
+If “none”, the plots are not shown (test mode).</p></li>
+<li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
+The current directory is used as the default directory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
+False if problems are encountered.</p></li>
+<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
+None if the termination is successful.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_plotter_file">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_plotter_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_plotter</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_plotter_file" title="Permalink to this definition"></a></dt>
+<dd><p>Main script for plotting the solution of a PEEC problem.
+Load the input data from files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_solution</strong> (<em>filename</em>) – The dict describes the problem solution.
+This input file is loaded by this function (Pickle format).</p></li>
+<li><p><strong>file_point</strong> (<em>filename</em>) – The array describes the point cloud used for field evaluation.
+This input file is loaded by this function (JSON or YAML format).</p></li>
+<li><p><strong>file_plotter</strong> (<em>filename</em>) – The dict describes the different plots to be created.
+This input file is loaded by this function (JSON or YAML format).</p></li>
+<li><p><strong>tag_sweep</strong> (<em>list</em>) – The list describes sweeps to be shown.
+If None, all the sweeps are shown.</p></li>
+<li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
+If None, all the plots are shown.</p></li>
+<li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
+If “nb”, the plots are rendered within the Jupyter notebook.
+If “save”, the plots are not shown but saved as screenshots.
+If “none”, the plots are not shown (test mode).</p></li>
+<li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
+The current directory is used as the default directory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
+False if problems are encountered.</p></li>
+<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
+None if the termination is successful.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pypeec.script.html" class="btn btn-neutral float-right" title="pypeec.script" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Thomas Guillod.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
