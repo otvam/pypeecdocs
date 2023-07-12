@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Implementation &mdash; PyPEEC</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Known Issues" href="warnings.html" />
+    <link rel="prev" title="Technical Details" href="technical.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            PyPEEC
+              <img src="../_static/header.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                4.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">General Doc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Included Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="technical.html">Technical Details</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fft-accelerated-peec-method">FFT-Accelerated PEEC Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numerical-optimization">Numerical Optimization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">File Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index_api.html">API Doc</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPEEC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Implementation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="implementation">
+<h1>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading"></a></h1>
+<section id="fft-accelerated-peec-method">
+<h2>FFT-Accelerated PEEC Method<a class="headerlink" href="#fft-accelerated-peec-method" title="Permalink to this heading"></a></h2>
+<p>There are two main categories of field simulation methods:</p>
+<ul class="simple">
+<li><p>Differential equation based method (FEM, FVM, FD, etc.)</p></li>
+<li><p>Integral equation based method (MoM, BEM, PEEC, etc.)</p></li>
+</ul>
+<p>The PEEC method is an integral equation method. The fundamental ideal is to represent
+the field simulation problem with a very large distributed equivalent circuit consisting
+of resistances, self-inductances, mutual inductances, and capacitances.</p>
+<p>This PEEC method feature several advantanges:</p>
+<ul class="simple">
+<li><p>Only the active materials are meshed (no need to mesh the free-space).</p></li>
+<li><p>Intuitive understanding of the equation discretization process.</p></li>
+<li><p>Straightforward connection of external circuit elements.</p></li>
+</ul>
+<p>The fundamental drawback of the PEEC method is that the matrix describing the
+equation system is not sparse. This means that the computational cost and the
+memory requirements of the problem is becoming problematic for large systems.</p>
+<p>This problem can be mitigated if the geometry is represented with a voxel structure.
+In this case, the dense matrices are block-Toeplitz Toeplitz-block matrices.
+Such matrices can be embedded into circulant tensors reducing the memory requirements
+from O(n^2) to 0(n). Additionally, the matrix-vector multiplications can be done
+with Fourier transforms. With an FFT algorithm, the computational complexity of
+matrix-vector multiplications is reduced from O(n^2) to 0(n*log(n)). Besides the reduced
+computational cost and memory requirement, the FFTs allows for the usage of heavily
+optimized libraries leveraging the parallel processing capabilities of CPUs or GPUs.</p>
+<p>Here are some interesting papers about the PEEC method:</p>
+<ul class="simple">
+<li><ol class="upperalpha simple">
+<li><p>Ruehli IEEE TMTT, 10.1109/TMTT.1974.1128204, 1974</p></li>
+</ol>
+</li>
+<li><ol class="upperalpha simple" start="18">
+<li><p>Torchio, IEEE TAP, 10.1109/TAP.2019.2927789, 2019</p></li>
+</ol>
+</li>
+<li><ol class="upperalpha simple" start="18">
+<li><p>Torchio, IEEE TPEL, 10.1109/TPEL.2021.3092431, 2022</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="numerical-optimization">
+<h2>Numerical Optimization<a class="headerlink" href="#numerical-optimization" title="Permalink to this heading"></a></h2>
+<p>The code is reasonably optimized, leveraging NumPy and SciPy for the heavy operations.
+All the code is vectorized, no loops are used for the array operations.
+Sparse matrix algebra is used wherever appropriate to speed up the code and limit the memory consumption.
+Wherever possible, multithreading/multiprocessing is used for exploiting multicore CPUs.</p>
+<p>The following optimizations are available for the computationally heavy operations:</p>
+<ul>
+<li><p>Computation of the Green functions and electric-magnetic coupling functions.</p>
+<ul class="simple">
+<li><p>If the distance between the considered voxels is small, an analytical solution is used.</p></li>
+<li><p>If the distance between the considered voxels is large, a numerical approximation is used.</p></li>
+</ul>
+</li>
+<li><p>The factorization of the preconditioner sparse matrix can be done with several algorithms.</p>
+<ul class="simple">
+<li><p>SuperLU is typically slower but is always available (integrated with SciPy).</p></li>
+<li><p>UMFPACK is typically faster than SuperLU (available through SciKits).</p></li>
+<li><p>MKL/PARDISO is typically faster than UMFPACK (available through Pydiso).</p></li>
+</ul>
+</li>
+<li><p>Two different iterative solvers are available for the dense matrices.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>GMRES - Generalized Minimal RESidual algorithm</p></li>
+<li><p>GCROT - Flexible GCROT(m,k) algorithm</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The FFTs for computing matrix-vector product can be done with several algorithms.</p>
+<ul class="simple">
+<li><p>SciPy FFT library is always available (integrated with SciPy)</p></li>
+<li><p>FFTW has to be installed separately (available through pyFFTW)</p></li>
+<li><p>CuPy is extremely fast but require GPUs compatible with the CUDA toolkit</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Thomas Guillod.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

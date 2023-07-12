@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Known Issues &mdash; PyPEEC</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File Formats" href="format.html" />
+    <link rel="prev" title="Implementation" href="implementation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            PyPEEC
+              <img src="../_static/header.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                4.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">General Doc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Included Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="technical.html">Technical Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Known Issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pypeec-issues">PyPEEC Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#library-issues">Library Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-issues">General Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">File Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index_api.html">API Doc</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPEEC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Known Issues</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="known-issues">
+<h1>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this heading"></a></h1>
+<section id="pypeec-issues">
+<h2>PyPEEC Issues<a class="headerlink" href="#pypeec-issues" title="Permalink to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For problems with <strong>magnetic domains</strong>, the <strong>preconditioner</strong> is not optimal.
+This might lead to a slow convergence of the iterative matrix solver.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For <strong>large problems</strong>, the code might allocate huge amounts of <strong>memory</strong>.
+This might crash the program and/or your operating system.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>During the <strong>voxelization</strong> process, the same voxel can be assigned to several domains.
+The problem is solved with used-provided <strong>conflict</strong> resolution rules between the domains.</p>
+</div>
+</section>
+<section id="library-issues">
+<h2>Library Issues<a class="headerlink" href="#library-issues" title="Permalink to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <strong>plotting code</strong> is probably sensitive to the environment (platform and the version of the libraries).
+Therefore, these dependencies are minimized and insulated from the rest of the code.
+The plotting code (viewer and plotter) is separated from the simulation code (mesher and solver).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Jupyter</strong> is not included in the package dependencies.
+For Jupyter, PyVista has to be installed with the optional Trame support.
+Jupyter support is optional, PyPEEC is fully functional without Jupyter.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <strong>GPU libraries</strong> (CuPy and CUDA) are not included in the package dependencies.
+The GPU support is extremely hardware/platform/version dependent.
+GPU support is optional, PyPEEC is fully functional without GPU support.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>FFTW, UMFPACK, and MKL/PARDISO</strong> are not included in the package dependencies.
+These libraries can be tricky to install, especially on MS Windows.
+Make sure that these libraries are compiled with multithreading support.
+FFTW, UMFPACK, and MKL/PARDISO are optional, PyPEEC is fully functional without them.</p>
+</div>
+</section>
+<section id="general-issues">
+<h2>General Issues<a class="headerlink" href="#general-issues" title="Permalink to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Python <strong>Pickle files</strong> are using to store the mesher and solver results.
+Pickling data is not secure.
+Only load Pickle files that you trust.
+Do not commit the Pickle files in the Git repository.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <strong>dependencies</strong> are under <strong>various licences</strong> (including copyleft and proprietary).
+Make sure to respect these licenses if you package and/or distribute these libraries.
+Qt is under a copyleft license (LGPL and GPL).
+FFTW is under a copyleft license (GPL).
+MKL/PARDISO is a proprietary library (ISSL).</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Thomas Guillod.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API &mdash; PyPEEC</title>
+  <title>API Doc &mdash; PyPEEC</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/icon.png"/>
@@ -18,7 +18,6 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pypeec.main" href="pypeec.main.html" />
     <link rel="prev" title="File Formats" href="../content/format.html" /> 
@@ -37,7 +36,7 @@
               <img src="../_static/header.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.0.1.dev20+g32863a9
+                4.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -47,21 +46,23 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">General Doc</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/gallery.html">Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/tutorial.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/examples.html">Included Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../content/technical.html">Technical Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/warnings.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/format.html">File Formats</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pypeec.main.html">pypeec.main</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pypeec.script.html">pypeec.script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pypeec.error.html">pypeec.error</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pypeec.config.html">pypeec.config</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pypeec.log.html">pypeec.log</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pypeec.io.html">pypeec.io</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Doc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#packages">Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-modules">Main Modules</a></li>
 </ul>
 </li>
 </ul>
@@ -80,9 +81,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">API</li>
+      <li class="breadcrumb-item active">API Doc</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/api/api.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -90,8 +90,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="api">
-<h1>API<a class="headerlink" href="#api" title="Permalink to this heading"></a></h1>
+  <section id="api-doc">
+<h1>API Doc<a class="headerlink" href="#api-doc" title="Permalink to this heading"></a></h1>
+<section id="packages">
+<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec</span></code></p></td>
+<td><p>Main PyPEEC package.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.run</span></code></p></td>
+<td><p>Mesher, solver, viewer, and plotter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.utils</span></code></p></td>
+<td><p>Various independent utils for data manipulation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_check</span></code></p></td>
+<td><p>Library for checking the integrity of the input data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_matrix</span></code></p></td>
+<td><p>Library for handling and manipulating matrices.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_mesher</span></code></p></td>
+<td><p>Modules used by the mesher.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_solver</span></code></p></td>
+<td><p>Modules used by the solver.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_visualization</span></code></p></td>
+<td><p>Modules used by the viewer and plotter.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="main-modules">
+<h2>Main Modules<a class="headerlink" href="#main-modules" title="Permalink to this heading"></a></h2>
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="pypeec.main.html#module-pypeec.main" title="pypeec.main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pypeec.main</span></code></a></p></td>
@@ -115,14 +148,12 @@
 </tbody>
 </table>
 </section>
+</section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../content/format.html" class="btn btn-neutral float-left" title="File Formats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pypeec.main.html" class="btn btn-neutral float-right" title="pypeec.main" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
