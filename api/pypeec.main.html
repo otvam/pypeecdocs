@@ -31,12 +31,12 @@
 
           
           
-          <a href="../index.html" class="icon icon-home">
-            PyPEEC
+          <a href="../index.html">
+            
               <img src="../_static/header.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.1.0
+                4.1.1.dev10+g8d7727c.d20230715
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -113,6 +113,26 @@
 <dt class="sig sig-object py" id="pypeec.main.run_hide_logo">
 <span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_hide_logo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_hide_logo" title="Permalink to this definition"></a></dt>
 <dd><p>Prevent the display of the splash screen.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.main.run_examples">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_examples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_examples</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_examples" title="Permalink to this definition"></a></dt>
+<dd><p>Extract the examples.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path_examples</strong> (<em>string</em>) – Path where the examples will be extracted.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
+False if problems are encountered.</p></li>
+<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
+None if the termination is successful.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
