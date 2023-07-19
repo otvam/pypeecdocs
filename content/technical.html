@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Implementation" href="implementation.html" />
-    <link rel="prev" title="Included Examples" href="examples.html" /> 
+    <link rel="prev" title="Workflow" href="workflow.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,7 +36,7 @@
               <img src="../_static/header.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.1.1.dev10+g8d7727c.d20230715
+                4.2.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -51,8 +51,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Included Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
 <ul class="current">
@@ -121,14 +121,14 @@
 </section>
 <section id="platforms">
 <h2>Platforms<a class="headerlink" href="#platforms" title="Permalink to this heading"></a></h2>
-<p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong>.
-The following <strong>platforms</strong> and systems have been <strong>tested</strong>:</p>
+<p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong> on x86/x64.
+The following <strong>platforms</strong> and systems have been partially <strong>tested</strong>:</p>
 <ul class="simple">
 <li><p>Linux / RedHat 7.9 on x86/x64</p></li>
 <li><p>Linux / Ubuntu 20.04 on x86/x64</p></li>
 <li><p>Linux / Ubuntu 22.04 on x86/x64</p></li>
 <li><p>Apple / macOS Ventura 13 on M1 Pro</p></li>
-<li><p>MS Windows / Pro 10 21H2 on x86/x64</p></li>
+<li><p>MS Windows / Pro 10 on x86/x64</p></li>
 </ul>
 <p>The following <strong>GPUs</strong> have been tested:</p>
 <p># GPU / NVIDIA RTX 2070 Max-Q
@@ -169,6 +169,7 @@ If you want to use PyPEEC with Jupyter, PyVista has to be installed with the opt
 <h2>Packaging and Environment<a class="headerlink" href="#packaging-and-environment" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>A Python package can be built from the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> and <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> files.</p></li>
+<li><p>The shell script <code class="docutils literal notranslate"><span class="pre">run_build.sh</span></code> is used to build the Python package.</p></li>
 <li><p>In order to create a minimal Python Virtual Environment, use <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p></li>
 <li><p>In order to create a minimal Conda Environment, use <code class="docutils literal notranslate"><span class="pre">conda_base.yaml</span></code>.</p></li>
 <li><p>In order to create a development environment, use <code class="docutils literal notranslate"><span class="pre">conda_dev.yaml</span></code>.</p></li>
@@ -186,7 +187,7 @@ If you want to use PyPEEC with Jupyter, PyVista has to be installed with the opt
 <section id="sphinx-documentation">
 <h2>Sphinx Documentation<a class="headerlink" href="#sphinx-documentation" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>The documentation is located in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder (using the <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code> generator).</p></li>
+<li><p>The documentation is located in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder (using the <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> generator).</p></li>
 <li><p>The shell script <code class="docutils literal notranslate"><span class="pre">run_docs.sh</span></code> is used to build the HTML documentation.</p></li>
 </ul>
 </section>

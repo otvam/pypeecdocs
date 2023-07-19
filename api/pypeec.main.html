@@ -36,7 +36,7 @@
               <img src="../_static/header.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.1.1.dev10+g8d7727c.d20230715
+                4.2.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -51,8 +51,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/gallery.html">Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/tutorial.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/examples.html">Included Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/workflow.html">Workflow</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
 <ul class="current">
@@ -138,7 +138,13 @@ None if the termination is successful.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.main.run_mesher_data">
 <span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_mesher_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_geometry</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_mesher_data" title="Permalink to this definition"></a></dt>
-<dd><p>Main script for meshing the geometry and generating a 3D voxel structure.</p>
+<dd><dl class="simple">
+<dt>Main script for meshing the geometry and generating a 3D voxel structure.</dt><dd><ul class="simple">
+<li><p>Get the geometry data as an argument.</p></li>
+<li><p>Return the created voxel data.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -163,9 +169,13 @@ None if the termination is successful.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.main.run_mesher_file">
 <span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_mesher_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_mesher_file" title="Permalink to this definition"></a></dt>
-<dd><p>Main script for meshing the geometry and generating a 3D voxel structure.</p>
-<p>Load the geometry data from a file.
-Write the created voxel data in a file.</p>
+<dd><dl class="simple">
+<dt>Main script for meshing the geometry and generating a 3D voxel structure.</dt><dd><ul class="simple">
+<li><p>Load the geometry data from a file.</p></li>
+<li><p>Write the created voxel data in a file.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -192,7 +202,14 @@ None if the termination is successful.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.main.run_viewer_data">
 <span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_viewer_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_viewer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_viewer_data" title="Permalink to this definition"></a></dt>
-<dd><p>Main script for visualizing a 3D voxel structure.</p>
+<dd><dl class="simple">
+<dt>Main script for visualizing a 3D voxel structure.</dt><dd><ul class="simple">
+<li><p>Get the voxel data as an argument.</p></li>
+<li><p>Get the point data as an argument.</p></li>
+<li><p>Get the viewer data as an argument.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -224,10 +241,14 @@ None if the termination is successful.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.main.run_viewer_file">
 <span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_viewer_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_viewer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_viewer_file" title="Permalink to this definition"></a></dt>
-<dd><p>Main script for visualizing a 3D voxel structure.</p>
-<p>Load the voxel data from a file.
-Load the point data from a file.
-Load the viewer data from a file.</p>
+<dd><dl class="simple">
+<dt>Main script for visualizing a 3D voxel structure.</dt><dd><ul class="simple">
+<li><p>Load the voxel data from a file.</p></li>
+<li><p>Load the point data from a file.</p></li>
+<li><p>Load the viewer data from a file.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -262,7 +283,15 @@ None if the termination is successful.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.main.run_solver_data">
 <span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_solver_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_tolerance</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_solver_data" title="Permalink to this definition"></a></dt>
-<dd><p>Main script for solving a problem with the PEEC solver.</p>
+<dd><dl class="simple">
+<dt>Main script for solving a problem with the PEEC solver.</dt><dd><ul class="simple">
+<li><p>Get the voxel data as an argument.</p></li>
+<li><p>Get the problem data as an argument.</p></li>
+<li><p>Get the tolerance data as an argument.</p></li>
+<li><p>Return the created solution data.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -289,11 +318,15 @@ None if the termination is successful.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.main.run_solver_file">
 <span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_solver_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_solution</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_solver_file" title="Permalink to this definition"></a></dt>
-<dd><p>Main script for solving a problem with the PEEC solver.</p>
-<p>Load the voxel data from a file.
-Load the problem data from a file.
-Load the tolerance data from a file.
-Write the created solution data in a file.</p>
+<dd><dl class="simple">
+<dt>Main script for solving a problem with the PEEC solver.</dt><dd><ul class="simple">
+<li><p>Load the voxel data from a file.</p></li>
+<li><p>Load the problem data from a file.</p></li>
+<li><p>Load the tolerance data from a file.</p></li>
+<li><p>Write the created solution data in a file.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -324,7 +357,14 @@ None if the termination is successful.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.main.run_plotter_data">
 <span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_plotter_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_plotter</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_plotter_data" title="Permalink to this definition"></a></dt>
-<dd><p>Main script for plotting the solution of a PEEC problem.</p>
+<dd><dl class="simple">
+<dt>Main script for plotting the solution of a PEEC problem.</dt><dd><ul class="simple">
+<li><p>Get the solution data as an argument.</p></li>
+<li><p>Get the point data as an argument.</p></li>
+<li><p>Get the plotter data as an argument.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -358,8 +398,14 @@ None if the termination is successful.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.main.run_plotter_file">
 <span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_plotter_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_plotter</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_plotter_file" title="Permalink to this definition"></a></dt>
-<dd><p>Main script for plotting the solution of a PEEC problem.
-Load the input data from files.</p>
+<dd><dl class="simple">
+<dt>Main script for plotting the solution of a PEEC problem.</dt><dd><ul class="simple">
+<li><p>Load the solution data from a file.</p></li>
+<li><p>Load the point data from a file.</p></li>
+<li><p>Load the plotter data from a file.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
