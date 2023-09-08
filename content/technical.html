@@ -34,10 +34,10 @@
           
           <a href="../index.html">
             
-              <img src="../_static/header.png" class="logo" alt="Logo"/>
+              <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.3.0
+                4.3.1.dev22+g267bbb3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -51,15 +51,16 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Details</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#platforms">Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration-file">Configuration File</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#packaging-and-environment">Packaging and Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#automated-tests">Automated Tests</a></li>
@@ -120,21 +121,26 @@
 <li><p>CuPy (using GPUs through CUDA)</p></li>
 </ul>
 </section>
-<section id="platforms">
-<h2>Platforms<a class="headerlink" href="#platforms" title="Permalink to this heading"></a></h2>
-<p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong> on x86/x64.
-The following <strong>platforms</strong> and systems have been partially <strong>tested</strong>:</p>
+<section id="supported-platforms">
+<h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this heading"></a></h2>
+<p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong> on x86/x64:</p>
 <ul class="simple">
 <li><p>Linux / RedHat 7.9 on x86/x64</p></li>
 <li><p>Linux / Ubuntu 20.04 on x86/x64</p></li>
 <li><p>Linux / Ubuntu 22.04 on x86/x64</p></li>
+</ul>
+<p>The following <strong>platforms</strong> and systems have been  <strong>partially tested</strong>:</p>
+<ul class="simple">
+<li><p>Apple / macOS Monterey 12 on x86/x64</p></li>
 <li><p>Apple / macOS Ventura 13 on M1 Pro</p></li>
 <li><p>MS Windows / Pro 10 on x86/x64</p></li>
 </ul>
 <p>The following <strong>GPUs</strong> have been tested:</p>
-<p># GPU / NVIDIA RTX 2070 Max-Q
-* GPU / NVIDIA T4 Tensor
-* GPU / NVIDIA Tesla K80</p>
+<ul class="simple">
+<li><p>GPU / NVIDIA RTX 2070 Max-Q</p></li>
+<li><p>GPU / NVIDIA T4 Tensor</p></li>
+<li><p>GPU / NVIDIA Tesla K80</p></li>
+</ul>
 <p>The following <strong>platforms</strong> are passing the <strong>automated tests</strong>:</p>
 <ul class="simple">
 <li><p>Linux / Ubuntu 22.04 on x86/x64</p></li>
@@ -142,7 +148,7 @@ The following <strong>platforms</strong> and systems have been partially <strong
 <li><p>Apple / macOS Monterey 12 on x86/x64</p></li>
 </ul>
 <p>If you deploy PyPEEC on computing nodes, GUI libraries (Matplotlib, PyVistaQt, PyQt5) are not required.
-If you want to use PyPEEC with Jupyter, PyVista has to be installed with the optional Trame support.</p>
+Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 </section>
 <section id="configuration-file">
 <h2>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this heading"></a></h2>
@@ -189,7 +195,7 @@ If you want to use PyPEEC with Jupyter, PyVista has to be installed with the opt
 <h2>Sphinx Documentation<a class="headerlink" href="#sphinx-documentation" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>The documentation is located in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder (using the <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> generator).</p></li>
-<li><p>The shell script <code class="docutils literal notranslate"><span class="pre">run_docs.sh</span></code> is used to build the HTML documentation.</p></li>
+<li><p>The shell script <code class="docutils literal notranslate"><span class="pre">run_build.sh</span></code> is used to build the HTML documentation.</p></li>
 </ul>
 </section>
 </section>
@@ -202,7 +208,7 @@ If you want to use PyPEEC with Jupyter, PyVista has to be installed with the opt
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Thomas Guillod.</p>
+    <p>&#169; Copyright Thomas Guillod - Dartmouth College.</p>
   </div>
 
    

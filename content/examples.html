@@ -20,8 +20,8 @@
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Workflow" href="workflow.html" />
-    <link rel="prev" title="Gallery" href="gallery.html" /> 
+    <link rel="next" title="Gallery" href="gallery.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,10 +34,10 @@
           
           <a href="../index.html">
             
-              <img src="../_static/header.png" class="logo" alt="Logo"/>
+              <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.3.0
+                4.3.1.dev22+g267bbb3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -51,9 +51,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-the-examples">Installing the Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-the-examples">Running the Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#stl-mesher-examples">STL Mesher Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shape-mesher-examples">Shape Mesher Examples</a></li>
@@ -61,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#voxel-mesher-examples">Voxel Mesher Examples</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
@@ -97,39 +97,10 @@
              
   <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
-<section id="installing-the-examples">
-<h2>Installing the Examples<a class="headerlink" href="#installing-the-examples" title="Permalink to this heading"></a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new folder</span>
-mkdir<span class="w"> </span>examples
-
-<span class="c1"># Go to the created folder</span>
-<span class="nb">cd</span><span class="w"> </span>examples
-
-<span class="c1"># install Python Virtual Environment</span>
-<span class="c1">#    - The Python executable can be &quot;python&quot; or &quot;python3&quot;</span>
-<span class="c1">#    - Alternatively, Conda can be used for the environment</span>
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>virtualenv
-
-<span class="c1"># Create a Python Virtual Environment</span>
-<span class="c1">#    - The Python executable can be &quot;python&quot; or &quot;python3&quot;</span>
-<span class="c1">#    - Alternatively, Conda can be used for the environment</span>
-python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-
-<span class="c1"># Activate the Python Virtual Environment</span>
-<span class="nb">source</span><span class="w"> </span>venv/bin/activate
-
-<span class="c1"># Install PyPEEC from Pypi</span>
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pypeec
-
-<span class="c1"># Extract the PyPEEC examples</span>
-pypeec<span class="w"> </span>examples<span class="w"> </span>.
-</pre></div>
-</div>
-</section>
 <section id="running-the-examples">
 <h2>Running the Examples<a class="headerlink" href="#running-the-examples" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>For running the examples from a <strong>Jupyter notebook</strong>, use <code class="docutils literal notranslate"><span class="pre">notebook.ipynb</span></code>.</p></li>
+<li><p>Extract the examples with the <code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">examples</span></code> command.</p></li>
 <li><p>For running the examples from <strong>Python</strong>:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">examples_config.py</span></code> is used to select the example</p></li>
@@ -146,6 +117,12 @@ pypeec<span class="w"> </span>examples<span class="w"> </span>.
 <li><p><code class="docutils literal notranslate"><span class="pre">run_viewer.sh</span></code> runs the viewer</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">run_solver.sh</span></code> runs the solver</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">run_plotter.sh</span></code> runs the plotter</p></li>
+</ul>
+</li>
+<li><p>For running the examples from a <strong>Jupyter notebook</strong>, use <code class="docutils literal notranslate"><span class="pre">notebook.ipynb</span></code>:</p>
+<ul>
+<li><p>Jupyter should be installed (not included in the default environment).</p></li>
+<li><p>IPyWidgets and Trame are used for the rendering inside the notebook.</p></li>
 </ul>
 </li>
 </ul>
@@ -292,7 +269,7 @@ pypeec<span class="w"> </span>examples<span class="w"> </span>.
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Thomas Guillod.</p>
+    <p>&#169; Copyright Thomas Guillod - Dartmouth College.</p>
   </div>
 
    

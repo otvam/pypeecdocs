@@ -34,10 +34,10 @@
           
           <a href="../index.html">
             
-              <img src="../_static/header.png" class="logo" alt="Logo"/>
+              <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.3.0
+                4.3.1.dev22+g267bbb3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -51,8 +51,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/about.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/gallery.html">Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/workflow.html">Workflow</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
@@ -117,12 +118,15 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_examples">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_examples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_examples</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_examples" title="Permalink to this definition"></a></dt>
-<dd><p>Extract the examples.</p>
+<dt class="sig sig-object py" id="pypeec.main.run_extract">
+<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_extract</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_extract" title="Permalink to this definition"></a></dt>
+<dd><p>Extract data (examples or documentation).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>path_examples</strong> (<em>string</em>) – Path where the examples will be extracted.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_name</strong> (<em>string</em>) – Name of the archive containing the data.</p></li>
+<li><p><strong>path_extract</strong> (<em>string</em>) – Path where the data will be extracted.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
@@ -450,7 +454,7 @@ None if the termination is successful.</p></li>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Thomas Guillod.</p>
+    <p>&#169; Copyright Thomas Guillod - Dartmouth College.</p>
   </div>
 
    

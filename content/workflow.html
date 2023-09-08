@@ -21,7 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Technical Details" href="technical.html" />
-    <link rel="prev" title="Examples" href="examples.html" /> 
+    <link rel="prev" title="Gallery" href="gallery.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,10 +34,10 @@
           
           <a href="../index.html">
             
-              <img src="../_static/header.png" class="logo" alt="Logo"/>
+              <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.3.0
+                4.3.1.dev22+g267bbb3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -51,11 +51,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Workflow</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#tools">Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pypeec-tools">PyPEEC Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pypeec-workflow">PyPEEC Workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#entry-points-and-scripts">Entry Points and Scripts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#input-output-file-description">Input/Output File Description</a></li>
 </ul>
@@ -95,8 +96,8 @@
              
   <section id="workflow">
 <h1>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading"></a></h1>
-<section id="tools">
-<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this heading"></a></h2>
+<section id="pypeec-tools">
+<h2>PyPEEC Tools<a class="headerlink" href="#pypeec-tools" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><strong>mesher</strong></p>
 <ul class="simple">
@@ -143,14 +144,13 @@
 </li>
 </ul>
 </section>
-<section id="id1">
-<h2>Workflow<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<section id="pypeec-workflow">
+<h2>PyPEEC Workflow<a class="headerlink" href="#pypeec-workflow" title="Permalink to this heading"></a></h2>
 <img alt="PyPEEC Workflow" src="../_images/workflow.png" />
 </section>
 <section id="entry-points-and-scripts">
 <h2>Entry Points and Scripts<a class="headerlink" href="#entry-points-and-scripts" title="Permalink to this heading"></a></h2>
-<p>PyPEEC can be install from PyPi with the following command: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pypeec</span></code>.</p>
-<p>The entry points of the different tools are located in the <code class="docutils literal notranslate"><span class="pre">pypeec.main</span></code></p>
+<p>The entry points of the different tools are located in the <code class="docutils literal notranslate"><span class="pre">pypeec.main</span></code> module:</p>
 <ul class="simple">
 <li><p>Running the tools with files as input/ouput:</p>
 <ul>
@@ -176,7 +176,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">viewer</span></code> for running the <strong>viewer</strong></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">solver</span></code> for running the <strong>solver</strong></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">plotter</span></code> for running the <strong>plotter</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">examples</span></code> for installing the <strong>examples</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">examples</span></code> for extracting the <strong>examples</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">documentation</span></code> for extracting the <strong>documentation</strong></p></li>
 </ul>
 </section>
 <section id="input-output-file-description">
@@ -206,7 +207,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Thomas Guillod.</p>
+    <p>&#169; Copyright Thomas Guillod - Dartmouth College.</p>
   </div>
 
    

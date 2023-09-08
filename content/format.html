@@ -34,10 +34,10 @@
           
           <a href="../index.html">
             
-              <img src="../_static/header.png" class="logo" alt="Logo"/>
+              <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.3.0
+                4.3.1.dev22+g267bbb3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -51,8 +51,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
@@ -61,7 +62,7 @@
 <li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">File Formats</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pypeec-workflow">PyPEEC Workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#geometry-file-format">Geometry File Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#problem-file-format">Problem File Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#point-file-format">Point File Format</a></li>
@@ -96,8 +97,8 @@
              
   <section id="file-formats">
 <h1>File Formats<a class="headerlink" href="#file-formats" title="Permalink to this heading"></a></h1>
-<section id="workflow">
-<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading"></a></h2>
+<section id="pypeec-workflow">
+<h2>PyPEEC Workflow<a class="headerlink" href="#pypeec-workflow" title="Permalink to this heading"></a></h2>
 <img alt="PyPEEC Workflow" src="../_images/workflow.png" />
 </section>
 <section id="geometry-file-format">
@@ -226,13 +227,12 @@ This file contains the definition of the voxel structure.</p>
 <span class="w">    </span><span class="c1">#   - dict with the domain name and the shape definition</span>
 <span class="w">    </span><span class="c1">#   - required information, the dict cannot be empty</span>
 <span class="w">    </span><span class="c1">#   - domain definition</span>
-<span class="w">    </span><span class="c1">#       - list of the different shapes composing the domain</span>
-<span class="w">    </span><span class="c1">#       - layer_start: name of the layer where the shape starts</span>
-<span class="w">    </span><span class="c1">#       - layer_stop: name of the layer where the shape stops</span>
-<span class="w">    </span><span class="c1">#       - shape_add: list of shapes to be merged be added</span>
-<span class="w">    </span><span class="c1">#       - shape_sub: list of shapes to be merged be subtracted</span>
+<span class="w">    </span><span class="c1">#       - shape_layer: list of layer where the shape is located</span>
+<span class="w">    </span><span class="c1">#       - shape_operation: composition operation for assembling the shape (&quot;add&quot; or &quot;sub&quot;)</span>
+<span class="w">    </span><span class="c1">#       - shape_data: list of shapes to be merged together to form the resulting object</span>
 <span class="w">    </span><span class="c1">#   - shape definition</span>
 <span class="w">    </span><span class="c1">#       - shape_type: type of the shape (&quot;pad&quot; or &quot;trace&quot; or &quot;polygon&quot;)</span>
+<span class="w">    </span><span class="c1">#       - shape_operation: composition operation for assembling the shape (&quot;add&quot; or &quot;sub&quot;)</span>
 <span class="w">    </span><span class="c1">#       - coord: array with the 2D coordinates composing the shape</span>
 <span class="w">    </span><span class="c1">#       - buffer: thickness of the buffer around the polygons</span>
 <span class="w">    </span><span class="c1">#       - diameter: diameter of the pads</span>
@@ -240,48 +240,53 @@ This file contains the definition of the voxel structure.</p>
 <span class="w">    </span><span class="s">&quot;geometry_shape&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">        </span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span>
-<span class="w">                </span><span class="s">&quot;layer_start&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;cond&quot;</span>
-<span class="w">                </span><span class="s">&quot;layer_stop&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;cond&quot;</span>
-<span class="w">                </span><span class="s">&quot;shape_add&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">                </span><span class="s">&quot;shape_layer&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;cond&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">                </span><span class="s">&quot;shape_operation&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;add&quot;</span>
+<span class="w">                </span><span class="s">&quot;shape_data&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">                    </span><span class="p p-Indicator">-</span>
 <span class="w">                        </span><span class="s">&quot;shape_type&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;trace&quot;</span>
+<span class="w">                        </span><span class="s">&quot;shape_operation&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;add&quot;</span>
 <span class="w">                        </span><span class="s">&quot;width&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5e-3</span>
 <span class="w">                        </span><span class="s">&quot;coord&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">0.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0e-3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5.0e-3</span><span class="p p-Indicator">]]</span>
-<span class="w">                </span><span class="s">&quot;shape_sub&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 <span class="w">        </span><span class="s">&quot;dom_mag&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span>
-<span class="w">                </span><span class="s">&quot;layer_start&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;mag&quot;</span>
-<span class="w">                </span><span class="s">&quot;layer_stop&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;mag&quot;</span>
-<span class="w">                </span><span class="s">&quot;shape_add&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">                </span><span class="s">&quot;shape_layer&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;mag&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">                </span><span class="s">&quot;shape_operation&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;add&quot;</span>
+<span class="w">                </span><span class="s">&quot;shape_data&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">                    </span><span class="p p-Indicator">-</span>
 <span class="w">                        </span><span class="s">&quot;shape_type&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span>
+<span class="w">                        </span><span class="s">&quot;shape_operation&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;add&quot;</span>
 <span class="w">                        </span><span class="s">&quot;buffer&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
 <span class="w">                        </span><span class="s">&quot;coord&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">0.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0e-3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0e-3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5.0e-3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5.0e-3</span><span class="p p-Indicator">]]</span>
-<span class="w">                </span><span class="s">&quot;shape_sub&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span>
+<span class="w">                </span><span class="s">&quot;shape_layer&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;mag&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">                </span><span class="s">&quot;shape_operation&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;sub&quot;</span>
+<span class="w">                </span><span class="s">&quot;shape_data&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">                    </span><span class="p p-Indicator">-</span>
 <span class="w">                        </span><span class="s">&quot;shape_type&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span>
+<span class="w">                        </span><span class="s">&quot;shape_operation&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;add&quot;</span>
 <span class="w">                        </span><span class="s">&quot;buffer&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
 <span class="w">                        </span><span class="s">&quot;coord&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">1.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0e-3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0e-3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.0e-3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.0e-3</span><span class="p p-Indicator">]]</span>
 <span class="w">        </span><span class="s">&quot;dom_src&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span>
-<span class="w">                </span><span class="s">&quot;layer_start&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;insulation_terminal&quot;</span>
-<span class="w">                </span><span class="s">&quot;layer_stop&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;terminal&quot;</span>
-<span class="w">                </span><span class="s">&quot;shape_add&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">                </span><span class="s">&quot;shape_layer&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;insulation_terminal&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;terminal&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">                </span><span class="s">&quot;shape_operation&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;add&quot;</span>
+<span class="w">                </span><span class="s">&quot;shape_data&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">                    </span><span class="p p-Indicator">-</span>
 <span class="w">                        </span><span class="s">&quot;shape_type&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;pad&quot;</span>
+<span class="w">                        </span><span class="s">&quot;shape_operation&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;add&quot;</span>
 <span class="w">                        </span><span class="s">&quot;diameter&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.7e-3</span>
 <span class="w">                        </span><span class="s">&quot;coord&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">0.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0e-3</span><span class="p p-Indicator">]]</span>
-<span class="w">                </span><span class="s">&quot;shape_sub&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 <span class="w">        </span><span class="s">&quot;dom_sink&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span>
-<span class="w">                </span><span class="s">&quot;layer_start&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;insulation_terminal&quot;</span>
-<span class="w">                </span><span class="s">&quot;layer_stop&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;terminal&quot;</span>
-<span class="w">                </span><span class="s">&quot;shape_add&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">                </span><span class="s">&quot;shape_layer&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;insulation_terminal&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;terminal&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">                </span><span class="s">&quot;shape_operation&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;add&quot;</span>
+<span class="w">                </span><span class="s">&quot;shape_data&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">                    </span><span class="p p-Indicator">-</span>
 <span class="w">                        </span><span class="s">&quot;shape_type&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;pad&quot;</span>
+<span class="w">                        </span><span class="s">&quot;shape_operation&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;add&quot;</span>
 <span class="w">                        </span><span class="s">&quot;diameter&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.7e-3</span>
 <span class="w">                        </span><span class="s">&quot;coord&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">5.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5.0e-3</span><span class="p p-Indicator">]]</span>
-<span class="w">                </span><span class="s">&quot;shape_sub&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 </pre></div>
 </div>
 </section>
@@ -487,7 +492,7 @@ This file contains the definition of the points used for magnetic field evaluati
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Thomas Guillod.</p>
+    <p>&#169; Copyright Thomas Guillod - Dartmouth College.</p>
   </div>
 
    
