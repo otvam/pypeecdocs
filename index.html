@@ -36,7 +36,7 @@
               <img src="_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.4.0
+                4.5.1.dev0+g9bfd777.d20230918
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -100,14 +100,20 @@
 <ul class="simple">
 <li><p><strong>Website:</strong> <a class="reference external" href="https://pypeec.otvam.ch">pypeec.otvam.ch</a></p></li>
 <li><p><strong>Repository:</strong> <a class="reference external" href="https://github.com/otvam/pypeec">github.com/otvam/pypeec</a></p></li>
+<li><p><strong>Package:</strong> <a class="reference external" href="https://pypi.org/project/pypeec">pypi.org/project/pypeec</a></p></li>
 </ul>
 </div>
 <hr class="docutils" />
-<p><strong>PyPEEC</strong> is a <strong>3D quasi-magnetostatic field solver</strong> with the following characteristics:</p>
+<p><strong>PyPEEC</strong> is a <strong>3D quasi-magnetostatic PEEC solver</strong> developed at <strong>Dartmouth College</strong> within the Power Management Integration Center (PMIC).
+PyPEEC is a <strong>fast solver</strong> (FFT and GPU accelerated) that can simulate a large variety of <strong>magnetic components</strong> (inductors, transformers, chokes, IPT coils, busbars, etc.).
+The tool contains a <strong>mesher</strong> (STL, PNG, and GERBER formats), a <strong>solver</strong> (static and frequency domain), and <strong>advanced plotting</strong> capabilities.
+The code is written in <strong>Python</strong> and is fully <strong>open source</strong>!</p>
+<hr class="docutils" />
+<p><strong>PyPEEC</strong> features the following <strong>characteristics</strong>:</p>
 <ul class="simple">
 <li><p><strong>PEEC method</strong> with <strong>FFT acceleration</strong></p></li>
 <li><p>Representation of the <strong>geometry</strong> with <strong>3D voxels</strong></p></li>
-<li><p><strong>Multithreading and GPU acceleration</strong> are available</p></li>
+<li><p><strong>Multithreading</strong> and <strong>GPU acceleration</strong> are available</p></li>
 <li><p><strong>Fast</strong> with <strong>moderate memory</strong> requirements</p></li>
 <li><p>Import the <strong>geometry</strong> from <strong>STL</strong>, <strong>PNG</strong>, and <strong>GERBER</strong> files</p></li>
 <li><p>Draw the <strong>geometry</strong> with stacked 2D <strong>vector shapes</strong> or <strong>voxel indices</strong></p></li>
@@ -134,7 +140,7 @@
 <li><p>No model order reduction techniques</p></li>
 <li><p>Limited to voxel geometries</p></li>
 </ul>
-<p>The <strong>PyPEEC</strong> package contains the following tools:</p>
+<p>The <strong>PyPEEC</strong> package contains the following <strong>tools</strong>:</p>
 <ul class="simple">
 <li><p><strong>mesher</strong>: create a 3D voxel structure from STL or PNG files</p></li>
 <li><p><strong>viewer</strong>: visualization of the 3D voxel structure</p></li>
