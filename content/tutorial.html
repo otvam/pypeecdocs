@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial &mdash; PyPEEC</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+    <link rel="canonical" href="https://pypeec.otvam.ch/content/tutorial.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="About" href="about.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #137e9c" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                4.6.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">General Doc</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-code">Installing the Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extracting-the-data">Extracting the Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solving-a-problem">Solving a Problem</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="technical.html">Technical Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">File Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index_api.html">API Doc</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPEEC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h1>
+<section id="installing-the-code">
+<h2>Installing the Code<a class="headerlink" href="#installing-the-code" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installation of PyPEEC with pip</span>
+<span class="c1">#    - The Python executable can be &quot;python&quot; or &quot;python3&quot;</span>
+<span class="c1">#    - Alternatively, Conda can be used for the environment</span>
+
+<span class="c1"># Install Python Virtual Environment</span>
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>virtualenv
+
+<span class="c1"># Create a Python Virtual Environment</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+
+<span class="c1"># Activate the Python Virtual Environment</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+
+<span class="c1"># Install PyPEEC from PyPi</span>
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pypeec
+</pre></div>
+</div>
+</section>
+<section id="extracting-the-data">
+<h2>Extracting the Data<a class="headerlink" href="#extracting-the-data" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the PyPEEC version</span>
+pypeec<span class="w"> </span>--version
+
+<span class="c1"># Extract the PyPEEC examples</span>
+pypeec<span class="w"> </span>examples<span class="w"> </span>examples
+
+<span class="c1"># Extract the PyPEEC documentation</span>
+pypeec<span class="w"> </span>documentation<span class="w"> </span>documentation
+</pre></div>
+</div>
+</section>
+<section id="solving-a-problem">
+<h2>Solving a Problem<a class="headerlink" href="#solving-a-problem" title="Permalink to this heading"></a></h2>
+<p>This tutorial demonstrates how PyPEEC can be used to simulate a four-layer PCB coil.
+The coil has two terminals and the simulation is done in the frequency domain.
+All the command are executed inside the virtual environment in the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder.</p>
+<section id="mesher-meshing-of-the-geometry">
+<h3>Mesher: Meshing of the Geometry<a class="headerlink" href="#mesher-meshing-of-the-geometry" title="Permalink to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the mesher</span>
+<span class="c1">#   - geometry.yaml - contains the geometry description (input)</span>
+<span class="c1">#   - voxel.pck - contains the meshed voxel structure (output)</span>
+pypeec<span class="w"> </span>mesher<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--geometry<span class="w"> </span>tutorial/geometry.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.pck
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  ╔═══════════════════════════════════════════════════════╗
+  ║  ╔═══╗   ╔═══╦═══╦═══╦═══╗            3D PEEC Solver  ║
+  ║  ║╔═╗║   ║╔═╗║╔══╣╔══╣╔═╗║      Quasi-Magnetostatics  ║
+  ║  ║╚═╝╠╗ ╔╣╚═╝║╚══╣╚══╣║ ╚╝          Frequency Domain  ║
+  ║  ║╔══╣║ ║║╔══╣╔══╣╔══╣║ ╔╗          Voxel Geometries  ║
+  ║  ║║  ║╚═╝║║  ║╚══╣╚══╣╚═╝║       FFT/GPU Accelerated  ║
+  ║  ╚╝  ╚═╗ ╠╝  ╚═══╩═══╩═══╝    Python and Open Source  ║
+  ╚══════╦═╝ ╠════════════════════════════════════════════╝
+         ╚═══╝
+  ╔═══════════════════════════════════════════════════════╗
+  ║ Website - https://pypeec.otvam.ch                     ║
+  ║ Thomas Guillod - Dartmouth College                    ║
+  ║ Mozilla Public License Version 2.0                    ║
+  ╚═══════════════════════════════════════════════════════╝
+
+00:00:00.00 : MAIN     : INFO     : load the input data
+00:00:00.01 : MAIN     : INFO     : load the mesher
+00:00:00.82 : MAIN     : INFO     : run the mesher
+00:00:00.82 : MESHER   : INFO     : check the input data
+00:00:00.82 : MESHER   : INFO     : mesher_shape : enter : timing
+00:00:00.82 : SHAPE    : DEBUG    :     parse the layers
+00:00:00.82 : SHAPE    : DEBUG    :     create the shapes
+00:00:00.83 : SHAPE    : DEBUG    :     get the voxel size
+00:00:00.83 : SHAPE    : DEBUG    :     voxelize the shapes
+00:00:00.85 : SHAPE    : DEBUG    :     trace: n_voxel = 19728
+00:00:00.85 : SHAPE    : DEBUG    :     via: n_voxel = 1205
+00:00:00.85 : SHAPE    : DEBUG    :     src: n_voxel = 361
+00:00:00.85 : SHAPE    : DEBUG    :     sink: n_voxel = 361
+00:00:00.85 : SHAPE    : DEBUG    :     merge the shapes
+00:00:00.87 : MESHER   : INFO     : mesher_shape : exit : 00:00:00.04
+00:00:00.87 : MESHER   : INFO     : voxel_conflict : enter : timing
+00:00:00.88 : MESHER   : INFO     : voxel_conflict : exit : 00:00:00.00
+00:00:00.88 : MESHER   : INFO     : voxel_resample : enter : timing
+00:00:00.88 : SAMPLE   : DEBUG    :     original number = 331056
+00:00:00.88 : SAMPLE   : DEBUG    :     use_reduce = False
+00:00:00.88 : SAMPLE   : DEBUG    :     use_resample = False
+00:00:00.88 : SAMPLE   : DEBUG    :     final number = 331056
+00:00:00.88 : MESHER   : INFO     : voxel_resample : exit : 00:00:00.00
+00:00:00.88 : MESHER   : INFO     : voxel_connection : enter : timing
+00:00:00.97 : MESHER   : INFO     : voxel_connection : exit : 00:00:00.08
+00:00:00.97 : MESHER   : INFO     : voxel_summary : enter : timing
+00:00:00.97 : SUMMARY  : DEBUG    :     voxel size
+00:00:00.97 : SUMMARY  : DEBUG    :         n = (132, 132, 19)
+00:00:00.97 : SUMMARY  : DEBUG    :         d = (3.50e-05, 3.50e-05, 3.50e-05)
+00:00:00.97 : SUMMARY  : DEBUG    :         s = (4.63e-03, 4.63e-03, 6.65e-04)
+00:00:00.97 : SUMMARY  : DEBUG    :         c = (1.94e-03, 1.94e-03, 0.00e+00)
+00:00:00.97 : SUMMARY  : DEBUG    :         A = (2.14e-05, 3.08e-06, 3.08e-06)
+00:00:00.97 : SUMMARY  : DEBUG    :     voxel summary
+00:00:00.97 : SUMMARY  : DEBUG    :         V_total = 1.42e-08
+00:00:00.97 : SUMMARY  : DEBUG    :         V_used = 9.12e-10
+00:00:00.97 : SUMMARY  : DEBUG    :         n_total = 331056
+00:00:00.97 : SUMMARY  : DEBUG    :         n_used = 21225
+00:00:00.97 : SUMMARY  : DEBUG    :         ratio = 6.41e-02
+00:00:00.97 : SUMMARY  : DEBUG    :         n_domain = 4
+00:00:00.97 : SUMMARY  : DEBUG    :         n_graph = 1
+00:00:00.97 : SUMMARY  : DEBUG    :     voxel domain
+00:00:00.97 : SUMMARY  : DEBUG    :         trace = 19298
+00:00:00.97 : SUMMARY  : DEBUG    :         via = 1205
+00:00:00.97 : SUMMARY  : DEBUG    :         src = 361
+00:00:00.97 : SUMMARY  : DEBUG    :         sink = 361
+00:00:00.97 : MESHER   : INFO     : voxel_summary : exit : 00:00:00.00
+00:00:00.97 : MESHER   : INFO     : duration: 00:00:00.14
+00:00:00.97 : MESHER   : INFO     : successful termination
+00:00:00.97 : MAIN     : INFO     : save the results
+</pre></div>
+</div>
+</section>
+<section id="viewer-plot-the-geometry">
+<h3>Viewer: Plot the Geometry<a class="headerlink" href="#viewer-plot-the-geometry" title="Permalink to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the viewer</span>
+<span class="c1">#   - voxel.pck - contains the meshed voxel structure (input)</span>
+<span class="c1">#   - point.yaml - contains the points used for field evaluation (input)</span>
+<span class="c1">#   - viewer.yaml - contains the plot configuration (input)</span>
+<span class="c1">#   - tag_plot - list of plots to be shown (defined in viewer.yaml)</span>
+pypeec<span class="w"> </span>viewer<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.pck<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--point<span class="w"> </span>tutorial/point.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--viewer<span class="w"> </span>config/viewer.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tag_plot<span class="w"> </span>domain<span class="w"> </span>connection
+</pre></div>
+</div>
+<figure class="align-default" id="id1">
+<img alt="../_images/viewer_domain.png" src="../_images/viewer_domain.png" />
+<figcaption>
+<p><span class="caption-text">Plot showing which the different domains.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="../_images/viewer_connection.png" src="../_images/viewer_connection.png" />
+<figcaption>
+<p><span class="caption-text">Plot showing which domains are interconnected.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="solver-solve-the-problem">
+<h3>Solver: Solve the Problem<a class="headerlink" href="#solver-solve-the-problem" title="Permalink to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the solver</span>
+<span class="c1">#   - voxel.pck - contains the meshed voxel structure (input)</span>
+<span class="c1">#   - problem.yaml - contains the magnetic problem description (input)</span>
+<span class="c1">#   - tolerance.yaml - contains the solver numerical tolerances (input)</span>
+<span class="c1">#   - solution.pck - contains the problem solution (output)</span>
+pypeec<span class="w"> </span>solver<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.pck<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--problem<span class="w"> </span>tutorial/problem.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tolerance<span class="w"> </span>config/tolerance.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--solution<span class="w"> </span>tutorial/solution.pck
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  ╔═══════════════════════════════════════════════════════╗
+  ║  ╔═══╗   ╔═══╦═══╦═══╦═══╗            3D PEEC Solver  ║
+  ║  ║╔═╗║   ║╔═╗║╔══╣╔══╣╔═╗║      Quasi-Magnetostatics  ║
+  ║  ║╚═╝╠╗ ╔╣╚═╝║╚══╣╚══╣║ ╚╝          Frequency Domain  ║
+  ║  ║╔══╣║ ║║╔══╣╔══╣╔══╣║ ╔╗          Voxel Geometries  ║
+  ║  ║║  ║╚═╝║║  ║╚══╣╚══╣╚═╝║       FFT/GPU Accelerated  ║
+  ║  ╚╝  ╚═╗ ╠╝  ╚═══╩═══╩═══╝    Python and Open Source  ║
+  ╚══════╦═╝ ╠════════════════════════════════════════════╝
+         ╚═══╝
+  ╔═══════════════════════════════════════════════════════╗
+  ║ Website - https://pypeec.otvam.ch                     ║
+  ║ Thomas Guillod - Dartmouth College                    ║
+  ║ Mozilla Public License Version 2.0                    ║
+  ╚═══════════════════════════════════════════════════════╝
+
+00:00:00.00 : MAIN     : INFO     : load the input data
+00:00:00.57 : MAIN     : INFO     : load the solver
+00:00:00.64 : MAIN     : INFO     : run the solver
+00:00:00.64 : SOLVER   : INFO     : check the input data
+00:00:00.64 : SOLVER   : INFO     : combine the input data
+00:00:00.64 : SOLVER   : INFO     : init : enter : timing
+00:00:00.64 : SOLVER   : INFO     :     voxel_geometry : enter : timing
+00:00:00.83 : SOLVER   : INFO     :     voxel_geometry : exit : 00:00:00.18
+00:00:00.83 : SOLVER   : INFO     :     system_tensor : enter : timing
+00:00:00.83 : GREEN    : DEBUG    :         analytical solution: 6D / 1
+00:00:00.85 : GREEN    : DEBUG    :         analytical solution: 6D / 4624
+00:00:01.02 : GREEN    : DEBUG    :         numerical approximation: 6D / 326432
+00:00:01.04 : SOLVER   : INFO     :     system_tensor : exit : 00:00:00.20
+00:00:01.04 : SOLVER   : INFO     :     problem_geometry : enter : timing
+00:00:01.08 : PROBLEM  : DEBUG    :         n_voxel_total = 331056
+00:00:01.08 : PROBLEM  : DEBUG    :         n_voxel_used = 21225
+00:00:01.08 : PROBLEM  : DEBUG    :         n_face_total = 993168
+00:00:01.08 : PROBLEM  : DEBUG    :         n_face_used = 42094
+00:00:01.08 : PROBLEM  : DEBUG    :         n_voxel_electric = 21225
+00:00:01.08 : PROBLEM  : DEBUG    :         n_voxel_magnetic = 0
+00:00:01.08 : PROBLEM  : DEBUG    :         n_face_electric = 42094
+00:00:01.08 : PROBLEM  : DEBUG    :         n_face_magnetic = 0
+00:00:01.08 : PROBLEM  : DEBUG    :         n_src_current = 0
+00:00:01.08 : PROBLEM  : DEBUG    :         n_src_voltage = 722
+00:00:01.08 : PROBLEM  : DEBUG    :         ratio_voxel = 6.41e-02
+00:00:01.08 : PROBLEM  : DEBUG    :         ratio_face = 4.24e-02
+00:00:01.08 : SOLVER   : INFO     :     problem_geometry : exit : 00:00:00.04
+00:00:01.08 : SOLVER   : INFO     :     system_matrix : enter : timing
+00:00:01.08 : FFT      : DEBUG    :         multiplication: inductance
+00:00:01.08 : FFT      : DEBUG    :             tensor size: (132, 132, 19)
+00:00:01.08 : FFT      : DEBUG    :             tensor footprint: 40.41 MB
+00:00:01.08 : FFT      : DEBUG    :             library: SciPy / GPU: False
+00:00:01.17 : SOLVER   : INFO     :     system_matrix : exit : 00:00:00.08
+00:00:01.17 : SOLVER   : INFO     : init : exit : 00:00:00.52
+00:00:01.17 : SOLVER   : INFO     : run sweep: sim_default : enter : timing
+00:00:01.17 : SOLVER   : INFO     :     problem_value : enter : timing
+00:00:01.18 : SOLVER   : INFO     :     problem_value : exit : 00:00:00.01
+00:00:01.18 : SOLVER   : INFO     :     equation_system : enter : timing
+00:00:01.20 : FACTOR   : DEBUG    :         factorization: electric
+00:00:01.20 : FACTOR   : DEBUG    :             matrix size: (21947, 21947)
+00:00:01.20 : FACTOR   : DEBUG    :             matrix elements: 107579
+00:00:01.20 : FACTOR   : DEBUG    :             matrix density: 2.23e-04
+00:00:01.20 : FACTOR   : DEBUG    :             library: SuperLU
+00:00:01.20 : FACTOR   : DEBUG    :             compute factorization
+00:00:01.33 : FACTOR   : DEBUG    :             factorization success
+00:00:01.33 : FACTOR   : DEBUG    :         factorization: magnetic
+00:00:01.34 : SOLVER   : INFO     :     equation_system : exit : 00:00:00.15
+00:00:01.34 : SOLVER   : INFO     :     equation_solver : enter : timing
+00:00:01.34 : COND     : DEBUG    :         condition: electric
+00:00:01.34 : COND     : DEBUG    :             matrix size: (21947, 21947)
+00:00:01.34 : COND     : DEBUG    :             matrix elements: 107579
+00:00:01.34 : COND     : DEBUG    :             matrix density: 2.23e-04
+00:00:01.34 : COND     : DEBUG    :             compute LU decomposition
+00:00:01.49 : COND     : DEBUG    :             estimate norm of the inverse
+00:00:01.63 : COND     : DEBUG    :             estimate norm of the matrix
+00:00:01.69 : COND     : DEBUG    :             compute condition estimate
+00:00:01.69 : COND     : DEBUG    :         condition: magnetic
+00:00:01.69 : EQUATION : DEBUG    :         condition summary
+00:00:01.69 : EQUATION : DEBUG    :             check = True
+00:00:01.69 : EQUATION : DEBUG    :             status = True
+00:00:01.69 : EQUATION : DEBUG    :             value_electric = 3.25e+06
+00:00:01.69 : EQUATION : DEBUG    :             value_magnetic = 0.00e+00
+00:00:01.69 : EQUATION : DEBUG    :             matrix condition is good
+00:00:01.69 : ITER     : DEBUG    :         matrix solver
+00:00:01.69 : ITER     : DEBUG    :             init solver
+00:00:01.69 : ITER     : DEBUG    :             solver: GMRES
+00:00:01.69 : ITER     : DEBUG    :             n_dof: 64041
+00:00:01.69 : ITER     : DEBUG    :             call solver
+00:00:01.76 : ITER     : DEBUG    :             i = 1 / 0.00e+00+0.00e+00j VA
+00:00:06.25 : ITER     : DEBUG    :             i = 2 / 8.44e-01+5.40e+00j VA
+00:00:06.62 : EQUATION : DEBUG    :         solver summary
+00:00:06.62 : EQUATION : DEBUG    :             n_dof = 64041
+00:00:06.62 : EQUATION : DEBUG    :             n_iter = 2
+00:00:06.62 : EQUATION : DEBUG    :             n_sys_eval = 12
+00:00:06.62 : EQUATION : DEBUG    :             n_pcd_eval = 13
+00:00:06.62 : EQUATION : DEBUG    :             res_rms = 1.52e-09
+00:00:06.62 : EQUATION : DEBUG    :             check = True
+00:00:06.62 : EQUATION : DEBUG    :             status_pcd = True
+00:00:06.62 : EQUATION : DEBUG    :             status_solver = True
+00:00:06.62 : EQUATION : DEBUG    :             status_res = True
+00:00:06.62 : EQUATION : DEBUG    :             convergence achieved
+00:00:06.62 : SOLVER   : INFO     :     equation_solver : exit : 00:00:05.28
+00:00:06.62 : SOLVER   : INFO     :     extract_solution : enter : timing
+00:00:06.96 : SOLUTION : DEBUG    :         domain: trace_via
+00:00:06.96 : SOLUTION : DEBUG    :             P_electric = 8.05e-01 W
+00:00:06.96 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
+00:00:06.96 : SOLUTION : DEBUG    :             P_tot = 8.05e-01 W
+00:00:06.96 : SOLUTION : DEBUG    :         domain: src_sink
+00:00:06.96 : SOLUTION : DEBUG    :             P_electric = 7.84e-03 W
+00:00:06.96 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
+00:00:06.96 : SOLUTION : DEBUG    :             P_tot = 7.84e-03 W
+00:00:06.96 : SOLUTION : DEBUG    :         terminal: src
+00:00:06.96 : SOLUTION : DEBUG    :             V = +9.99e-01 + +5.40e-03j V
+00:00:06.96 : SOLUTION : DEBUG    :             I = +8.74e-01 + -5.40e+00j A
+00:00:06.96 : SOLUTION : DEBUG    :             S = +4.22e-01 + +2.70e+00j VA
+00:00:06.96 : SOLUTION : DEBUG    :         terminal: sink
+00:00:06.96 : SOLUTION : DEBUG    :             V = -9.99e-01 + -5.40e-03j V
+00:00:06.96 : SOLUTION : DEBUG    :             I = -8.74e-01 + +5.40e+00j A
+00:00:06.96 : SOLUTION : DEBUG    :             S = +4.22e-01 + +2.70e+00j VA
+00:00:06.96 : SOLUTION : DEBUG    :         integral
+00:00:06.96 : SOLUTION : DEBUG    :             S_tot_real = 8.44e-01 VA
+00:00:06.96 : SOLUTION : DEBUG    :             S_tot_imag = 5.40e+00j VA
+00:00:06.96 : SOLUTION : DEBUG    :             P_electric = 8.13e-01 W
+00:00:06.96 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
+00:00:06.96 : SOLUTION : DEBUG    :             W_electric = 4.30e-07 J
+00:00:06.96 : SOLUTION : DEBUG    :             W_magnetic = 0.00e+00 J
+00:00:06.96 : SOLUTION : DEBUG    :             P_tot = 8.13e-01 W
+00:00:06.96 : SOLUTION : DEBUG    :             W_tot = 4.30e-07 J
+00:00:06.96 : SOLVER   : INFO     :     extract_solution : exit : 00:00:00.34
+00:00:06.96 : SOLVER   : INFO     : run sweep: sim_default : exit : 00:00:05.79
+00:00:06.96 : SOLVER   : INFO     : duration: 00:00:06.32
+00:00:06.96 : SOLVER   : INFO     : successful termination
+00:00:06.96 : MAIN     : INFO     : save the results
+</pre></div>
+</div>
+</section>
+<section id="plotter-plot-the-solution">
+<h3>Plotter: Plot the Solution<a class="headerlink" href="#plotter-plot-the-solution" title="Permalink to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the plotter</span>
+<span class="c1">#   - solution.pck - contains the problem solution (input)</span>
+<span class="c1">#   - point.yaml - contains the points used for field evaluation (input)</span>
+<span class="c1">#   - plotter.yaml - contains the plot configuration (input)</span>
+<span class="c1">#   - tag_plot - list of plots to be shown (defined in plotter.yaml)</span>
+pypeec<span class="w"> </span>plotter<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--solution<span class="w"> </span>tutorial/solution.pck<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--point<span class="w"> </span>tutorial/point.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--plotter<span class="w"> </span>config/plotter.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tag_plot<span class="w"> </span>V_c_abs<span class="w"> </span>J_c_norm<span class="w"> </span>H_norm<span class="w"> </span>residuum
+</pre></div>
+</div>
+<figure class="align-default" id="id3">
+<img alt="../_images/plotter_V_c_abs.png" src="../_images/plotter_V_c_abs.png" />
+<figcaption>
+<p><span class="caption-text">Plot showing the electric potential.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<img alt="../_images/plotter_J_c_norm.png" src="../_images/plotter_J_c_norm.png" />
+<figcaption>
+<p><span class="caption-text">Plot showing the current density.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="../_images/plotter_H_norm.png" src="../_images/plotter_H_norm.png" />
+<figcaption>
+<p><span class="caption-text">Plot showing the generated magnetic field.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id6">
+<img alt="../_images/plotter_residuum.png" src="../_images/plotter_residuum.png" />
+<figcaption>
+<p><span class="caption-text">Plot showing the equation system residuum.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Thomas Guillod - Dartmouth College.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -28,7 +28,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #2980B9" >
+        <div class="wy-side-nav-search"  style="background: #137e9c" >
 
           
           
@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.5.0
+                4.6.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -51,7 +51,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
@@ -76,7 +76,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">PyPEEC</a>
       </nav>
@@ -99,7 +99,14 @@
 <h1>File Formats<a class="headerlink" href="#file-formats" title="Permalink to this heading"></a></h1>
 <section id="pypeec-workflow">
 <h2>PyPEEC Workflow<a class="headerlink" href="#pypeec-workflow" title="Permalink to this heading"></a></h2>
-<img alt="PyPEEC Workflow" src="../_images/workflow.png" />
+<figure class="align-default" id="id1">
+<img alt="../_images/workflow.png" src="../_images/workflow.png" />
+<figcaption>
+<p><span class="caption-text">Description of the PyPEEC workflow (mesher, viewer, solver, and plotter).
+The input and output files of the different tools are shown.
+Additionally, a global configuration file is used.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="geometry-file-format">
 <h2>Geometry File Format<a class="headerlink" href="#geometry-file-format" title="Permalink to this heading"></a></h2>
@@ -445,7 +452,7 @@ This file contains the definition of the magnetic problem to be solved.</p>
 <span class="w">            </span><span class="s">&quot;mat_electric&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;rho_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1.0e-8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;rho_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0&quot;</span><span class="p p-Indicator">}</span>
 <span class="w">            </span><span class="s">&quot;mat_magnetic&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;chi_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">100.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;chi_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">10.0</span><span class="p p-Indicator">}</span>
 <span class="w">        </span><span class="s">&quot;source_val&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">            </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;I_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Y_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Y_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">}</span>
+<span class="w">            </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;I_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Y_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">2.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Y_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">}</span>
 <span class="w">            </span><span class="s">&quot;sink&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;V_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;V_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Z_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">2.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Z_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">}</span>
 <span class="w">    </span><span class="s">&quot;sim_ac&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">        </span><span class="s">&quot;freq&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0e+3</span>
@@ -453,7 +460,7 @@ This file contains the definition of the magnetic problem to be solved.</p>
 <span class="w">            </span><span class="s">&quot;mat_electric&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;rho_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1.0e-8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;rho_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0&quot;</span><span class="p p-Indicator">}</span>
 <span class="w">            </span><span class="s">&quot;mat_magnetic&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;chi_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">100.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;chi_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">10.0</span><span class="p p-Indicator">}</span>
 <span class="w">        </span><span class="s">&quot;source_val&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">            </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;I_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Y_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Y_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">}</span>
+<span class="w">            </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;I_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Y_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">2.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Y_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">}</span>
 <span class="w">            </span><span class="s">&quot;sink&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;V_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;V_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Z_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">2.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Z_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">}</span>
 </pre></div>
 </div>
@@ -477,7 +484,7 @@ This file contains the definition of the points used for magnetic field evaluati
 <section id="other-file-formats">
 <h2>Other File Formats<a class="headerlink" href="#other-file-formats" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>The configuration file format is documented in <code class="docutils literal notranslate"><span class="pre">pypeec/config.yaml</span></code>.</p></li>
+<li><p>The configuration file format is documented in <code class="docutils literal notranslate"><span class="pre">pypeec/data/config.yaml</span></code>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">file_tolerance</span></code> format is documented in <code class="docutils literal notranslate"><span class="pre">examples/config/tolerance.yaml</span></code>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">file_viewer</span></code> format is documented in <code class="docutils literal notranslate"><span class="pre">examples/config/viewer.yaml</span></code>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">file_plotter</span></code> format is documented in <code class="docutils literal notranslate"><span class="pre">examples/config/plotter.yaml</span></code>.</p></li>

@@ -28,7 +28,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #2980B9" >
+        <div class="wy-side-nav-search"  style="background: #137e9c" >
 
           
           
@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.5.0
+                4.6.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -51,7 +51,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
@@ -65,6 +65,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#packaging-and-environment">Packaging and Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#automated-tests">Automated Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sphinx-documentation">Sphinx Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bug-report">Bug report</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
@@ -77,7 +79,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">PyPEEC</a>
       </nav>
@@ -153,7 +155,7 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <section id="configuration-file">
 <h2>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this heading"></a></h2>
 <ul>
-<li><p>The default configuration file is <code class="docutils literal notranslate"><span class="pre">pypeec/config.yaml</span></code>.</p>
+<li><p>The default configuration file is <code class="docutils literal notranslate"><span class="pre">pypeec/data/config.yaml</span></code>.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>This file is always loaded first.</p></li>
@@ -198,6 +200,23 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <li><p>The documentation is located in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder (using the <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> generator).</p></li>
 <li><p>The shell script <code class="docutils literal notranslate"><span class="pre">run_build.sh</span></code> is used to build the HTML documentation.</p></li>
 </ul>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading"></a></h2>
+<p>PyPEEC is welcoming contributions (code, documentation, example, benchmark, test, tutorial, etc.) !
+For large changes, please first discuss the change you wish to make in the issue tracker.</p>
+</section>
+<section id="bug-report">
+<h2>Bug report<a class="headerlink" href="#bug-report" title="Permalink to this heading"></a></h2>
+<p>Please include a clear and concise description of what the bug is.
+Ideally, provide a minimal working example for the bug.</p>
+<p>Additionally, please report the following parameters:
+* The version of the PyPEEC you are using.
+* The platform/hardware you are using.
+* The version of Python and of the relevant dependencies.
+* For PyVista related bugs, please include the <code class="docutils literal notranslate"><span class="pre">pyvista.Report</span></code> output.
+* For NumPy related bugs, please include the <code class="docutils literal notranslate"><span class="pre">numpy.show_config</span></code> output.
+* For SciPy related bugs, please include the <code class="docutils literal notranslate"><span class="pre">scipy.show_config</span></code> output.</p>
 </section>
 </section>
 
