@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.7.0
+                4.8.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -159,6 +159,7 @@ Wherever possible, multithreading/multiprocessing is used for exploiting multico
 <li><p>SuperLU is typically slower but is always available (integrated with SciPy).</p></li>
 <li><p>UMFPACK is typically faster than SuperLU (available through SciKits).</p></li>
 <li><p>MKL/PARDISO is typically faster than UMFPACK (available through Pydiso).</p></li>
+<li><p>PyAMG is typically slow but uses less memory (risk of convergence issues).</p></li>
 </ul>
 </li>
 <li><p>Two different iterative solvers are available for the dense matrices.</p>
