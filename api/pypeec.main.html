@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.8.0
+                4.9.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -155,8 +155,9 @@ None if the termination is successful.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data_geometry</strong> (<em>data</em>) – The dict describes the geometry, meshing and resampling process.</p></li>
-<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If true, the results are truncated to save space.
-If false, the complete results are returned.</p></li>
+<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If false, the complete results are returned (default).
+If true, the results are truncated to save space.
+This argument is optional.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -189,8 +190,9 @@ None if the termination is successful.</p></li>
 This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>file_voxel</strong> (<em>filename</em>) – The file content describes the voxel structure.
 This output file is written by this function (Pickle format).</p></li>
-<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If true, the results are truncated to save space.
-If false, the complete results are returned.</p></li>
+<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If false, the complete results are returned (default).
+If true, the results are truncated to save space.
+This argument is optional.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -223,13 +225,18 @@ None if the termination is successful.</p></li>
 <li><p><strong>data_point</strong> (<em>data</em>) – The array describes the point cloud used for field evaluation.</p></li>
 <li><p><strong>data_viewer</strong> (<em>data</em>) – The dict describes the different plots to be created.</p></li>
 <li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
-If None, all the plots are shown.</p></li>
+If None, all the plots are shown (default).
+This argument is optional.</p></li>
 <li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
 If “nb”, the plots are rendered within the Jupyter notebook.
 If “save”, the plots are not shown but saved as screenshots.
-If “none”, the plots are not shown (test mode).</p></li>
+If “none”, the plots are not shown (test mode).
+This argument is optional.</p></li>
 <li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
-The current directory is used as the default directory.</p></li>
+The current directory is used as the default directory.
+This argument is optional.</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
+This argument is optional.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -265,13 +272,18 @@ This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>file_viewer</strong> (<em>filename</em>) – The file content describes the different plots to be created.
 This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
-If None, all the plots are shown.</p></li>
+If None, all the plots are shown (default).
+This argument is optional.</p></li>
 <li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
 If “nb”, the plots are rendered within the Jupyter notebook.
 If “save”, the plots are not shown but saved as screenshots.
-If “none”, the plots are not shown (test mode).</p></li>
+If “none”, the plots are not shown (test mode).
+This argument is optional.</p></li>
 <li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
-The current directory is used as the default directory.</p></li>
+The current directory is used as the default directory.
+This argument is optional.</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
+This argument is optional.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -304,8 +316,9 @@ None if the termination is successful.</p></li>
 <li><p><strong>data_voxel</strong> (<em>data</em>) – The dict describes the voxel structure.</p></li>
 <li><p><strong>data_problem</strong> (<em>data</em>) – The dict describes the problem to be solved.</p></li>
 <li><p><strong>data_tolerance</strong> (<em>data</em>) – The dict describes the numerical options.</p></li>
-<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If true, the results are truncated to save space.
-If false, the complete results are returned.</p></li>
+<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If false, the complete results are returned (default).
+If true, the results are truncated to save space.
+This argument is optional.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -344,8 +357,9 @@ This input file is loaded by this function (JSON or YAML format).</p></li>
 This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>file_solution</strong> (<em>filename</em>) – The file content describes the problem solution.
 This output file is written by this function (Pickle format).</p></li>
-<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If true, the results are truncated to save space.
-If false, the complete results are returned.</p></li>
+<li><p><strong>is_truncated</strong> (<em>boolean</em>) – If false, the complete results are returned (default).
+If true, the results are truncated to save space.
+This argument is optional.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -378,15 +392,21 @@ None if the termination is successful.</p></li>
 <li><p><strong>data_point</strong> (<em>data</em>) – The array describes the point cloud used for field evaluation.</p></li>
 <li><p><strong>data_plotter</strong> (<em>data</em>) – The dict describes the different plots to be created.</p></li>
 <li><p><strong>tag_sweep</strong> (<em>list</em>) – The list describes sweeps to be shown.
-If None, all the sweeps are shown.</p></li>
+If None, all the sweeps are shown (default).
+This argument is optional.</p></li>
 <li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
-If None, all the plots are shown.</p></li>
+If None, all the plots are shown (default).
+This argument is optional.</p></li>
 <li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
 If “nb”, the plots are rendered within the Jupyter notebook.
 If “save”, the plots are not shown but saved as screenshots.
-If “none”, the plots are not shown (test mode).</p></li>
+If “none”, the plots are not shown (test mode).
+This argument is optional.</p></li>
 <li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
-The current directory is used as the default directory.</p></li>
+The current directory is used as the default directory.
+This argument is optional.</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
+This argument is optional.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -422,15 +442,21 @@ This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>file_plotter</strong> (<em>filename</em>) – The dict describes the different plots to be created.
 This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>tag_sweep</strong> (<em>list</em>) – The list describes sweeps to be shown.
-If None, all the sweeps are shown.</p></li>
+If None, all the sweeps are shown (default).
+This argument is optional.</p></li>
 <li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
-If None, all the plots are shown.</p></li>
+If None, all the plots are shown (default).
+This argument is optional.</p></li>
 <li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
 If “nb”, the plots are rendered within the Jupyter notebook.
 If “save”, the plots are not shown but saved as screenshots.
-If “none”, the plots are not shown (test mode).</p></li>
+If “none”, the plots are not shown (test mode).
+This argument is optional.</p></li>
 <li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
-The current directory is used as the default directory.</p></li>
+The current directory is used as the default directory.
+This argument is optional.</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
+This argument is optional.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
