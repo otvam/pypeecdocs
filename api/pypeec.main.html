@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.9.0
+                4.10.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -129,15 +129,6 @@
 <li><p><strong>path_extract</strong> (<em>string</em>) – Path where the data will be extracted.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
-False if problems are encountered.</p></li>
-<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
-None if the termination is successful.</p></li>
-</ul>
-</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -161,14 +152,10 @@ This argument is optional.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
-False if problems are encountered.</p></li>
-<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
-None if the termination is successful.</p></li>
-<li><p><strong>data_voxel</strong> (<em>data</em>) – The dict describes the voxel structure.</p></li>
-</ul>
-</p>
+<dd class="field-even"><p><strong>data_voxel</strong> – The dict describes the voxel structure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>data</p>
 </dd>
 </dl>
 </dd></dl>
@@ -194,15 +181,6 @@ This output file is written by this function (Pickle format).</p></li>
 If true, the results are truncated to save space.
 This argument is optional.</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
-False if problems are encountered.</p></li>
-<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
-None if the termination is successful.</p></li>
-</ul>
-</p>
 </dd>
 </dl>
 </dd></dl>
@@ -238,15 +216,6 @@ This argument is optional.</p></li>
 <li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
 This argument is optional.</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
-False if problems are encountered.</p></li>
-<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
-None if the termination is successful.</p></li>
-</ul>
-</p>
 </dd>
 </dl>
 </dd></dl>
@@ -286,15 +255,6 @@ This argument is optional.</p></li>
 This argument is optional.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
-False if problems are encountered.</p></li>
-<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
-None if the termination is successful.</p></li>
-</ul>
-</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -322,14 +282,10 @@ This argument is optional.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
-False if problems are encountered.</p></li>
-<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
-None if the termination is successful.</p></li>
-<li><p><strong>data_solution</strong> (<em>data</em>) – The dict describes the problem solution.</p></li>
-</ul>
-</p>
+<dd class="field-even"><p><strong>data_solution</strong> – The dict describes the problem solution.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>data</p>
 </dd>
 </dl>
 </dd></dl>
@@ -361,15 +317,6 @@ This output file is written by this function (Pickle format).</p></li>
 If true, the results are truncated to save space.
 This argument is optional.</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
-False if problems are encountered.</p></li>
-<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
-None if the termination is successful.</p></li>
-</ul>
-</p>
 </dd>
 </dl>
 </dd></dl>
@@ -408,15 +355,6 @@ This argument is optional.</p></li>
 <li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
 This argument is optional.</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
-False if problems are encountered.</p></li>
-<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
-None if the termination is successful.</p></li>
-</ul>
-</p>
 </dd>
 </dl>
 </dd></dl>
@@ -458,15 +396,6 @@ This argument is optional.</p></li>
 <li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
 This argument is optional.</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>status</strong> (<em>boolean</em>) – True if the call is successful.
-False if problems are encountered.</p></li>
-<li><p><strong>ex</strong> (<em>exception</em>) – The encountered exception (if any).
-None if the termination is successful.</p></li>
-</ul>
-</p>
 </dd>
 </dl>
 </dd></dl>
