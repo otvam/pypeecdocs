@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.10.0
+                4.11.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -143,70 +143,55 @@ pypeec<span class="w"> </span>mesher<span class="w"> </span><span class="se">\</
 <span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.pck
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  ╔═══════════════════════════════════════════════════════╗
-  ║  ╔═══╗   ╔═══╦═══╦═══╦═══╗            3D PEEC Solver  ║
-  ║  ║╔═╗║   ║╔═╗║╔══╣╔══╣╔═╗║      Quasi-Magnetostatics  ║
-  ║  ║╚═╝╠╗ ╔╣╚═╝║╚══╣╚══╣║ ╚╝          Frequency Domain  ║
-  ║  ║╔══╣║ ║║╔══╣╔══╣╔══╣║ ╔╗          Voxel Geometries  ║
-  ║  ║║  ║╚═╝║║  ║╚══╣╚══╣╚═╝║       FFT/GPU Accelerated  ║
-  ║  ╚╝  ╚═╗ ╠╝  ╚═══╩═══╩═══╝    Python and Open Source  ║
-  ╚══════╦═╝ ╠════════════════════════════════════════════╝
-         ╚═══╝
-  ╔═══════════════════════════════════════════════════════╗
-  ║ Website - https://pypeec.otvam.ch                     ║
-  ║ Thomas Guillod - Dartmouth College                    ║
-  ║ Mozilla Public License Version 2.0                    ║
-  ╚═══════════════════════════════════════════════════════╝
-
-00:00:00.00 : MAIN     : INFO     : load the input data
-00:00:00.01 : MAIN     : INFO     : load the mesher
-00:00:00.82 : MAIN     : INFO     : run the mesher
-00:00:00.82 : MESHER   : INFO     : check the input data
-00:00:00.82 : MESHER   : INFO     : mesher_shape : enter : timing
-00:00:00.82 : SHAPE    : DEBUG    :     parse the layers
-00:00:00.82 : SHAPE    : DEBUG    :     create the shapes
-00:00:00.83 : SHAPE    : DEBUG    :     get the voxel size
-00:00:00.83 : SHAPE    : DEBUG    :     voxelize the shapes
-00:00:00.85 : SHAPE    : DEBUG    :     trace: n_voxel = 19728
-00:00:00.85 : SHAPE    : DEBUG    :     via: n_voxel = 1205
-00:00:00.85 : SHAPE    : DEBUG    :     src: n_voxel = 361
-00:00:00.85 : SHAPE    : DEBUG    :     sink: n_voxel = 361
-00:00:00.85 : SHAPE    : DEBUG    :     merge the shapes
-00:00:00.87 : MESHER   : INFO     : mesher_shape : exit : 00:00:00.04
-00:00:00.87 : MESHER   : INFO     : voxel_conflict : enter : timing
-00:00:00.88 : MESHER   : INFO     : voxel_conflict : exit : 00:00:00.00
-00:00:00.88 : MESHER   : INFO     : voxel_resample : enter : timing
-00:00:00.88 : SAMPLE   : DEBUG    :     original number = 331056
-00:00:00.88 : SAMPLE   : DEBUG    :     use_reduce = False
-00:00:00.88 : SAMPLE   : DEBUG    :     use_resample = False
-00:00:00.88 : SAMPLE   : DEBUG    :     final number = 331056
-00:00:00.88 : MESHER   : INFO     : voxel_resample : exit : 00:00:00.00
-00:00:00.88 : MESHER   : INFO     : voxel_connection : enter : timing
-00:00:00.97 : MESHER   : INFO     : voxel_connection : exit : 00:00:00.08
-00:00:00.97 : MESHER   : INFO     : voxel_summary : enter : timing
-00:00:00.97 : SUMMARY  : DEBUG    :     voxel size
-00:00:00.97 : SUMMARY  : DEBUG    :         n = (132, 132, 19)
-00:00:00.97 : SUMMARY  : DEBUG    :         d = (3.50e-05, 3.50e-05, 3.50e-05)
-00:00:00.97 : SUMMARY  : DEBUG    :         s = (4.63e-03, 4.63e-03, 6.65e-04)
-00:00:00.97 : SUMMARY  : DEBUG    :         c = (1.94e-03, 1.94e-03, 0.00e+00)
-00:00:00.97 : SUMMARY  : DEBUG    :         A = (2.14e-05, 3.08e-06, 3.08e-06)
-00:00:00.97 : SUMMARY  : DEBUG    :     voxel summary
-00:00:00.97 : SUMMARY  : DEBUG    :         V_total = 1.42e-08
-00:00:00.97 : SUMMARY  : DEBUG    :         V_used = 9.12e-10
-00:00:00.97 : SUMMARY  : DEBUG    :         n_total = 331056
-00:00:00.97 : SUMMARY  : DEBUG    :         n_used = 21225
-00:00:00.97 : SUMMARY  : DEBUG    :         ratio = 6.41e-02
-00:00:00.97 : SUMMARY  : DEBUG    :         n_domain = 4
-00:00:00.97 : SUMMARY  : DEBUG    :         n_graph = 1
-00:00:00.97 : SUMMARY  : DEBUG    :     voxel domain
-00:00:00.97 : SUMMARY  : DEBUG    :         trace = 19298
-00:00:00.97 : SUMMARY  : DEBUG    :         via = 1205
-00:00:00.97 : SUMMARY  : DEBUG    :         src = 361
-00:00:00.97 : SUMMARY  : DEBUG    :         sink = 361
-00:00:00.97 : MESHER   : INFO     : voxel_summary : exit : 00:00:00.00
-00:00:00.97 : MESHER   : INFO     : duration: 00:00:00.14
-00:00:00.97 : MESHER   : INFO     : successful termination
-00:00:00.97 : MAIN     : INFO     : save the results
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>00:00:00.00 : MAIN     : INFO     : load the input data
+00:00:00.02 : MAIN     : INFO     : load the mesher
+00:00:01.89 : MAIN     : INFO     : run the mesher
+00:00:01.89 : MESHER   : INFO     : check the input data
+00:00:01.89 : MESHER   : INFO     : mesher_shape : enter : timing
+00:00:01.89 : SHAPE    : DEBUG    :     parse the layers
+00:00:01.89 : SHAPE    : DEBUG    :     create the shapes
+00:00:01.90 : SHAPE    : DEBUG    :     get the voxel size
+00:00:01.90 : SHAPE    : DEBUG    :     voxelize the shapes
+00:00:01.99 : SHAPE    : DEBUG    :     trace: n_voxel = 19728
+00:00:01.99 : SHAPE    : DEBUG    :     via: n_voxel = 1195
+00:00:01.99 : SHAPE    : DEBUG    :     src: n_voxel = 361
+00:00:01.99 : SHAPE    : DEBUG    :     sink: n_voxel = 361
+00:00:01.99 : SHAPE    : DEBUG    :     merge the shapes
+00:00:02.04 : MESHER   : INFO     : mesher_shape : exit : 00:00:00.14
+00:00:02.04 : MESHER   : INFO     : voxel_conflict : enter : timing
+00:00:02.04 : MESHER   : INFO     : voxel_conflict : exit : 00:00:00.00
+00:00:02.04 : MESHER   : INFO     : voxel_resample : enter : timing
+00:00:02.04 : SAMPLE   : DEBUG    :     original number = 331056
+00:00:02.04 : SAMPLE   : DEBUG    :     use_reduce = False
+00:00:02.04 : SAMPLE   : DEBUG    :     use_resample = False
+00:00:02.04 : SAMPLE   : DEBUG    :     final number = 331056
+00:00:02.04 : MESHER   : INFO     : voxel_resample : exit : 00:00:00.00
+00:00:02.04 : MESHER   : INFO     : voxel_connection : enter : timing
+00:00:02.18 : MESHER   : INFO     : voxel_connection : exit : 00:00:00.14
+00:00:02.19 : MESHER   : INFO     : voxel_summary : enter : timing
+00:00:02.19 : SUMMARY  : DEBUG    :     voxel size
+00:00:02.19 : SUMMARY  : DEBUG    :         n = (132, 132, 19)
+00:00:02.19 : SUMMARY  : DEBUG    :         d = (3.50e-05, 3.50e-05, 3.50e-05)
+00:00:02.19 : SUMMARY  : DEBUG    :         s = (4.63e-03, 4.63e-03, 6.65e-04)
+00:00:02.19 : SUMMARY  : DEBUG    :         c = (1.94e-03, 1.94e-03, 0.00e+00)
+00:00:02.19 : SUMMARY  : DEBUG    :         A = (2.14e-05, 3.08e-06, 3.08e-06)
+00:00:02.19 : SUMMARY  : DEBUG    :     voxel summary
+00:00:02.19 : SUMMARY  : DEBUG    :         V_total = 1.42e-08
+00:00:02.19 : SUMMARY  : DEBUG    :         V_used = 9.12e-10
+00:00:02.19 : SUMMARY  : DEBUG    :         n_total = 331056
+00:00:02.19 : SUMMARY  : DEBUG    :         n_used = 21215
+00:00:02.19 : SUMMARY  : DEBUG    :         ratio = 6.41e-02
+00:00:02.19 : SUMMARY  : DEBUG    :         n_domain = 4
+00:00:02.19 : SUMMARY  : DEBUG    :         n_graph = 1
+00:00:02.19 : SUMMARY  : DEBUG    :     voxel domain
+00:00:02.19 : SUMMARY  : DEBUG    :         trace = 19298
+00:00:02.19 : SUMMARY  : DEBUG    :         via = 1195
+00:00:02.19 : SUMMARY  : DEBUG    :         src = 361
+00:00:02.19 : SUMMARY  : DEBUG    :         sink = 361
+00:00:02.19 : MESHER   : INFO     : voxel_summary : exit : 00:00:00.00
+00:00:02.19 : MESHER   : INFO     : duration: 00:00:00.29
+00:00:02.19 : MESHER   : INFO     : successful termination
+00:00:02.19 : MAIN     : INFO     : save the results
 </pre></div>
 </div>
 </section>
@@ -214,12 +199,10 @@ pypeec<span class="w"> </span>mesher<span class="w"> </span><span class="se">\</
 <h3>Viewer: Plot the Geometry<a class="headerlink" href="#viewer-plot-the-geometry" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the viewer</span>
 <span class="c1">#   - voxel.pck - contains the meshed voxel structure (input)</span>
-<span class="c1">#   - point.yaml - contains the points used for field evaluation (input)</span>
 <span class="c1">#   - viewer.yaml - contains the plot configuration (input)</span>
 <span class="c1">#   - tag_plot - list of plots to be shown (defined in viewer.yaml)</span>
 pypeec<span class="w"> </span>viewer<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.pck<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--point<span class="w"> </span>tutorial/point.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--viewer<span class="w"> </span>config/viewer.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tag_plot<span class="w"> </span>domain<span class="w"> </span>connection
 </pre></div>
@@ -251,134 +234,201 @@ pypeec<span class="w"> </span>solver<span class="w"> </span><span class="se">\</
 <span class="w">    </span>--solution<span class="w"> </span>tutorial/solution.pck
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  ╔═══════════════════════════════════════════════════════╗
-  ║  ╔═══╗   ╔═══╦═══╦═══╦═══╗            3D PEEC Solver  ║
-  ║  ║╔═╗║   ║╔═╗║╔══╣╔══╣╔═╗║      Quasi-Magnetostatics  ║
-  ║  ║╚═╝╠╗ ╔╣╚═╝║╚══╣╚══╣║ ╚╝          Frequency Domain  ║
-  ║  ║╔══╣║ ║║╔══╣╔══╣╔══╣║ ╔╗          Voxel Geometries  ║
-  ║  ║║  ║╚═╝║║  ║╚══╣╚══╣╚═╝║       FFT/GPU Accelerated  ║
-  ║  ╚╝  ╚═╗ ╠╝  ╚═══╩═══╩═══╝    Python and Open Source  ║
-  ╚══════╦═╝ ╠════════════════════════════════════════════╝
-         ╚═══╝
-  ╔═══════════════════════════════════════════════════════╗
-  ║ Website - https://pypeec.otvam.ch                     ║
-  ║ Thomas Guillod - Dartmouth College                    ║
-  ║ Mozilla Public License Version 2.0                    ║
-  ╚═══════════════════════════════════════════════════════╝
-
-00:00:00.00 : MAIN     : INFO     : load the input data
-00:00:00.57 : MAIN     : INFO     : load the solver
-00:00:00.64 : MAIN     : INFO     : run the solver
-00:00:00.64 : SOLVER   : INFO     : check the input data
-00:00:00.64 : SOLVER   : INFO     : combine the input data
-00:00:00.64 : SOLVER   : INFO     : init : enter : timing
-00:00:00.64 : SOLVER   : INFO     :     voxel_geometry : enter : timing
-00:00:00.83 : SOLVER   : INFO     :     voxel_geometry : exit : 00:00:00.18
-00:00:00.83 : SOLVER   : INFO     :     system_tensor : enter : timing
-00:00:00.83 : GREEN    : DEBUG    :         analytical solution: 6D / 1
-00:00:00.85 : GREEN    : DEBUG    :         analytical solution: 6D / 4624
-00:00:01.02 : GREEN    : DEBUG    :         numerical approximation: 6D / 326432
-00:00:01.04 : SOLVER   : INFO     :     system_tensor : exit : 00:00:00.20
-00:00:01.04 : SOLVER   : INFO     :     problem_geometry : enter : timing
-00:00:01.08 : PROBLEM  : DEBUG    :         n_voxel_total = 331056
-00:00:01.08 : PROBLEM  : DEBUG    :         n_voxel_used = 21225
-00:00:01.08 : PROBLEM  : DEBUG    :         n_face_total = 993168
-00:00:01.08 : PROBLEM  : DEBUG    :         n_face_used = 42094
-00:00:01.08 : PROBLEM  : DEBUG    :         n_voxel_electric = 21225
-00:00:01.08 : PROBLEM  : DEBUG    :         n_voxel_magnetic = 0
-00:00:01.08 : PROBLEM  : DEBUG    :         n_face_electric = 42094
-00:00:01.08 : PROBLEM  : DEBUG    :         n_face_magnetic = 0
-00:00:01.08 : PROBLEM  : DEBUG    :         n_src_current = 0
-00:00:01.08 : PROBLEM  : DEBUG    :         n_src_voltage = 722
-00:00:01.08 : PROBLEM  : DEBUG    :         ratio_voxel = 6.41e-02
-00:00:01.08 : PROBLEM  : DEBUG    :         ratio_face = 4.24e-02
-00:00:01.08 : SOLVER   : INFO     :     problem_geometry : exit : 00:00:00.04
-00:00:01.08 : SOLVER   : INFO     :     system_matrix : enter : timing
-00:00:01.08 : FFT      : DEBUG    :         multiplication: inductance
-00:00:01.08 : FFT      : DEBUG    :             tensor size: (132, 132, 19)
-00:00:01.08 : FFT      : DEBUG    :             tensor footprint: 40.41 MB
-00:00:01.08 : FFT      : DEBUG    :             library: SciPy / GPU: False
-00:00:01.17 : SOLVER   : INFO     :     system_matrix : exit : 00:00:00.08
-00:00:01.17 : SOLVER   : INFO     : init : exit : 00:00:00.52
-00:00:01.17 : SOLVER   : INFO     : run sweep: sim_default : enter : timing
-00:00:01.17 : SOLVER   : INFO     :     problem_value : enter : timing
-00:00:01.18 : SOLVER   : INFO     :     problem_value : exit : 00:00:00.01
-00:00:01.18 : SOLVER   : INFO     :     equation_system : enter : timing
-00:00:01.20 : FACTOR   : DEBUG    :         factorization: electric
-00:00:01.20 : FACTOR   : DEBUG    :             matrix size: (21947, 21947)
-00:00:01.20 : FACTOR   : DEBUG    :             matrix elements: 107579
-00:00:01.20 : FACTOR   : DEBUG    :             matrix density: 2.23e-04
-00:00:01.20 : FACTOR   : DEBUG    :             library: SuperLU
-00:00:01.20 : FACTOR   : DEBUG    :             compute factorization
-00:00:01.33 : FACTOR   : DEBUG    :             factorization success
-00:00:01.33 : FACTOR   : DEBUG    :         factorization: magnetic
-00:00:01.34 : SOLVER   : INFO     :     equation_system : exit : 00:00:00.15
-00:00:01.34 : SOLVER   : INFO     :     equation_solver : enter : timing
-00:00:01.34 : COND     : DEBUG    :         condition: electric
-00:00:01.34 : COND     : DEBUG    :             matrix size: (21947, 21947)
-00:00:01.34 : COND     : DEBUG    :             matrix elements: 107579
-00:00:01.34 : COND     : DEBUG    :             matrix density: 2.23e-04
-00:00:01.34 : COND     : DEBUG    :             compute LU decomposition
-00:00:01.49 : COND     : DEBUG    :             estimate norm of the inverse
-00:00:01.63 : COND     : DEBUG    :             estimate norm of the matrix
-00:00:01.69 : COND     : DEBUG    :             compute condition estimate
-00:00:01.69 : COND     : DEBUG    :         condition: magnetic
-00:00:01.69 : EQUATION : DEBUG    :         condition summary
-00:00:01.69 : EQUATION : DEBUG    :             check = True
-00:00:01.69 : EQUATION : DEBUG    :             status = True
-00:00:01.69 : EQUATION : DEBUG    :             value_electric = 3.25e+06
-00:00:01.69 : EQUATION : DEBUG    :             value_magnetic = 0.00e+00
-00:00:01.69 : EQUATION : DEBUG    :             matrix condition is good
-00:00:01.69 : ITER     : DEBUG    :         matrix solver
-00:00:01.69 : ITER     : DEBUG    :             init solver
-00:00:01.69 : ITER     : DEBUG    :             solver: GMRES
-00:00:01.69 : ITER     : DEBUG    :             n_dof: 64041
-00:00:01.69 : ITER     : DEBUG    :             call solver
-00:00:01.76 : ITER     : DEBUG    :             i = 1 / 0.00e+00+0.00e+00j VA
-00:00:06.25 : ITER     : DEBUG    :             i = 2 / 8.44e-01+5.40e+00j VA
-00:00:06.62 : EQUATION : DEBUG    :         solver summary
-00:00:06.62 : EQUATION : DEBUG    :             n_dof = 64041
-00:00:06.62 : EQUATION : DEBUG    :             n_iter = 2
-00:00:06.62 : EQUATION : DEBUG    :             n_sys_eval = 12
-00:00:06.62 : EQUATION : DEBUG    :             n_pcd_eval = 13
-00:00:06.62 : EQUATION : DEBUG    :             res_rms = 1.52e-09
-00:00:06.62 : EQUATION : DEBUG    :             check = True
-00:00:06.62 : EQUATION : DEBUG    :             status_pcd = True
-00:00:06.62 : EQUATION : DEBUG    :             status_solver = True
-00:00:06.62 : EQUATION : DEBUG    :             status_res = True
-00:00:06.62 : EQUATION : DEBUG    :             convergence achieved
-00:00:06.62 : SOLVER   : INFO     :     equation_solver : exit : 00:00:05.28
-00:00:06.62 : SOLVER   : INFO     :     extract_solution : enter : timing
-00:00:06.96 : SOLUTION : DEBUG    :         domain: trace_via
-00:00:06.96 : SOLUTION : DEBUG    :             P_electric = 8.05e-01 W
-00:00:06.96 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
-00:00:06.96 : SOLUTION : DEBUG    :             P_tot = 8.05e-01 W
-00:00:06.96 : SOLUTION : DEBUG    :         domain: src_sink
-00:00:06.96 : SOLUTION : DEBUG    :             P_electric = 7.84e-03 W
-00:00:06.96 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
-00:00:06.96 : SOLUTION : DEBUG    :             P_tot = 7.84e-03 W
-00:00:06.96 : SOLUTION : DEBUG    :         terminal: src
-00:00:06.96 : SOLUTION : DEBUG    :             V = +9.99e-01 + +5.40e-03j V
-00:00:06.96 : SOLUTION : DEBUG    :             I = +8.74e-01 + -5.40e+00j A
-00:00:06.96 : SOLUTION : DEBUG    :             S = +4.22e-01 + +2.70e+00j VA
-00:00:06.96 : SOLUTION : DEBUG    :         terminal: sink
-00:00:06.96 : SOLUTION : DEBUG    :             V = -9.99e-01 + -5.40e-03j V
-00:00:06.96 : SOLUTION : DEBUG    :             I = -8.74e-01 + +5.40e+00j A
-00:00:06.96 : SOLUTION : DEBUG    :             S = +4.22e-01 + +2.70e+00j VA
-00:00:06.96 : SOLUTION : DEBUG    :         integral
-00:00:06.96 : SOLUTION : DEBUG    :             S_tot_real = 8.44e-01 VA
-00:00:06.96 : SOLUTION : DEBUG    :             S_tot_imag = 5.40e+00j VA
-00:00:06.96 : SOLUTION : DEBUG    :             P_electric = 8.13e-01 W
-00:00:06.96 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
-00:00:06.96 : SOLUTION : DEBUG    :             W_electric = 4.30e-07 J
-00:00:06.96 : SOLUTION : DEBUG    :             W_magnetic = 0.00e+00 J
-00:00:06.96 : SOLUTION : DEBUG    :             P_tot = 8.13e-01 W
-00:00:06.96 : SOLUTION : DEBUG    :             W_tot = 4.30e-07 J
-00:00:06.96 : SOLVER   : INFO     :     extract_solution : exit : 00:00:00.34
-00:00:06.96 : SOLVER   : INFO     : run sweep: sim_default : exit : 00:00:05.79
-00:00:06.96 : SOLVER   : INFO     : duration: 00:00:06.32
-00:00:06.96 : SOLVER   : INFO     : successful termination
-00:00:06.96 : MAIN     : INFO     : save the results
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>00:00:00.00 : MAIN     : INFO     : load the input data
+00:00:00.68 : MAIN     : INFO     : load the solver
+00:00:00.91 : MAIN     : INFO     : run the solver
+00:00:00.91 : SOLVER   : INFO     : check the voxel data
+00:00:00.91 : SOLVER   : INFO     : check the input data
+00:00:00.92 : SOLVER   : INFO     : combine the input data
+00:00:00.92 : SOLVER   : INFO     : init : enter : timing
+00:00:00.95 : SOLVER   : INFO     :     voxel_geometry : enter : timing
+00:00:01.16 : SOLVER   : INFO     :     voxel_geometry : exit : 00:00:00.21
+00:00:01.16 : SOLVER   : INFO     :     system_tensor : enter : timing
+00:00:01.16 : GREEN    : DEBUG    :         analytical solution: 6D / 1
+00:00:01.20 : GREEN    : DEBUG    :         analytical solution: 6D / 4624
+00:00:01.39 : GREEN    : DEBUG    :         numerical approximation: 6D / 326432
+00:00:01.42 : SOLVER   : INFO     :     system_tensor : exit : 00:00:00.25
+00:00:01.42 : SOLVER   : INFO     :     problem_geometry : enter : timing
+00:00:01.48 : PROBLEM  : DEBUG    :         n_voxel_total = 331056
+00:00:01.48 : PROBLEM  : DEBUG    :         n_voxel_used = 21215
+00:00:01.48 : PROBLEM  : DEBUG    :         n_face_total = 993168
+00:00:01.48 : PROBLEM  : DEBUG    :         n_face_used = 42062
+00:00:01.48 : PROBLEM  : DEBUG    :         n_voxel_electric = 21215
+00:00:01.48 : PROBLEM  : DEBUG    :         n_voxel_magnetic = 0
+00:00:01.48 : PROBLEM  : DEBUG    :         n_face_electric = 42062
+00:00:01.48 : PROBLEM  : DEBUG    :         n_face_magnetic = 0
+00:00:01.48 : PROBLEM  : DEBUG    :         n_src_current = 0
+00:00:01.48 : PROBLEM  : DEBUG    :         n_src_voltage = 722
+00:00:01.48 : PROBLEM  : DEBUG    :         ratio_voxel = 6.41e-02
+00:00:01.48 : PROBLEM  : DEBUG    :         ratio_face = 4.24e-02
+00:00:01.48 : SOLVER   : INFO     :     problem_geometry : exit : 00:00:00.06
+00:00:01.48 : SOLVER   : INFO     :     system_matrix : enter : timing
+00:00:01.49 : FFT      : DEBUG    :         multiplication: inductance
+00:00:01.49 : FFT      : DEBUG    :             tensor size: (132, 132, 19)
+00:00:01.49 : FFT      : DEBUG    :             tensor footprint: 40.41 MB
+00:00:01.58 : SOLVER   : INFO     :     system_matrix : exit : 00:00:00.09
+00:00:01.58 : SOLVER   : INFO     : init : exit : 00:00:00.65
+00:00:01.58 : SOLVER   : INFO     : run sweep: sim_dc : enter : timing
+00:00:01.58 : SOLVER   : INFO     :     problem_value : enter : timing
+00:00:01.62 : SOLVER   : INFO     :     problem_value : exit : 00:00:00.03
+00:00:01.62 : SOLVER   : INFO     :     equation_system : enter : timing
+00:00:01.65 : FACTOR   : DEBUG    :         factorization: electric
+00:00:01.65 : FACTOR   : DEBUG    :             matrix size: (21937, 21937)
+00:00:01.65 : FACTOR   : DEBUG    :             matrix elements: 107505
+00:00:01.65 : FACTOR   : DEBUG    :             matrix density: 2.23e-04
+00:00:01.65 : FACTOR   : DEBUG    :             compute factorization
+00:00:01.91 : FACTOR   : DEBUG    :             factorization success
+00:00:01.91 : FACTOR   : DEBUG    :         factorization: magnetic
+00:00:01.91 : SOLVER   : INFO     :     equation_system : exit : 00:00:00.28
+00:00:01.91 : SOLVER   : INFO     :     equation_solver : enter : timing
+00:00:01.91 : COND     : DEBUG    :         condition: electric
+00:00:01.91 : COND     : DEBUG    :             matrix size: (21937, 21937)
+00:00:01.91 : COND     : DEBUG    :             matrix elements: 107505
+00:00:01.91 : COND     : DEBUG    :             matrix density: 2.23e-04
+00:00:01.91 : COND     : DEBUG    :             compute LU decomposition
+00:00:02.07 : COND     : DEBUG    :             estimate norm of the inverse
+00:00:02.20 : COND     : DEBUG    :             estimate norm of the matrix
+00:00:02.24 : COND     : DEBUG    :             compute condition estimate
+00:00:02.24 : COND     : DEBUG    :         condition: magnetic
+00:00:02.24 : EQUATION : DEBUG    :         condition summary
+00:00:02.24 : EQUATION : DEBUG    :             check = True
+00:00:02.24 : EQUATION : DEBUG    :             status = True
+00:00:02.24 : EQUATION : DEBUG    :             cond_electric = 3.25e+06
+00:00:02.24 : EQUATION : DEBUG    :             cond_magnetic = 0.00e+00
+00:00:02.24 : EQUATION : DEBUG    :             matrix condition is good
+00:00:02.24 : EQUATION : DEBUG    :         solver run
+00:00:02.25 : EQUATION : DEBUG    :             init / 0.00e+00+0.00e+00j VA
+00:00:02.30 : EQUATION : DEBUG    :             i = 1 / 0.00e+00+0.00e+00j VA
+00:00:02.35 : EQUATION : DEBUG    :             i = 2 / 7.91e+01+0.00e+00j VA
+00:00:02.36 : EQUATION : DEBUG    :             final / 7.91e+01+0.00e+00j VA
+00:00:02.36 : EQUATION : DEBUG    :         solver summary
+00:00:02.36 : EQUATION : DEBUG    :             check = True
+00:00:02.36 : EQUATION : DEBUG    :             status = True
+00:00:02.36 : EQUATION : DEBUG    :             n_dof_total = 63999
+00:00:02.36 : EQUATION : DEBUG    :             n_dof_electric = 63999
+00:00:02.36 : EQUATION : DEBUG    :             n_dof_magnetic = 0
+00:00:02.36 : EQUATION : DEBUG    :             n_iter = 2
+00:00:02.36 : EQUATION : DEBUG    :             n_sys_eval = 3
+00:00:02.36 : EQUATION : DEBUG    :             n_pcd_eval = 3
+00:00:02.36 : EQUATION : DEBUG    :             res_rms = 3.32e-13
+00:00:02.36 : EQUATION : DEBUG    :             convergence achieved
+00:00:02.36 : SOLVER   : INFO     :     equation_solver : exit : 00:00:00.45
+00:00:02.36 : SOLVER   : INFO     :     extract_solution : enter : timing
+00:00:02.76 : SOLUTION : DEBUG    :         domain: trace_via
+00:00:02.76 : SOLUTION : DEBUG    :             P_electric = 7.84e+01 W
+00:00:02.76 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
+00:00:02.76 : SOLUTION : DEBUG    :             P_tot = 7.84e+01 W
+00:00:02.76 : SOLUTION : DEBUG    :         domain: src_sink
+00:00:02.76 : SOLUTION : DEBUG    :             P_electric = 6.78e-01 W
+00:00:02.76 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
+00:00:02.76 : SOLUTION : DEBUG    :             P_tot = 6.78e-01 W
+00:00:02.76 : SOLUTION : DEBUG    :         terminal: src
+00:00:02.76 : SOLUTION : DEBUG    :             type = voltage / lumped
+00:00:02.76 : SOLUTION : DEBUG    :             V_src = +1.00e+00 + +0.00e+00j V
+00:00:02.76 : SOLUTION : DEBUG    :             V_drop = +4.13e-02 + +0.00e+00j V
+00:00:02.76 : SOLUTION : DEBUG    :             V = +9.59e-01 + +0.00e+00j V
+00:00:02.76 : SOLUTION : DEBUG    :             I = +4.13e+01 + +0.00e+00j A
+00:00:02.76 : SOLUTION : DEBUG    :             S = +3.96e+01 + +0.00e+00j VA
+00:00:02.76 : SOLUTION : DEBUG    :         terminal: sink
+00:00:02.76 : SOLUTION : DEBUG    :             type = voltage / lumped
+00:00:02.76 : SOLUTION : DEBUG    :             V_src = -1.00e+00 + +0.00e+00j V
+00:00:02.76 : SOLUTION : DEBUG    :             V_drop = -4.13e-02 + +0.00e+00j V
+00:00:02.76 : SOLUTION : DEBUG    :             V = -9.59e-01 + +0.00e+00j V
+00:00:02.76 : SOLUTION : DEBUG    :             I = -4.13e+01 + +0.00e+00j A
+00:00:02.76 : SOLUTION : DEBUG    :             S = +3.96e+01 + +0.00e+00j VA
+00:00:02.76 : SOLUTION : DEBUG    :         integral
+00:00:02.76 : SOLUTION : DEBUG    :             S_tot_real = 7.91e+01 VA
+00:00:02.76 : SOLUTION : DEBUG    :             S_tot_imag = 0.00e+00j VA
+00:00:02.76 : SOLUTION : DEBUG    :             P_electric = 7.91e+01 W
+00:00:02.76 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
+00:00:02.76 : SOLUTION : DEBUG    :             W_electric = 4.97e-05 J
+00:00:02.76 : SOLUTION : DEBUG    :             W_magnetic = 0.00e+00 J
+00:00:02.76 : SOLUTION : DEBUG    :             P_tot = 7.91e+01 W
+00:00:02.76 : SOLUTION : DEBUG    :             W_tot = 4.97e-05 J
+00:00:02.76 : SOLVER   : INFO     :     extract_solution : exit : 00:00:00.39
+00:00:02.76 : SOLVER   : INFO     : run sweep: sim_dc : exit : 00:00:01.18
+00:00:02.76 : SOLVER   : INFO     : run sweep: sim_ac : enter : timing
+00:00:02.76 : SOLVER   : INFO     :     problem_value : enter : timing
+00:00:02.78 : SOLVER   : INFO     :     problem_value : exit : 00:00:00.01
+00:00:02.78 : SOLVER   : INFO     :     equation_system : enter : timing
+00:00:02.79 : FACTOR   : DEBUG    :         factorization: electric
+00:00:02.79 : FACTOR   : DEBUG    :             matrix size: (21937, 21937)
+00:00:02.79 : FACTOR   : DEBUG    :             matrix elements: 107505
+00:00:02.79 : FACTOR   : DEBUG    :             matrix density: 2.23e-04
+00:00:02.79 : FACTOR   : DEBUG    :             compute factorization
+00:00:02.91 : FACTOR   : DEBUG    :             factorization success
+00:00:02.91 : FACTOR   : DEBUG    :         factorization: magnetic
+00:00:02.91 : SOLVER   : INFO     :     equation_system : exit : 00:00:00.13
+00:00:02.92 : SOLVER   : INFO     :     equation_solver : enter : timing
+00:00:02.92 : COND     : DEBUG    :         condition: electric
+00:00:02.92 : COND     : DEBUG    :             matrix size: (21937, 21937)
+00:00:02.92 : COND     : DEBUG    :             matrix elements: 107505
+00:00:02.92 : COND     : DEBUG    :             matrix density: 2.23e-04
+00:00:02.92 : COND     : DEBUG    :             compute LU decomposition
+00:00:03.12 : COND     : DEBUG    :             estimate norm of the inverse
+00:00:03.24 : COND     : DEBUG    :             estimate norm of the matrix
+00:00:03.27 : COND     : DEBUG    :             compute condition estimate
+00:00:03.27 : COND     : DEBUG    :         condition: magnetic
+00:00:03.27 : EQUATION : DEBUG    :         condition summary
+00:00:03.27 : EQUATION : DEBUG    :             check = True
+00:00:03.27 : EQUATION : DEBUG    :             status = True
+00:00:03.27 : EQUATION : DEBUG    :             cond_electric = 3.25e+06
+00:00:03.27 : EQUATION : DEBUG    :             cond_magnetic = 0.00e+00
+00:00:03.27 : EQUATION : DEBUG    :             matrix condition is good
+00:00:03.27 : EQUATION : DEBUG    :         solver run
+00:00:03.28 : EQUATION : DEBUG    :             init / 0.00e+00+0.00e+00j VA
+00:00:03.31 : EQUATION : DEBUG    :             i = 1 / 0.00e+00+0.00e+00j VA
+00:00:08.65 : EQUATION : DEBUG    :             i = 2 / 8.13e-01+5.40e+00j VA
+00:00:09.06 : EQUATION : DEBUG    :             final / 8.13e-01+5.40e+00j VA
+00:00:09.06 : EQUATION : DEBUG    :         solver summary
+00:00:09.06 : EQUATION : DEBUG    :             check = True
+00:00:09.06 : EQUATION : DEBUG    :             status = True
+00:00:09.06 : EQUATION : DEBUG    :             n_dof_total = 63999
+00:00:09.06 : EQUATION : DEBUG    :             n_dof_electric = 63999
+00:00:09.06 : EQUATION : DEBUG    :             n_dof_magnetic = 0
+00:00:09.06 : EQUATION : DEBUG    :             n_iter = 2
+00:00:09.06 : EQUATION : DEBUG    :             n_sys_eval = 13
+00:00:09.06 : EQUATION : DEBUG    :             n_pcd_eval = 13
+00:00:09.06 : EQUATION : DEBUG    :             res_rms = 1.57e-09
+00:00:09.06 : EQUATION : DEBUG    :             convergence achieved
+00:00:09.06 : SOLVER   : INFO     :     equation_solver : exit : 00:00:06.14
+00:00:09.06 : SOLVER   : INFO     :     extract_solution : enter : timing
+00:00:09.43 : SOLUTION : DEBUG    :         domain: trace_via
+00:00:09.43 : SOLUTION : DEBUG    :             P_electric = 8.05e-01 W
+00:00:09.43 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
+00:00:09.43 : SOLUTION : DEBUG    :             P_tot = 8.05e-01 W
+00:00:09.43 : SOLUTION : DEBUG    :         domain: src_sink
+00:00:09.43 : SOLUTION : DEBUG    :             P_electric = 7.84e-03 W
+00:00:09.43 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
+00:00:09.43 : SOLUTION : DEBUG    :             P_tot = 7.84e-03 W
+00:00:09.43 : SOLUTION : DEBUG    :         terminal: src
+00:00:09.43 : SOLUTION : DEBUG    :             type = voltage / lumped
+00:00:09.43 : SOLUTION : DEBUG    :             V_src = +1.00e+00 + +0.00e+00j V
+00:00:09.43 : SOLUTION : DEBUG    :             V_drop = +8.74e-04 + -5.40e-03j V
+00:00:09.43 : SOLUTION : DEBUG    :             V = +9.99e-01 + +5.40e-03j V
+00:00:09.43 : SOLUTION : DEBUG    :             I = +8.74e-01 + -5.40e+00j A
+00:00:09.43 : SOLUTION : DEBUG    :             S = +4.06e-01 + +2.70e+00j VA
+00:00:09.43 : SOLUTION : DEBUG    :         terminal: sink
+00:00:09.43 : SOLUTION : DEBUG    :             type = voltage / lumped
+00:00:09.43 : SOLUTION : DEBUG    :             V_src = -1.00e+00 + +0.00e+00j V
+00:00:09.43 : SOLUTION : DEBUG    :             V_drop = -8.74e-04 + +5.40e-03j V
+00:00:09.43 : SOLUTION : DEBUG    :             V = -9.99e-01 + -5.40e-03j V
+00:00:09.43 : SOLUTION : DEBUG    :             I = -8.74e-01 + +5.40e+00j A
+00:00:09.43 : SOLUTION : DEBUG    :             S = +4.06e-01 + +2.70e+00j VA
+00:00:09.43 : SOLUTION : DEBUG    :         integral
+00:00:09.43 : SOLUTION : DEBUG    :             S_tot_real = 8.13e-01 VA
+00:00:09.43 : SOLUTION : DEBUG    :             S_tot_imag = 5.40e+00j VA
+00:00:09.43 : SOLUTION : DEBUG    :             P_electric = 8.13e-01 W
+00:00:09.43 : SOLUTION : DEBUG    :             P_magnetic = 0.00e+00 W
+00:00:09.43 : SOLUTION : DEBUG    :             W_electric = 4.30e-07 J
+00:00:09.43 : SOLUTION : DEBUG    :             W_magnetic = 0.00e+00 J
+00:00:09.43 : SOLUTION : DEBUG    :             P_tot = 8.13e-01 W
+00:00:09.43 : SOLUTION : DEBUG    :             W_tot = 4.30e-07 J
+00:00:09.43 : SOLVER   : INFO     :     extract_solution : exit : 00:00:00.37
+00:00:09.43 : SOLVER   : INFO     : run sweep: sim_ac : exit : 00:00:06.66
+00:00:09.43 : SOLVER   : INFO     : duration: 00:00:08.51
+00:00:09.43 : SOLVER   : INFO     : successful termination
+00:00:09.43 : MAIN     : INFO     : save the results
 </pre></div>
 </div>
 </section>
@@ -386,12 +436,10 @@ pypeec<span class="w"> </span>solver<span class="w"> </span><span class="se">\</
 <h3>Plotter: Plot the Solution<a class="headerlink" href="#plotter-plot-the-solution" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the plotter</span>
 <span class="c1">#   - solution.pck - contains the problem solution (input)</span>
-<span class="c1">#   - point.yaml - contains the points used for field evaluation (input)</span>
 <span class="c1">#   - plotter.yaml - contains the plot configuration (input)</span>
 <span class="c1">#   - tag_plot - list of plots to be shown (defined in plotter.yaml)</span>
 pypeec<span class="w"> </span>plotter<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--solution<span class="w"> </span>tutorial/solution.pck<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--point<span class="w"> </span>tutorial/point.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--plotter<span class="w"> </span>config/plotter.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tag_plot<span class="w"> </span>V_c_abs<span class="w"> </span>J_c_norm<span class="w"> </span>H_norm<span class="w"> </span>residuum
 </pre></div>

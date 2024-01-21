@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.10.0
+                4.11.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -65,7 +65,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#pypeec-workflow">PyPEEC Workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#geometry-file-format">Geometry File Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#problem-file-format">Problem File Format</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#point-file-format">Point File Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#other-file-formats">Other File Formats</a></li>
 </ul>
 </li>
@@ -132,6 +131,18 @@ This file contains the definition of the voxel structure.</p>
 <span class="w">    </span><span class="s">&quot;use_reduce&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="s">&quot;use_resample&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="s">&quot;resampling_factor&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
+
+<span class="c1"># 2D array containing the points used for magnetic field evaluation</span>
+<span class="c1">#   - the number of points (n_pts) can be zero.</span>
+<span class="c1">#   - the array has the following size: (n_pts, 3)</span>
+<span class="c1">#   - the points should be located outside the active voxels</span>
+<span class="s">&quot;pts_cloud&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.0</span><span class="p p-Indicator">]</span>
+
+<span class="c1"># check (or not) the validity of the point cloud</span>
+<span class="s">&quot;check_cloud&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
 <span class="c1"># perform (or not) the conflict resolution between the voxels</span>
 <span class="s">&quot;check_conflict&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -356,8 +367,8 @@ This file contains the definition of the voxel structure.</p>
 <span class="w">    </span><span class="c1">#   - required information, the dict cannot be empty</span>
 <span class="w">    </span><span class="c1">#   - domain definition</span>
 <span class="w">    </span><span class="c1">#       - list of STL meshes composing the domain</span>
-<span class="w">    </span><span class="c1">#       - scale: scaling factor for specifying the unit of the STL meshes</span>
-<span class="w">    </span><span class="c1">#       - offset: array with offsets for translating the STL meshes</span>
+<span class="w">    </span><span class="c1">#       - scale: scaling factor for specifying the unit of the STL meshes (before offsetting)</span>
+<span class="w">    </span><span class="c1">#       - offset: array with offsets for translating the STL meshes (after scaling)</span>
 <span class="w">    </span><span class="c1">#       - filename: string with the STL filename</span>
 <span class="w">    </span><span class="s">&quot;domain_stl&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">        </span><span class="s">&quot;dom_src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[{</span><span class="s">&quot;scale&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;offset&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="s">&quot;filename&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;stl/dom_src.stl&quot;</span><span class="p p-Indicator">}]</span>
@@ -460,22 +471,6 @@ This file contains the definition of the magnetic problem to be solved.</p>
 <span class="w">        </span><span class="s">&quot;source_val&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">            </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;I_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Y_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">2.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Y_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">}</span>
 <span class="w">            </span><span class="s">&quot;sink&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;V_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;V_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Z_re&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">2.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Z_im&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">}</span>
-</pre></div>
-</div>
-</section>
-<section id="point-file-format">
-<h2>Point File Format<a class="headerlink" href="#point-file-format" title="Permalink to this heading"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">file_point</span></code> file format is used by the viewer and plotter.
-This file contains the definition of the points used for magnetic field evaluation.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2D array containing the points used for magnetic field evaluation</span>
-<span class="c1">#   - the number of points (n_pts) can be zero.</span>
-<span class="c1">#   - the array has the following size: (n_pts, 3)</span>
-<span class="c1">#   - the points should be located outside the active voxels</span>
-<span class="p p-Indicator">[</span>
-<span class="w">    </span><span class="p p-Indicator">[</span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">],</span>
-<span class="w">    </span><span class="p p-Indicator">[</span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">],</span>
-<span class="w">    </span><span class="p p-Indicator">[</span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.0</span><span class="p p-Indicator">],</span>
-<span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 </section>
