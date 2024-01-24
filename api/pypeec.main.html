@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.11.0
+                4.12.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -176,7 +176,7 @@ This argument is optional.</p></li>
 <li><p><strong>file_geometry</strong> (<em>filename</em>) – The file content describes the geometry, meshing and resampling process.
 This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>file_voxel</strong> (<em>filename</em>) – The file content describes the voxel structure.
-This output file is written by this function (Pickle format).</p></li>
+This output file is written by this function (JSON or Pickle format).</p></li>
 <li><p><strong>is_truncated</strong> (<em>boolean</em>) – If false, the complete results are returned (default).
 If true, the results are truncated to save space.
 This argument is optional.</p></li>
@@ -234,7 +234,7 @@ This argument is optional.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>file_voxel</strong> (<em>filename</em>) – The file content describes the voxel structure.
-This input file is loaded by this function (Pickle format).</p></li>
+This input file is loaded by this function (JSON or Pickle format).</p></li>
 <li><p><strong>file_viewer</strong> (<em>filename</em>) – The file content describes the different plots to be created.
 This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
@@ -303,13 +303,13 @@ This argument is optional.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>file_voxel</strong> (<em>filename</em>) – The file content describes the voxel structure.
-This input file is loaded by this function (Pickle format).</p></li>
+This input file is loaded by this function (JSON or Pickle format).</p></li>
 <li><p><strong>file_problem</strong> (<em>filename</em>) – The file content describes the problem to be solved.
 This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>file_tolerance</strong> (<em>filename</em>) – The file content describes the numerical options.
 This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>file_solution</strong> (<em>filename</em>) – The file content describes the problem solution.
-This output file is written by this function (Pickle format).</p></li>
+This output file is written by this function (JSON or Pickle format).</p></li>
 <li><p><strong>is_truncated</strong> (<em>boolean</em>) – If false, the complete results are returned (default).
 If true, the results are truncated to save space.
 This argument is optional.</p></li>
@@ -370,7 +370,7 @@ This argument is optional.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>file_solution</strong> (<em>filename</em>) – The dict describes the problem solution.
-This input file is loaded by this function (Pickle format).</p></li>
+This input file is loaded by this function (JSON or Pickle format).</p></li>
 <li><p><strong>file_plotter</strong> (<em>filename</em>) – The dict describes the different plots to be created.
 This input file is loaded by this function (JSON or YAML format).</p></li>
 <li><p><strong>tag_sweep</strong> (<em>list</em>) – The list describes sweeps to be shown.

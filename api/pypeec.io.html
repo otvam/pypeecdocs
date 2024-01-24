@@ -36,7 +36,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.11.0
+                4.12.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -96,13 +96,26 @@
 <span id="pypeec-io"></span><h1>pypeec.io<a class="headerlink" href="#module-pypeec.io" title="Permalink to this heading"></a></h1>
 <dl class="simple">
 <dt>Module for serialization and deserialization.</dt><dd><ul class="simple">
-<li><p>load JSON/YAML configuration files</p></li>
-<li><p>load and write Pickle files</p></li>
+<li><p>load JSON/YAML input files</p></li>
+<li><p>load and write JSON/Pickle data files</p></li>
 </ul>
 </dd>
 <dt>For YAML files, the following custom extensions are used:</dt><dd><ul class="simple">
-<li><p>“!path” - allow the inclusion of relative paths</p></li>
-<li><p>“!include” - allow the inclusion of YAML sub-files</p></li>
+<li><p>“!path” - allows the inclusion of relative paths</p></li>
+<li><p>“!include” - allows the inclusion of YAML sub-files</p></li>
+</ul>
+</dd>
+<dt>For JSON files, the following custom extensions are used:</dt><dd><ul class="simple">
+<li><p>“__complex__” - allows the serialization of complex numbers</p></li>
+<li><p>“__numpy__” - allows the serialization of NumPy arrays</p></li>
+</ul>
+</dd>
+</dl>
+<p>The JSON/YAML files with the custom extensions are still valid JSON/YAML files.</p>
+<dl class="simple">
+<dt>The JSON files can be serialized/deserialized as/from:</dt><dd><ul class="simple">
+<li><p>text files</p></li>
+<li><p>gzip files</p></li>
 </ul>
 </dd>
 </dl>
@@ -111,13 +124,12 @@
 <ul class="simple">
 <li><p>Pickling data is not secure.</p></li>
 <li><p>Only load pickle files that you trust.</p></li>
-<li><p>Do not commit the Pickle files in the Git repository.</p></li>
 </ul>
 </div>
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.io.load_config">
-<span class="sig-prename descclassname"><span class="pre">pypeec.io.</span></span><span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.io.load_config" title="Permalink to this definition"></a></dt>
-<dd><p>Load a config file (JSON or YAML).</p>
+<dt class="sig sig-object py" id="pypeec.io.load_input">
+<span class="sig-prename descclassname"><span class="pre">pypeec.io.</span></span><span class="sig-name descname"><span class="pre">load_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.io.load_input" title="Permalink to this definition"></a></dt>
+<dd><p>Load an input file (JSON or YAML).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>string</em><em>)</em>) – Name and path of the file to be loaded.
@@ -135,26 +147,15 @@ For JSON files, the extension should be “json” or “js”.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.io.write_config">
-<span class="sig-prename descclassname"><span class="pre">pypeec.io.</span></span><span class="sig-name descname"><span class="pre">write_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.io.write_config" title="Permalink to this definition"></a></dt>
-<dd><p>Write a config file (JSON).</p>
+<dt class="sig sig-object py" id="pypeec.io.load_data">
+<span class="sig-prename descclassname"><span class="pre">pypeec.io.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.io.load_data" title="Permalink to this definition"></a></dt>
+<dd><p>Load a data file (JSON or Pickle).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<em>string</em><em>)</em>) – Name and path of the file to be created.</p></li>
-<li><p><strong>data</strong> (<em>data</em>) – Python data to be saved.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pypeec.io.load_pickle">
-<span class="sig-prename descclassname"><span class="pre">pypeec.io.</span></span><span class="sig-name descname"><span class="pre">load_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.io.load_pickle" title="Permalink to this definition"></a></dt>
-<dd><p>Load a pickle file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> (<em>string</em>) – Name and path of the file to be loaded.</p>
+<dd class="field-odd"><p><strong>filename</strong> (<em>string</em><em>)</em>) – Name and path of the file to be loaded.
+The file type is determined by the extension.
+For JSON files, the extension should be “json” or “js”.
+For Pickle files, the extension should be “pck”.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>data</strong> – Python data contained in the file content</p>
@@ -166,13 +167,16 @@ For JSON files, the extension should be “json” or “js”.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.io.write_pickle">
-<span class="sig-prename descclassname"><span class="pre">pypeec.io.</span></span><span class="sig-name descname"><span class="pre">write_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.io.write_pickle" title="Permalink to this definition"></a></dt>
-<dd><p>Write a pickle file.</p>
+<dt class="sig sig-object py" id="pypeec.io.write_data">
+<span class="sig-prename descclassname"><span class="pre">pypeec.io.</span></span><span class="sig-name descname"><span class="pre">write_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.io.write_data" title="Permalink to this definition"></a></dt>
+<dd><p>Write a data file (JSON or Pickle).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<em>string</em>) – Name and path of the file to be created.</p></li>
+<li><p><strong>filename</strong> (<em>string</em><em>)</em>) – Name and path of the file to be created.
+The file type is determined by the extension.
+For JSON files, the extension should be “json” or “js”.
+For Pickle files, the extension should be “pck”.</p></li>
 <li><p><strong>data</strong> (<em>data</em>) – Python data to be saved.</p></li>
 </ul>
 </dd>

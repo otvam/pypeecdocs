@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.11.0
+                4.12.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -101,9 +101,6 @@
 <span class="c1">#    - The Python executable can be &quot;python&quot; or &quot;python3&quot;</span>
 <span class="c1">#    - Alternatively, Conda can be used for the environment</span>
 
-<span class="c1"># Install Python Virtual Environment</span>
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>virtualenv
-
 <span class="c1"># Create a Python Virtual Environment</span>
 python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
 
@@ -137,10 +134,10 @@ All the command are executed inside the virtual environment in the <code class="
 <h3>Mesher: Meshing of the Geometry<a class="headerlink" href="#mesher-meshing-of-the-geometry" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the mesher</span>
 <span class="c1">#   - geometry.yaml - contains the geometry description (input)</span>
-<span class="c1">#   - voxel.pck - contains the meshed voxel structure (output)</span>
+<span class="c1">#   - voxel.gz - contains the meshed voxel structure (output)</span>
 pypeec<span class="w"> </span>mesher<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--geometry<span class="w"> </span>tutorial/geometry.yaml<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.pck
+<span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.gz
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>00:00:00.00 : MAIN     : INFO     : load the input data
@@ -198,11 +195,11 @@ pypeec<span class="w"> </span>mesher<span class="w"> </span><span class="se">\</
 <section id="viewer-plot-the-geometry">
 <h3>Viewer: Plot the Geometry<a class="headerlink" href="#viewer-plot-the-geometry" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the viewer</span>
-<span class="c1">#   - voxel.pck - contains the meshed voxel structure (input)</span>
+<span class="c1">#   - voxel.gz - contains the meshed voxel structure (input)</span>
 <span class="c1">#   - viewer.yaml - contains the plot configuration (input)</span>
 <span class="c1">#   - tag_plot - list of plots to be shown (defined in viewer.yaml)</span>
 pypeec<span class="w"> </span>viewer<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.pck<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.gz<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--viewer<span class="w"> </span>config/viewer.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tag_plot<span class="w"> </span>domain<span class="w"> </span>connection
 </pre></div>
@@ -223,15 +220,15 @@ pypeec<span class="w"> </span>viewer<span class="w"> </span><span class="se">\</
 <section id="solver-solve-the-problem">
 <h3>Solver: Solve the Problem<a class="headerlink" href="#solver-solve-the-problem" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the solver</span>
-<span class="c1">#   - voxel.pck - contains the meshed voxel structure (input)</span>
+<span class="c1">#   - voxel.gz - contains the meshed voxel structure (input)</span>
 <span class="c1">#   - problem.yaml - contains the magnetic problem description (input)</span>
 <span class="c1">#   - tolerance.yaml - contains the solver numerical tolerances (input)</span>
-<span class="c1">#   - solution.pck - contains the problem solution (output)</span>
+<span class="c1">#   - solution.gz - contains the problem solution (output)</span>
 pypeec<span class="w"> </span>solver<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.pck<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.gz<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--problem<span class="w"> </span>tutorial/problem.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tolerance<span class="w"> </span>config/tolerance.yaml<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--solution<span class="w"> </span>tutorial/solution.pck
+<span class="w">    </span>--solution<span class="w"> </span>tutorial/solution.gz
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>00:00:00.00 : MAIN     : INFO     : load the input data
@@ -435,11 +432,11 @@ pypeec<span class="w"> </span>solver<span class="w"> </span><span class="se">\</
 <section id="plotter-plot-the-solution">
 <h3>Plotter: Plot the Solution<a class="headerlink" href="#plotter-plot-the-solution" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the plotter</span>
-<span class="c1">#   - solution.pck - contains the problem solution (input)</span>
+<span class="c1">#   - solution.gz - contains the problem solution (input)</span>
 <span class="c1">#   - plotter.yaml - contains the plot configuration (input)</span>
 <span class="c1">#   - tag_plot - list of plots to be shown (defined in plotter.yaml)</span>
 pypeec<span class="w"> </span>plotter<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--solution<span class="w"> </span>tutorial/solution.pck<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--solution<span class="w"> </span>tutorial/solution.gz<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--plotter<span class="w"> </span>config/plotter.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tag_plot<span class="w"> </span>V_c_abs<span class="w"> </span>J_c_norm<span class="w"> </span>H_norm<span class="w"> </span>residuum
 </pre></div>
