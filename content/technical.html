@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.12.0
+                4.13.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -63,8 +63,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration-file">Configuration File</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#packaging-and-environment">Packaging and Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#automated-tests">Automated Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sphinx-documentation">Sphinx Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests-and-documentation">Tests and Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scripts">Scripts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bug-report">Bug report</a></li>
 </ul>
@@ -72,7 +72,7 @@
 <li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="format.html">File Formats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/index_api.html">API Doc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">API Doc</a></li>
 </ul>
 
         </div>
@@ -189,27 +189,27 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <h2>Packaging and Environment<a class="headerlink" href="#packaging-and-environment" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>A Python package can be built from the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p></li>
-<li><p>The shell script <code class="docutils literal notranslate"><span class="pre">run_build.sh</span></code> is used to build the Python package.</p></li>
-<li><p>The shell script <code class="docutils literal notranslate"><span class="pre">run_release.sh</span></code> is used to a create release.</p></li>
 <li><p>In order to create a minimal Python Virtual Environment, use <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p></li>
 <li><p>In order to create a minimal Conda Environment, use <code class="docutils literal notranslate"><span class="pre">conda_base.yaml</span></code>.</p></li>
 <li><p>In order to create a full development environment, use <code class="docutils literal notranslate"><span class="pre">conda_dev.yaml</span></code>.</p></li>
 </ul>
 </section>
-<section id="automated-tests">
-<h2>Automated Tests<a class="headerlink" href="#automated-tests" title="Permalink to this heading"></a></h2>
+<section id="tests-and-documentation">
+<h2>Tests and Documentation<a class="headerlink" href="#tests-and-documentation" title="Permalink to this heading"></a></h2>
 <ul class="simple">
+<li><p>The documentation is located in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder (using the <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> generator).</p></li>
 <li><p>The tests are located in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder (using the <code class="docutils literal notranslate"><span class="pre">unittest</span></code> framework).</p></li>
-<li><p>The shell script <code class="docutils literal notranslate"><span class="pre">run_tests.sh</span></code> is used to run the tests.</p></li>
 <li><p>The tests are checking that the examples are running correctly.</p></li>
 <li><p>Only integration tests currently exist (no unit tests).</p></li>
 </ul>
 </section>
-<section id="sphinx-documentation">
-<h2>Sphinx Documentation<a class="headerlink" href="#sphinx-documentation" title="Permalink to this heading"></a></h2>
+<section id="scripts">
+<h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>The documentation is located in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder (using the <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> generator).</p></li>
-<li><p>The shell script <code class="docutils literal notranslate"><span class="pre">run_build.sh</span></code> is used to build the HTML documentation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_tests.sh</span></code>: run all the tests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_coverage.sh</span></code>: run a code coverage analysis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_build.sh</span></code>: build the Python package and build the HTML documentation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_release.sh</span></code>: create a release (tag, release, package, and documentation).</p></li>
 </ul>
 </section>
 <section id="contributing">

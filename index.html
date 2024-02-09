@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PyPEEC - 3D PEEC Solver &mdash; PyPEEC</title>
+  <title>PyPEEC - 3D Quasi-Magnetostatic Solver &mdash; PyPEEC</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/icon.png"/>
@@ -36,7 +36,7 @@
               <img src="_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.12.0
+                4.13.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -61,7 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="content/implementation.html">Implementation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/warnings.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/format.html">File Formats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/index_api.html">API Doc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/api.html">API Doc</a></li>
 </ul>
 
         </div>
@@ -78,7 +78,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">PyPEEC - 3D PEEC Solver</li>
+      <li class="breadcrumb-item active">PyPEEC - 3D Quasi-Magnetostatic Solver</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -87,14 +87,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="pypeec-3d-peec-solver">
-<h1>PyPEEC - 3D PEEC Solver<a class="headerlink" href="#pypeec-3d-peec-solver" title="Permalink to this heading"></a></h1>
+  <section id="pypeec-3d-quasi-magnetostatic-solver">
+<h1>PyPEEC - 3D Quasi-Magnetostatic Solver<a class="headerlink" href="#pypeec-3d-quasi-magnetostatic-solver" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
-<img alt="PyPEEC Banner" src="_images/header.png" />
-<hr class="docutils" />
+<img alt="PyPEEC Banner" src="_images/banner.png" />
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <ul class="simple">
@@ -126,6 +125,7 @@ The code is written in <strong>Python</strong> and is fully <strong>open source<
 <ul class="simple">
 <li><p>Frequency domain solution (DC and AC)</p></li>
 <li><p>Conductive and magnetic domains (ideal or lossy)</p></li>
+<li><p>Isotropic, anisotropic, lumped, and distributed materials</p></li>
 <li><p>Connection of current and voltage sources</p></li>
 <li><p>Extraction of the loss and energy densities</p></li>
 <li><p>Extraction of the current density, flux density, and potential</p></li>
@@ -148,7 +148,16 @@ The code is written in <strong>Python</strong> and is fully <strong>open source<
 <li><p><strong>plotter</strong>: visualization of the problem solution</p></li>
 </ul>
 <hr class="docutils" />
-<img alt="Dartmouth PMIC" src="_images/footer.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><strong>Author:</strong> <a class="reference external" href="https://otvam.ch">Thomas Guillod</a></p></li>
+<li><p><strong>Institution:</strong> <a class="reference external" href="https://dartmouth.edu">Dartmouth College</a></p></li>
+<li><p><strong>Licence:</strong> <a class="reference external" href="http://mozilla.org/MPL/2.0">MPL-2.0</a></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<img alt="Dartmouth and PMIC" src="_images/institution.png" />
 </section>
 
 

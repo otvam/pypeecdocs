@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.12.0
+                4.13.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -62,9 +62,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../content/implementation.html">Implementation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/warnings.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/format.html">File Formats</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index_api.html">API Doc</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index_api.html#packages">Packages</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index_api.html#main-modules">Main Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API Doc</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#main-modules">Main Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#main-packages">Main Packages</a></li>
 </ul>
 </li>
 </ul>
@@ -83,7 +83,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index_api.html">API Doc</a></li>
+          <li class="breadcrumb-item"><a href="api.html">API Doc</a></li>
       <li class="breadcrumb-item active">pypeec.script</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -104,17 +104,40 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.script.run_script">
-<span class="sig-prename descclassname"><span class="pre">pypeec.script.</span></span><span class="sig-name descname"><span class="pre">run_script</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.script.run_script" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.script.run_arguments">
+<span class="sig-prename descclassname"><span class="pre">pypeec.script.</span></span><span class="sig-name descname"><span class="pre">run_arguments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.script.run_arguments" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
-<dt>User script for running PyPEEC from the command line.</dt><dd><ul class="simple">
+<dt>User script for running PyPEEC with given arguments.</dt><dd><ul class="simple">
 <li><p>The script offers a CLI for the mesher, solver, viewer, and plotter.</p></li>
-<li><p>The script can also be used to extract the examples.</p></li>
-<li><p>The script is installed with the package.</p></li>
-<li><p>The name of the command line script is “pypeec”.</p></li>
+<li><p>The script can also be used to extract the examples, documentation and config.</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>argv</strong> (<em>list</em>) – List with the command line arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>status</strong> – The status exit code of the script.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.script.run_script">
+<span class="sig-prename descclassname"><span class="pre">pypeec.script.</span></span><span class="sig-name descname"><span class="pre">run_script</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.script.run_script" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>User script for running PyPEEC with the command line arguments.</dt><dd><ul class="simple">
+<li><p>The script offers a CLI for the mesher, solver, viewer, and plotter.</p></li>
+<li><p>The script can also be used to extract the examples, documentation and config.</p></li>
+</ul>
+</dd>
+</dl>
+<p>The script is installed with the package.
+The name of the command line script is “pypeec”.</p>
 </dd></dl>
 
 </section>
