@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.13.0
+                4.14.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -186,6 +186,72 @@
 <li><p><strong>fmt</strong> (<em>string</em>) – String with the formatted elapsed time.</p></li>
 </ul>
 </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.log.set_global">
+<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">set_global</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.set_global" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Set the global variables.</dt><dd><ul class="simple">
+<li><p>timestamp (for the elapsed time)</p></li>
+<li><p>indentation level (for log messages)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timestamp</strong> (<em>timestamp</em>) – Timestamp (for the elapsed time).</p></li>
+<li><p><strong>level</strong> (<em>integer</em>) – Indentation level for the log messages.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.log.get_global">
+<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">get_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.get_global" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Get the global variables.</dt><dd><ul class="simple">
+<li><p>timestamp (for the elapsed time)</p></li>
+<li><p>indentation level (for log messages)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>timestamp</strong> (<em>timestamp</em>) – Timestamp (for the elapsed time).</p></li>
+<li><p><strong>level</strong> (<em>integer</em>) – Indentation level for the log messages.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.log.set_warning">
+<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">set_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">warning</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.set_warning" title="Permalink to this definition"></a></dt>
+<dd><p>Set a global warning flag (used to signal issues).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>warning</strong> (<em>boolean</em>) – Warning flag value to be set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.log.get_warning">
+<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">get_warning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.get_warning" title="Permalink to this definition"></a></dt>
+<dd><p>Get a global warning flag (used to signal issues).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>warning</strong> – Current value of the warning flag.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>boolean</p>
 </dd>
 </dl>
 </dd></dl>
