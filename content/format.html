@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.14.0
+                4.14.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -215,7 +215,7 @@ This file contains the definition of the voxel structure.</p>
 <span class="w">    </span><span class="c1">#   - dy: voxel dimension for the y direction</span>
 <span class="w">    </span><span class="c1">#   - dz: voxel dimension for the z direction</span>
 <span class="w">    </span><span class="c1">#   - cz: coordinates of the voxel structure center for the z direction</span>
-<span class="w">    </span><span class="c1">#   - tol: tolerance for simplifying the shapes</span>
+<span class="w">    </span><span class="c1">#   - tol: tolerance for simplifying the shapes (null for disabling simplification)</span>
 <span class="w">    </span><span class="c1">#   - xy_min: array with the lower corner coordinates of the voxel structure (x and y directions)</span>
 <span class="w">    </span><span class="c1">#   - xy_max: array with the upper corner coordinates of the voxel structure (x and y directions)</span>
 <span class="w">    </span><span class="c1">#   - alternatively, the xy_min/xy_max can be set to null and the shape bounds are kept</span>
@@ -390,8 +390,11 @@ This file contains the definition of the magnetic problem to be solved.</p>
 <span class="c1">#   - material definition</span>
 <span class="c1">#       - domain_list: list of domains with the specified material</span>
 <span class="c1">#       - material_type: material type (&quot;electric&quot; or &quot;magnetic&quot; or &quot;electromagnetic&quot;)</span>
+<span class="c1">#           - &quot;electric&quot;: material with a finite conductivity (with a zero susceptibility)</span>
+<span class="c1">#           - &quot;magnetic&quot;: material with a finite susceptibility (with a zero conductivity)</span>
+<span class="c1">#           - &quot;electromagnetic&quot;: material with a finite susceptibility and permeability</span>
 <span class="c1">#       - orientation_type: material type (&quot;isotropic&quot; or &quot;anisotropic&quot;)</span>
-<span class="c1">#           - &quot;electric&quot;: the material parameters are anisotropic</span>
+<span class="c1">#           - &quot;isotropic&quot;: the material parameters are anisotropic</span>
 <span class="c1">#           - &quot;anisotropic&quot;: the material parameters anisotropic</span>
 <span class="c1">#       - var_type: type of material parameters (&quot;lumped&quot; or &quot;distributed&quot;)</span>
 <span class="c1">#           - &quot;lumped&quot;: the material parameters are homogeneous</span>

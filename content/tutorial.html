@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.14.0
+                4.14.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -130,8 +130,8 @@ pypeec<span class="w"> </span>documentation<span class="w"> </span>documentation
 <p>This tutorial demonstrates how PyPEEC can be used to simulate a four-layer PCB coil.
 The coil has two terminals and the simulation is done in the frequency domain.
 All the command are executed inside the virtual environment in the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder.</p>
-<section id="mesher-meshing-of-the-geometry">
-<h3>Mesher: Meshing of the Geometry<a class="headerlink" href="#mesher-meshing-of-the-geometry" title="Permalink to this heading"></a></h3>
+<section id="mesher-building-and-meshing-the-geometry">
+<h3>Mesher: Building and Meshing the Geometry<a class="headerlink" href="#mesher-building-and-meshing-the-geometry" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the mesher</span>
 <span class="c1">#   - geometry.yaml - contains the geometry description (input)</span>
 <span class="c1">#   - voxel.gz - contains the meshed voxel structure (output)</span>
@@ -192,8 +192,8 @@ pypeec<span class="w"> </span>mesher<span class="w"> </span><span class="se">\</
 </pre></div>
 </div>
 </section>
-<section id="viewer-plot-the-geometry">
-<h3>Viewer: Plot the Geometry<a class="headerlink" href="#viewer-plot-the-geometry" title="Permalink to this heading"></a></h3>
+<section id="viewer-plot-the-geometry-and-mesh">
+<h3>Viewer: Plot the Geometry and Mesh<a class="headerlink" href="#viewer-plot-the-geometry-and-mesh" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the viewer</span>
 <span class="c1">#   - voxel.gz - contains the meshed voxel structure (input)</span>
 <span class="c1">#   - viewer.yaml - contains the plot configuration (input)</span>
@@ -217,8 +217,8 @@ pypeec<span class="w"> </span>viewer<span class="w"> </span><span class="se">\</
 </figcaption>
 </figure>
 </section>
-<section id="solver-solve-the-problem">
-<h3>Solver: Solve the Problem<a class="headerlink" href="#solver-solve-the-problem" title="Permalink to this heading"></a></h3>
+<section id="solver-solve-the-peec-problem">
+<h3>Solver: Solve the PEEC Problem<a class="headerlink" href="#solver-solve-the-peec-problem" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the solver</span>
 <span class="c1">#   - voxel.gz - contains the meshed voxel structure (input)</span>
 <span class="c1">#   - problem.yaml - contains the magnetic problem description (input)</span>
