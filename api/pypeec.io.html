@@ -36,7 +36,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.14.1
+                4.14.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -101,8 +101,10 @@
 </ul>
 </dd>
 <dt>For YAML files, the following custom extensions are used:</dt><dd><ul class="simple">
-<li><p>“!path” - allows the inclusion of relative paths</p></li>
-<li><p>“!include” - allows the inclusion of YAML sub-files</p></li>
+<li><p>“!path” - parse relative paths</p></li>
+<li><p>“!include” - include other YAML files</p></li>
+<li><p>“!merge_dict” - merge a list of dicts</p></li>
+<li><p>“!merge_list” - merge a list of lists</p></li>
 </ul>
 </dd>
 <dt>For JSON files, the following custom extensions are used:</dt><dd><ul class="simple">
@@ -135,7 +137,8 @@
 <dd class="field-odd"><p><strong>filename</strong> (<em>string</em><em>)</em>) – Name and path of the file to be loaded.
 The file type is determined by the extension.
 For YAML files, the extension should be “yaml” or “yml”.
-For JSON files, the extension should be “json” or “js”.</p>
+For JSON files, the extension should be “json” or “js”.
+For GZIP/JSON files, the extension should be “gzip” or “gz”.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>data</strong> – Python data contained in the file content</p>
@@ -155,6 +158,7 @@ For JSON files, the extension should be “json” or “js”.</p>
 <dd class="field-odd"><p><strong>filename</strong> (<em>string</em><em>)</em>) – Name and path of the file to be loaded.
 The file type is determined by the extension.
 For JSON files, the extension should be “json” or “js”.
+For GZIP/JSON files, the extension should be “gzip” or “gz”.
 For Pickle files, the extension should be “pck”.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -176,6 +180,7 @@ For Pickle files, the extension should be “pck”.</p>
 <li><p><strong>filename</strong> (<em>string</em><em>)</em>) – Name and path of the file to be created.
 The file type is determined by the extension.
 For JSON files, the extension should be “json” or “js”.
+For GZIP/JSON files, the extension should be “gzip” or “gz”.
 For Pickle files, the extension should be “pck”.</p></li>
 <li><p><strong>data</strong> (<em>data</em>) – Python data to be saved.</p></li>
 </ul>
