@@ -36,7 +36,7 @@
               <img src="_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.14.2
+                4.15.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -147,6 +147,13 @@ The code is written in <strong>Python</strong> and is fully <strong>open source<
 <li><p><strong>solver</strong>: solver for the magnetic field problem</p></li>
 <li><p><strong>plotter</strong>: visualization of the problem solution</p></li>
 </ul>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The geometry is meshed with a <strong>regular voxel structure</strong> (uniform grid).
+Some geometries/problems are not suited for voxel structures (inefficient meshing).
+For such cases, PyPEEC can be very slow and consume a lot of memory.</p>
+</div>
 <hr class="docutils" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
