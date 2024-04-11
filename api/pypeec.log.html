@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.15.0
+                4.15.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -182,8 +182,9 @@
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
-<li><p><strong>duration</strong> (<em>duration</em>) – Duration object with the elapsed time.</p></li>
-<li><p><strong>fmt</strong> (<em>string</em>) – String with the formatted elapsed time.</p></li>
+<li><p><strong>seconds</strong> (<em>float</em>) – Float with the elapsed time in seconds.</p></li>
+<li><p><strong>duration</strong> (<em>string</em>) – String with the formatted elapsed time.</p></li>
+<li><p><strong>date</strong> (<em>string</em>) – String with the formatted initial timestamp.</p></li>
 </ul>
 </p>
 </dd>
@@ -227,37 +228,6 @@
 <li><p><strong>level</strong> (<em>integer</em>) – Indentation level for the log messages.</p></li>
 </ul>
 </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pypeec.log.reset_warning">
-<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">reset_warning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.reset_warning" title="Permalink to this definition"></a></dt>
-<dd><p>Reset the global warning flag (used to signal issues).</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pypeec.log.set_warning">
-<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">set_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">warning</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.set_warning" title="Permalink to this definition"></a></dt>
-<dd><p>Set a global warning flag (used to signal issues).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>warning</strong> (<em>boolean</em>) – Warning flag value to be set.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pypeec.log.get_warning">
-<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">get_warning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.get_warning" title="Permalink to this definition"></a></dt>
-<dd><p>Get a global warning flag (used to signal issues).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>warning</strong> – Current value of the warning flag.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>boolean</p>
 </dd>
 </dl>
 </dd></dl>
