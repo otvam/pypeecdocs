@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.15.1
+                4.15.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -61,7 +61,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Details</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuration-file">Configuration File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logger-configuration-file">Logger Configuration File</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#packaging-and-environment">Packaging and Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tests-and-documentation">Tests and Documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#scripts">Scripts</a></li>
@@ -163,27 +163,14 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <li><p>CPython 3.12</p></li>
 </ul>
 </section>
-<section id="configuration-file">
-<h2>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this heading"></a></h2>
-<ul>
-<li><p>The default configuration file is <code class="docutils literal notranslate"><span class="pre">pypeec/data/config.yaml</span></code>.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>This file is always loaded first.</p></li>
-<li><p>This file is included in the package.</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>The default configuration file can be extracted with the <code class="docutils literal notranslate"><span class="pre">pypeec</span> <span class="pre">config</span></code> command.</p></li>
-<li><p>The filename located the environment variable <code class="docutils literal notranslate"><span class="pre">PYPEEC</span></code> is loaded.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>If the variable is not set, the default configuration is kept.</p></li>
-<li><p>If the variable is is set, the default configuration is replaced.</p></li>
-<li><p>This file can be in JSON or YAML formats.</p></li>
-</ul>
-</div></blockquote>
-</li>
+<section id="logger-configuration-file">
+<h2>Logger Configuration File<a class="headerlink" href="#logger-configuration-file" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>The default logger configuration file is located in <code class="docutils literal notranslate"><span class="pre">pypeec/data/logger.yaml</span></code>.</p></li>
+<li><p>A custom logger configuration file can set with an environment variable.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">PYTHONLOGGER</span></code> variable is not set, the default configuration is kept.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">PYTHONLOGGER</span></code> variable is is set, the default configuration is replaced.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">PYTHONLOGGER</span></code> variable should contain a path towards the YAML configuration.</p></li>
 </ul>
 </section>
 <section id="packaging-and-environment">

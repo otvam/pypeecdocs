@@ -36,7 +36,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.15.1
+                4.15.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -101,9 +101,9 @@
 </ul>
 </dd>
 <dt>For YAML files, the following custom extensions are used:</dt><dd><ul class="simple">
-<li><p>“!path” - parse relative paths</p></li>
-<li><p>“!include” - include other YAML files</p></li>
-<li><p>“!env” - include YAML from environment variables</p></li>
+<li><p>“!path” - parse relative paths (with respect to the main file path)</p></li>
+<li><p>“!include” - include other YAML files (recursion possible)</p></li>
+<li><p>“!env” - include YAML string from environment variables</p></li>
 <li><p>“!merge_dict” - merge a list of dicts</p></li>
 <li><p>“!merge_list” - merge a list of lists</p></li>
 </ul>
