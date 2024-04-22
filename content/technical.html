@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.15.2
+                4.16.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -51,6 +51,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
@@ -176,10 +177,11 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <section id="packaging-and-environment">
 <h2>Packaging and Environment<a class="headerlink" href="#packaging-and-environment" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>A Python package can be built from the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p></li>
-<li><p>In order to create a minimal Python Virtual Environment, use <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p></li>
-<li><p>In order to create a minimal Conda Environment, use <code class="docutils literal notranslate"><span class="pre">conda_base.yaml</span></code>.</p></li>
-<li><p>In order to create a full development environment, use <code class="docutils literal notranslate"><span class="pre">conda_dev.yaml</span></code>.</p></li>
+<li><p>List of Python dependencies (pinned versions): <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></li>
+<li><p>Package definition with dependencies (minimum versions): <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+<li><p>Conda file with the minimum requirements for PyPEEC: <code class="docutils literal notranslate"><span class="pre">conda_base.yaml</span></code></p></li>
+<li><p>Conda file including the optional and development packages: <code class="docutils literal notranslate"><span class="pre">conda_dev.yaml</span></code></p></li>
+<li><p>Conda feedstock recipe: <a class="reference external" href="https://github.com/conda-forge/pypeec-feedstock">https://github.com/conda-forge/pypeec-feedstock</a></p></li>
 </ul>
 </section>
 <section id="tests-and-documentation">
@@ -194,10 +196,10 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <section id="scripts">
 <h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">run_tests.sh</span></code>: run all the tests.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">run_coverage.sh</span></code>: run a code coverage analysis.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">run_build.sh</span></code>: build the Python package and build the HTML documentation.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">run_release.sh</span></code>: create a release (tag, release, package, and documentation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_tests.sh</span></code>: run all the tests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_coverage.sh</span></code>: run a code coverage analysis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_build.sh</span></code>: build the Python package and build the HTML documentation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_release.sh</span></code>: create a release (tag, release, package, and documentation).</p></li>
 </ul>
 </section>
 <section id="contributing">

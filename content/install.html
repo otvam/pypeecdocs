@@ -4,11 +4,11 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery &mdash; PyPEEC</title>
+  <title>Installation &mdash; PyPEEC</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/icon.png"/>
-    <link rel="canonical" href="https://pypeec.otvam.ch/content/gallery.html" />
+    <link rel="canonical" href="https://pypeec.otvam.ch/content/install.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -20,8 +20,8 @@
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Workflow" href="workflow.html" />
-    <link rel="prev" title="Examples" href="examples.html" /> 
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="About" href="about.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,14 +51,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Gallery</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#viewer-mesher-results">Viewer (Mesher Results)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#plotter-solver-results">Plotter (Solver Results)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#available-packages">Available Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-python-environment">Using a Python Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-conda-environment">Using a Conda Environment</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
@@ -84,7 +85,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Gallery</li>
+      <li class="breadcrumb-item active">Installation</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -93,27 +94,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="gallery">
-<h1>Gallery<a class="headerlink" href="#gallery" title="Permalink to this heading"></a></h1>
-<section id="viewer-mesher-results">
-<h2>Viewer (Mesher Results)<a class="headerlink" href="#viewer-mesher-results" title="Permalink to this heading"></a></h2>
-<img alt="../_images/viewer_1.png" src="../_images/viewer_1.png" />
-<img alt="../_images/viewer_2.png" src="../_images/viewer_2.png" />
-<img alt="../_images/viewer_3.png" src="../_images/viewer_3.png" />
-<img alt="../_images/viewer_4.png" src="../_images/viewer_4.png" />
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<section id="available-packages">
+<h2>Available Packages<a class="headerlink" href="#available-packages" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Python Package</strong> - available through PyPI</p></li>
+<li><p><strong>Conda Package</strong> - available through conda-forge</p></li>
+</ul>
+<p>PyPEEC packages are generic (architecture and system independent packages).
+However, some dependencies are architecture and system dependent packages.
+The optional HPC libraries are usually easier to install though Conda.</p>
 </section>
-<section id="plotter-solver-results">
-<h2>Plotter (Solver Results)<a class="headerlink" href="#plotter-solver-results" title="Permalink to this heading"></a></h2>
-<img alt="../_images/plotter_1.png" src="../_images/plotter_1.png" />
-<img alt="../_images/plotter_2.png" src="../_images/plotter_2.png" />
-<img alt="../_images/plotter_3.png" src="../_images/plotter_3.png" />
-<img alt="../_images/plotter_4.png" src="../_images/plotter_4.png" />
-<img alt="../_images/plotter_5.png" src="../_images/plotter_5.png" />
-<img alt="../_images/plotter_6.png" src="../_images/plotter_6.png" />
-<img alt="../_images/plotter_7.png" src="../_images/plotter_7.png" />
-<img alt="../_images/plotter_8.png" src="../_images/plotter_8.png" />
-<img alt="../_images/plotter_9.png" src="../_images/plotter_9.png" />
-<img alt="../_images/plotter_10.png" src="../_images/plotter_10.png" />
+<section id="using-a-python-environment">
+<h2>Using a Python Environment<a class="headerlink" href="#using-a-python-environment" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install a Python interpreter</span>
+<span class="c1">#   - Website: https://www.python.org</span>
+<span class="c1">#   - Supported versions: 3.9, 3.10, 3.11, and 3.12</span>
+<span class="c1">#   - Python executable: &quot;python&quot; or &quot;python3&quot;</span>
+
+<span class="c1"># Create a Python Virtual Environment</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>pypeecenv
+
+<span class="c1"># Activate the Python Virtual Environment</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+
+<span class="c1"># Install PyPEEC from PyPi</span>
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pypeec
+
+<span class="c1"># Check that PyPEEC is available</span>
+pypeec<span class="w"> </span>--version
+</pre></div>
+</div>
+</section>
+<section id="using-a-conda-environment">
+<h2>Using a Conda Environment<a class="headerlink" href="#using-a-conda-environment" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install a Conda distribution</span>
+<span class="c1">#   - Website: https://github.com/conda-forge/miniforge</span>
+<span class="c1">#   - Miniforge is sufficient for installing PyPEEC</span>
+<span class="c1">#   - Using mamba as a dependency solver is faster</span>
+
+<span class="c1"># Create a Conda Environment with a Python interpreter</span>
+mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pypeec_venv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
+
+<span class="c1"># Activate the Conda Environment</span>
+mamba<span class="w"> </span>activate<span class="w"> </span>pypeec_venv
+
+<span class="c1"># Install PyPEEC from conda-forge</span>
+mamba<span class="w"> </span>install<span class="w"> </span>conda-forge::pypeec
+
+<span class="c1"># Check that PyPEEC is available</span>
+pypeec<span class="w"> </span>--version
+</pre></div>
+</div>
 </section>
 </section>
 
