@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.16.1
+                4.16.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -110,6 +110,14 @@
 </ul>
 </dd>
 </dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>This logging module is based on the Python logging module.</p></li>
+<li><p>The philosophy of this logging module is slightly different.</p></li>
+<li><p>Be careful if you are mixing both modules.</p></li>
+</ul>
+</div>
 <dl class="py class">
 <dt class="sig sig-object py" id="pypeec.log.BlockTimer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">BlockTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'INFO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.BlockTimer" title="Permalink to this definition"></a></dt>
@@ -240,7 +248,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.log.get_logger">
-<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.get_logger" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.get_logger" title="Permalink to this definition"></a></dt>
 <dd><p>Get a logger with a specified name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
