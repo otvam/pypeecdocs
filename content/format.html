@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.16.2
+                4.17.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -216,7 +216,8 @@ This file contains the definition of the voxel structure.</p>
 <span class="w">    </span><span class="c1">#   - dy: voxel dimension for the y direction</span>
 <span class="w">    </span><span class="c1">#   - dz: voxel dimension for the z direction</span>
 <span class="w">    </span><span class="c1">#   - cz: coordinates of the voxel structure center for the z direction</span>
-<span class="w">    </span><span class="c1">#   - tol: tolerance for simplifying the shapes (null for disabling simplification)</span>
+<span class="w">    </span><span class="c1">#   - simplify: tolerance for simplifying the shapes (null for disabling simplification)</span>
+<span class="w">    </span><span class="c1">#   - construct: grid size for constructing the shapes (null for default grid size)</span>
 <span class="w">    </span><span class="c1">#   - xy_min: array with the lower corner coordinates of the voxel structure (x and y directions)</span>
 <span class="w">    </span><span class="c1">#   - xy_max: array with the upper corner coordinates of the voxel structure (x and y directions)</span>
 <span class="w">    </span><span class="c1">#   - alternatively, the xy_min/xy_max can be set to null and the shape bounds are kept</span>
@@ -225,7 +226,8 @@ This file contains the definition of the voxel structure.</p>
 <span class="w">        </span><span class="s">&quot;dy&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50.0e-6</span>
 <span class="w">        </span><span class="s">&quot;dz&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50.0e-6</span>
 <span class="w">        </span><span class="s">&quot;cz&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0e-6</span>
-<span class="w">        </span><span class="s">&quot;tol&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0e-6</span>
+<span class="w">        </span><span class="s">&quot;simplify&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0e-6</span>
+<span class="w">        </span><span class="s">&quot;construct&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0e-6</span>
 <span class="w">        </span><span class="s">&quot;xy_min&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-20e-3</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="s">&quot;xy_max&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+20e-3</span><span class="p p-Indicator">]</span>
 
@@ -529,7 +531,7 @@ This file contains the definition of the magnetic problem to be solved.</p>
 <section id="other-file-formats">
 <h2>Other File Formats<a class="headerlink" href="#other-file-formats" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>The logger configuration file format is documented in <code class="docutils literal notranslate"><span class="pre">pypeec/data/logger.yaml</span></code>.</p></li>
+<li><p>The logger configuration file format is documented in <code class="docutils literal notranslate"><span class="pre">pypeec/data/logger.ini</span></code>.</p></li>
 <li><p>The logger configuration can be changed with the <code class="docutils literal notranslate"><span class="pre">PYTHONLOGGER</span></code> environment variable.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">file_tolerance</span></code> format is documented in <code class="docutils literal notranslate"><span class="pre">examples/config/tolerance.yaml</span></code>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">file_viewer</span></code> format is documented in <code class="docutils literal notranslate"><span class="pre">examples/config/viewer.yaml</span></code>.</p></li>

@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.16.2
+                4.17.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -105,7 +105,8 @@
 </ul>
 </dd>
 <dt>The log config is defined by the following files.</dt><dd><ul class="simple">
-<li><p>First the default configuration is loaded (“pypeec/data/logger.yaml”).</p></li>
+<li><p>First the default configuration is loaded (“pypeec/data/logger.ini”).</p></li>
+<li><p>The logger configuration file is written as a Python ConfigParser INI file.</p></li>
 <li><p>Afterward, a custom file can be loaded with an environment variable (“PYTHONLOGGER”).</p></li>
 </ul>
 </dd>
@@ -249,12 +250,15 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.log.get_logger">
 <span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.get_logger" title="Permalink to this definition"></a></dt>
-<dd><p>Get a logger with a specified name.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<em>string</em>) – Name of the logger to be returned.
+<dd><p>Get a logger with a specified name.
 If the logger does not exist, the logger is created.
 If the logger does exist, the logger is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – Name of the logger to be returned.</p></li>
+<li><p><strong>tag</strong> (<em>string</em>) – Non-unique tag assigned to the logger.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>logger</strong> – Logger object instance.</p>

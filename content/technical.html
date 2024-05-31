@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.16.2
+                4.17.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -168,8 +168,9 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <section id="logger-configuration-file">
 <h2>Logger Configuration File<a class="headerlink" href="#logger-configuration-file" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>The default logger configuration file is located in <code class="docutils literal notranslate"><span class="pre">pypeec/data/logger.yaml</span></code>.</p></li>
+<li><p>The default logger configuration file is located in <code class="docutils literal notranslate"><span class="pre">pypeec/data/logger.ini</span></code>.</p></li>
 <li><p>A custom logger configuration file can set with an environment variable.</p></li>
+<li><p>The logger configuration file is written as a Python ConfigParser INI file.</p></li>
 <li><p>If the <code class="docutils literal notranslate"><span class="pre">PYTHONLOGGER</span></code> variable is not set, the default configuration is kept.</p></li>
 <li><p>If the <code class="docutils literal notranslate"><span class="pre">PYTHONLOGGER</span></code> variable is is set, the default configuration is replaced.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">PYTHONLOGGER</span></code> variable should contain a path towards the YAML configuration.</p></li>
