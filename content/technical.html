@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.17.0
+                4.18.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -64,8 +64,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#logger-configuration-file">Logger Configuration File</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#packaging-and-environment">Packaging and Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tests-and-documentation">Tests and Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scripts">Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests-and-coverage">Tests and Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bug-report">Bug report</a></li>
 </ul>
@@ -178,30 +177,36 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 </section>
 <section id="packaging-and-environment">
 <h2>Packaging and Environment<a class="headerlink" href="#packaging-and-environment" title="Permalink to this heading"></a></h2>
+<p>The following files are describing the package, documentation, and dependencies:</p>
 <ul class="simple">
 <li><p>List of Python dependencies (pinned versions): <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></li>
 <li><p>Package definition with dependencies (minimum versions): <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
 <li><p>Conda file with the minimum requirements for PyPEEC: <code class="docutils literal notranslate"><span class="pre">conda_base.yaml</span></code></p></li>
 <li><p>Conda file including the optional and development packages: <code class="docutils literal notranslate"><span class="pre">conda_dev.yaml</span></code></p></li>
 <li><p>Conda feedstock recipe: <a class="reference external" href="https://github.com/conda-forge/pypeec-feedstock">https://github.com/conda-forge/pypeec-feedstock</a></p></li>
+<li><p>The examples and the tutorial are located in the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder.</p></li>
+<li><p>The Sphinx documentation is located in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder.</p></li>
 </ul>
-</section>
-<section id="tests-and-documentation">
-<h2>Tests and Documentation<a class="headerlink" href="#tests-and-documentation" title="Permalink to this heading"></a></h2>
+<p>The following scripts are used to build the package, documentation, and releases:</p>
 <ul class="simple">
-<li><p>The documentation is located in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder (using the <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> generator).</p></li>
-<li><p>The tests are located in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder (using the <code class="docutils literal notranslate"><span class="pre">unittest</span></code> framework).</p></li>
-<li><p>The tests are checking that the examples are running correctly.</p></li>
-<li><p>Only integration tests currently exist (no unit tests).</p></li>
-</ul>
-</section>
-<section id="scripts">
-<h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this heading"></a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_tests.sh</span></code>: run all the tests.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_coverage.sh</span></code>: run a code coverage analysis.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_build.sh</span></code>: build the Python package and build the HTML documentation.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_release.sh</span></code>: create a release (tag, release, package, and documentation).</p></li>
+</ul>
+</section>
+<section id="tests-and-coverage">
+<h2>Tests and Coverage<a class="headerlink" href="#tests-and-coverage" title="Permalink to this heading"></a></h2>
+<p>PyPEEC is using different tests to check for potential regressions:</p>
+<ul class="simple">
+<li><p>The tests are located in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder.</p></li>
+<li><p>The tests are using the <code class="docutils literal notranslate"><span class="pre">unittest</span></code> framework.</p></li>
+<li><p>The tests are covering all the main functionalities.</p></li>
+<li><p>The tests are using the examples and the tutorial to check the code.</p></li>
+<li><p>Only integration tests are currently implemented (no unit tests).</p></li>
+</ul>
+<p>These files are used to run the tests (locally and/or continuous integration):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_tests.sh</span></code>: run all the integration tests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_coverage.sh</span></code>: run a code coverage analysis.</p></li>
 </ul>
 </section>
 <section id="contributing">

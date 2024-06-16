@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.17.0
+                4.18.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -120,12 +120,13 @@
 </ul>
 </div>
 <dl class="py class">
-<dt class="sig sig-object py" id="pypeec.log.BlockTimer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">BlockTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'INFO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.BlockTimer" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.log.BlockIndent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">BlockIndent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'INFO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.BlockIndent" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Class for timing a block of code.</dt><dd><ul class="simple">
 <li><p>Uses enter and exit magic methods.</p></li>
-<li><p>Display the results with a logger.</p></li>
+<li><p>Display the name of the block.</p></li>
+<li><p>Indent the results inside the block.</p></li>
 </ul>
 </dd>
 </dl>
@@ -141,12 +142,23 @@
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="pypeec.log.BlockIndent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">BlockIndent</span></span><a class="headerlink" href="#pypeec.log.BlockIndent" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.log.BlockTimer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">BlockTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'INFO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.BlockTimer" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
-<dt>Class for indenting a block of code.</dt><dd><ul class="simple">
+<dt>Class for timing a block of code.</dt><dd><ul class="simple">
 <li><p>Uses enter and exit magic methods.</p></li>
-<li><p>Display the results with a logger.</p></li>
+<li><p>Display the name of the block.</p></li>
+<li><p>Display timing information.</p></li>
+<li><p>Indent the results inside the block.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logger</em>) – Logger object instance.</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – Name of the code block.</p></li>
+<li><p><strong>level</strong> (<em>string</em>) – Logging level to be used.</p></li>
 </ul>
 </dd>
 </dl>
@@ -154,7 +166,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pypeec.log.log_exception">
-<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">log_exception</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ERROR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.log_exception" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">log_exception</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ERROR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.log_exception" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Log an exception.</dt><dd><ul class="simple">
 <li><p>Log the exception type, message, and trace.</p></li>
@@ -174,8 +186,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.log.get_timer">
-<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">get_timer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.get_timer" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.log.get_timestamp">
+<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">get_timestamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.get_timestamp" title="Permalink to this definition"></a></dt>
 <dd><p>Get a timestamp with the current time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -202,6 +214,18 @@
 <li><p><strong>date</strong> (<em>string</em>) – String with the formatted initial timestamp.</p></li>
 </ul>
 </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.log.reset_global">
+<span class="sig-prename descclassname"><span class="pre">pypeec.log.</span></span><span class="sig-name descname"><span class="pre">reset_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.log.reset_global" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Reset the global variables.</dt><dd><ul class="simple">
+<li><p>timestamp (for the elapsed time)</p></li>
+<li><p>indentation level (for log messages)</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
