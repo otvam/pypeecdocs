@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.18.2
+                4.18.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -108,6 +108,11 @@ This implies that large geometries with small features cannot be meshed efficien
 <p>For problems with <strong>magnetic domains</strong>, the <strong>preconditioner</strong> is not optimal.
 This might lead to a slow convergence of the iterative matrix solver.
 For such cases, using the segregated solver approach might be useful.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It should be noted that <strong>surface charges</strong> are not considered.
+Only volume charges are used, which is an approximation.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
