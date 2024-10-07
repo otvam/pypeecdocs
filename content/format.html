@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>File Formats &mdash; PyPEEC</title>
@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.18.3
+                5.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -121,65 +121,93 @@ This file contains the definition of the voxel structure.</p>
 
 <span class="c1"># definition of the voxel structure</span>
 <span class="c1">#   - specific for the different mesher types</span>
-<span class="c1">#   - format definition is located in the next subsections</span>
+<span class="c1">#   - format definition is located in separate files</span>
 <span class="s">&quot;data_voxelize&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 
-<span class="c1"># resampling of the voxel structure</span>
-<span class="c1">#   - use_reduce: reduce (or not) the voxel structure by removing unused voxels</span>
-<span class="c1">#   - use_resample: resample (or not) the voxel structure by subdividing voxels</span>
-<span class="c1">#   - resampling_factor: array with resampling factors (x, y, and z directions)</span>
-<span class="s">&quot;resampling&quot;</span><span class="p p-Indicator">:</span>
+<span class="c1"># parameters for checking the validity of the point cloud</span>
+<span class="s">&quot;data_point&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="c1"># check (or not) the validity of the point cloud</span>
+<span class="w">    </span><span class="s">&quot;check_cloud&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="c1"># enforce (or not) the validity of all the provided points</span>
+<span class="w">    </span><span class="s">&quot;full_cloud&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="c1"># 2D array containing the points used for magnetic field evaluation</span>
+<span class="w">    </span><span class="c1">#   - the number of points (n_pts) can be zero.</span>
+<span class="w">    </span><span class="c1">#   - the array has the following size: (n_pts, 3)</span>
+<span class="w">    </span><span class="c1">#   - the points should be located outside the active voxels</span>
+<span class="w">    </span><span class="s">&quot;pts_cloud&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.0</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="p p-Indicator">-</span>
+<span class="c1"># control the resampling of the voxel structure</span>
+<span class="s">&quot;data_resampling&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="c1"># reduce (or not) the voxel structure by removing unused voxels</span>
 <span class="w">    </span><span class="s">&quot;use_reduce&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="c1"># resample (or not) the voxel structure by subdividing voxels</span>
 <span class="w">    </span><span class="s">&quot;use_resample&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="s">&quot;resampling_factor&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
 
-<span class="c1"># 2D array containing the points used for magnetic field evaluation</span>
-<span class="c1">#   - the number of points (n_pts) can be zero.</span>
-<span class="c1">#   - the array has the following size: (n_pts, 3)</span>
-<span class="c1">#   - the points should be located outside the active voxels</span>
-<span class="s">&quot;pts_cloud&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.0</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="c1"># array with resampling factors (x, y, and z directions)</span>
+<span class="w">    </span><span class="s">&quot;resampling_factor&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="w"> </span><span class="p p-Indicator">]</span>
 
-<span class="c1"># check (or not) the validity of the point cloud</span>
-<span class="s">&quot;check_cloud&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="c1"># parameters for resolving conflict between domains</span>
+<span class="s">&quot;data_conflict&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="c1"># perform (or not) the rule-based conflict resolution</span>
+<span class="w">    </span><span class="c1">#   - using the provided resolution rules to remove duplicated voxels</span>
+<span class="w">    </span><span class="c1">#   - the resolution rules are applied before the random resolution</span>
+<span class="w">    </span><span class="s">&quot;resolve_rules&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
-<span class="c1"># perform (or not) the conflict resolution between the voxels</span>
-<span class="s">&quot;check_conflict&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="c1"># perform (or not) the random conflict resolution</span>
+<span class="w">    </span><span class="c1">#   - the duplicated voxels are randomly assigned to a unique domain</span>
+<span class="w">    </span><span class="c1">#   - the random resolution is performed after the application of the resolution rules</span>
+<span class="w">    </span><span class="s">&quot;resolve_random&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">    </span><span class="c1"># definition of the conflict resolution rules between domains</span>
+<span class="w">    </span><span class="c1">#   - during the voxelization, the same voxel can be assigned to several domains</span>
+<span class="w">    </span><span class="c1">#   - the shared voxels are located at the boundaries between domain</span>
+<span class="w">    </span><span class="c1">#   - the shared voxels are conflicts and should be assigned to a single domain</span>
+<span class="w">    </span><span class="c1">#   - list of dicts with the conflict resolution rules</span>
+<span class="w">    </span><span class="c1">#   - optional feature, the list can be empty if no conflict resolution is required</span>
+<span class="w">    </span><span class="c1">#   - conflict definition</span>
+<span class="w">    </span><span class="c1">#       - domain_resolve: list of domain names where the shared voxels should be removed</span>
+<span class="w">    </span><span class="c1">#       - domain_keep: list of domain names where the shared voxels should be kept</span>
+<span class="w">    </span><span class="s">&quot;conflict_rules&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;domain_resolve&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="s">&quot;domain_keep&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_src&quot;</span><span class="p p-Indicator">]}</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;domain_resolve&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="s">&quot;domain_keep&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_sink&quot;</span><span class="p p-Indicator">]}</span>
 
 <span class="c1"># compute (or not) the connections between the domains</span>
-<span class="s">&quot;check_connection&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="c1">#   - compute the connected components between the voxels</span>
+<span class="c1">#   - check the connections between the adjacent domains</span>
+<span class="c1">#   - check the connections between the connected components</span>
+<span class="s">&quot;check_integrity&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
-<span class="c1"># random resolution of the conflicts between the domains</span>
-<span class="c1">#   - the duplicated voxels are randomly assigned to a unique domain</span>
-<span class="c1">#   - the random resolution is performed after the manual conflict resolution</span>
-<span class="s">&quot;random_resolution&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="c1"># parameters for checking the integrity of the voxel structure</span>
+<span class="s">&quot;data_integrity&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="c1"># check if specified domains are connected to each other</span>
+<span class="w">    </span><span class="c1">#   - dict of dicts with the connection name and the connection definition</span>
+<span class="w">    </span><span class="c1">#   - optional feature, the dict can be empty without having an impact on the results</span>
+<span class="w">    </span><span class="c1">#   - check definition</span>
+<span class="w">    </span><span class="c1">#       - connected: boolean specified if the specified domains should be connected</span>
+<span class="w">    </span><span class="c1">#       - domain_group: list of list of domains where the connections are checked</span>
+<span class="w">    </span><span class="c1">#           - the outer list domains are used for the connection checks</span>
+<span class="w">    </span><span class="c1">#           - the inner list domains are merged together</span>
+<span class="w">    </span><span class="s">&quot;domain_connected&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="s">&quot;connected&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;connected&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">true</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;domain_group&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_src&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_sink&quot;</span><span class="p p-Indicator">]]}</span>
+<span class="w">        </span><span class="s">&quot;insulated&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;connected&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;domain_group&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&quot;dom_mag&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_src&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;dom_sink&quot;</span><span class="p p-Indicator">]]}</span>
 
-<span class="c1"># definition of the conflict resolution between domains</span>
-<span class="c1">#   - during the voxelization, the same voxel can be assigned to several domains</span>
-<span class="c1">#   - the shared voxels are located at the boundaries between domain</span>
-<span class="c1">#   - the shared voxels are conflicts and should be assigned to a single domain</span>
-<span class="c1">#   - list of dicts with the conflict resolution rules</span>
-<span class="c1">#   - optional feature, the list can be empty if no conflict resolution is required</span>
-<span class="c1">#   - conflict definition</span>
-<span class="c1">#       - domain_resolve: list of domain names where the shared voxels should be removed</span>
-<span class="c1">#       - domain_keep: list of domain names where the shared voxels should be kept</span>
-<span class="s">&quot;domain_conflict&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;domain_resolve&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="s">&quot;domain_keep&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_src&quot;</span><span class="p p-Indicator">]}</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;domain_resolve&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="s">&quot;domain_keep&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_sink&quot;</span><span class="p p-Indicator">]}</span>
-
-<span class="c1"># pledge the existence or absence of connections between domains</span>
-<span class="c1">#   - dict of dicts with the connection name and the connection definition</span>
-<span class="c1">#   - optional feature, the dict can be empty without having an impact on the results</span>
-<span class="c1">#   - connection definition</span>
-<span class="c1">#       - connected: boolean specified if the two domain lists should be connected</span>
-<span class="c1">#       - domain_group: list of list of domains where the connections are checks</span>
-<span class="c1">#           - the outer list domains are used for the connection checks</span>
-<span class="c1">#           - the inner list domains are merged together</span>
-<span class="s">&quot;domain_connection&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">    </span><span class="s">&quot;connected&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;connected&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">true</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;domain_group&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_src&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_sink&quot;</span><span class="p p-Indicator">]]}</span>
-<span class="w">    </span><span class="s">&quot;insulated&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;connected&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;domain_group&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&quot;dom_mag&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_src&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;dom_sink&quot;</span><span class="p p-Indicator">]]}</span>
+<span class="w">    </span><span class="c1"># check if specified domains are adjacent to each other</span>
+<span class="w">    </span><span class="c1">#   - dict of dicts with the connection name and the connection definition</span>
+<span class="w">    </span><span class="c1">#   - optional feature, the dict can be empty without having an impact on the results</span>
+<span class="w">    </span><span class="c1">#   - check definition</span>
+<span class="w">    </span><span class="c1">#       - connected: boolean specified if the specified domains should be connected</span>
+<span class="w">    </span><span class="c1">#       - domain_group: list of list of domains where the connections are checked</span>
+<span class="w">    </span><span class="c1">#           - the outer list domains are used for the connection checks</span>
+<span class="w">    </span><span class="c1">#           - the inner list domains are merged together</span>
+<span class="w">    </span><span class="s">&quot;domain_adjacent&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="s">&quot;connected&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;connected&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">true</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;domain_group&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_src&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_sink&quot;</span><span class="p p-Indicator">]]}</span>
+<span class="w">        </span><span class="s">&quot;insulated&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;connected&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;domain_group&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&quot;dom_mag&quot;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dom_src&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;dom_cond&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;dom_sink&quot;</span><span class="p p-Indicator">]]}</span>
 </pre></div>
 </div>
 <section id="definition-from-index-arrays">
