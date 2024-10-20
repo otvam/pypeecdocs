@@ -4,11 +4,11 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pypeec.main &mdash; PyPEEC</title>
+  <title>API Doc &mdash; PyPEEC</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/icon.png"/>
-    <link rel="canonical" href="https://pypeec.otvam.ch/api/pypeec.main.html" />
+    <link rel="canonical" href="https://pypeec.otvam.ch/content/api.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -20,8 +20,7 @@
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pypeec.script" href="pypeec.script.html" />
-    <link rel="prev" title="API Doc" href="api.html" /> 
+    <link rel="prev" title="File Formats" href="format.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -37,7 +36,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                5.0.1
+                5.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -50,22 +49,26 @@
               <p class="caption" role="heading"><span class="caption-text">General Doc</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/about.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/examples.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/gallery.html">Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/workflow.html">Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../content/technical.html">Technical Details</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/implementation.html">Implementation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/warnings.html">Known Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/format.html">File Formats</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api.html">API Doc</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="api.html#main-modules">Main Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#main-packages">Main Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html">Technical Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">File Formats</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Doc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main-packages">Main Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mesher-function">Mesher Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewer-function">Viewer Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solver-function">Solver Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotter-function">Plotter Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-line">Command Line</a></li>
 </ul>
 </li>
 </ul>
@@ -84,8 +87,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="api.html">API Doc</a></li>
-      <li class="breadcrumb-item active">pypeec.main</li>
+      <li class="breadcrumb-item active">API Doc</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -94,42 +96,47 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-pypeec.main">
-<span id="pypeec-main"></span><h1>pypeec.main<a class="headerlink" href="#module-pypeec.main" title="Permalink to this heading"></a></h1>
-<dl class="simple">
-<dt>Module containing the program entry points.</dt><dd><ul class="simple">
-<li><p>Used for calling the mesher, solver, viewer, and plotter.</p></li>
-<li><p>Files can be used for the input and output data.</p></li>
-<li><p>Data structure can be used for the input and output data.</p></li>
-<li><p>The import statements for the different modules are located inside the code.</p></li>
-<li><p>This allows for a minimization of the loaded dependencies.</p></li>
-</ul>
-</dd>
-</dl>
+  <section id="api-doc">
+<h1>API Doc<a class="headerlink" href="#api-doc" title="Permalink to this heading"></a></h1>
+<section id="main-packages">
+<h2>Main Packages<a class="headerlink" href="#main-packages" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec</span></code></p></td>
+<td><p>Main PyPEEC package.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.run</span></code></p></td>
+<td><p>Mesher, solver, viewer, and plotter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.utils</span></code></p></td>
+<td><p>Various independent utils for data manipulation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_check</span></code></p></td>
+<td><p>Library for checking the integrity of the input data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_matrix</span></code></p></td>
+<td><p>Library for handling and manipulating matrices.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_mesher</span></code></p></td>
+<td><p>Modules used by the mesher.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_solver</span></code></p></td>
+<td><p>Modules used by the solver.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_visualization</span></code></p></td>
+<td><p>Modules used by the viewer and plotter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.data</span></code></p></td>
+<td><p>Modules containing the static data.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mesher-function">
+<h2>Mesher Function<a class="headerlink" href="#mesher-function" title="Permalink to this heading"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_display_logo">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_display_logo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_display_logo" title="Permalink to this definition"></a></dt>
-<dd><p>Display the logo as a splash screen.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_extract">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_zip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_extract</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_extract" title="Permalink to this definition"></a></dt>
-<dd><p>Extract data (config, examples, or documentation).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_name</strong> (<em>string</em>) – Name of the file containing the data.</p></li>
-<li><p><strong>is_zip</strong> (<em>boolean</em>) – Indicate if the data is a zip archive.</p></li>
-<li><p><strong>path_extract</strong> (<em>string</em>) – Path where the data will be extracted.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_mesher_data">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_mesher_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_geometry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_mesher_data" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.run_mesher_data">
+<span class="sig-prename descclassname"><span class="pre">pypeec.</span></span><span class="sig-name descname"><span class="pre">run_mesher_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_geometry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.run_mesher_data" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Main script for meshing the geometry and generating a 3D voxel structure.</dt><dd><ul class="simple">
 <li><p>Get the geometry data as an argument.</p></li>
@@ -151,8 +158,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_mesher_file">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_mesher_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_mesher_file" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.run_mesher_file">
+<span class="sig-prename descclassname"><span class="pre">pypeec.</span></span><span class="sig-name descname"><span class="pre">run_mesher_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.run_mesher_file" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Main script for meshing the geometry and generating a 3D voxel structure.</dt><dd><ul class="simple">
 <li><p>Load the geometry data from a file.</p></li>
@@ -172,9 +179,12 @@ This output file is written by this function (JSON or Pickle format).</p></li>
 </dl>
 </dd></dl>
 
+</section>
+<section id="viewer-function">
+<h2>Viewer Function<a class="headerlink" href="#viewer-function" title="Permalink to this heading"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_viewer_data">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_viewer_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_viewer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_viewer_data" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.run_viewer_data">
+<span class="sig-prename descclassname"><span class="pre">pypeec.</span></span><span class="sig-name descname"><span class="pre">run_viewer_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_viewer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.run_viewer_data" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Main script for visualizing a 3D voxel structure.</dt><dd><ul class="simple">
 <li><p>Get the voxel data as an argument.</p></li>
@@ -207,8 +217,8 @@ This argument is optional.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_viewer_file">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_viewer_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_viewer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_viewer_file" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.run_viewer_file">
+<span class="sig-prename descclassname"><span class="pre">pypeec.</span></span><span class="sig-name descname"><span class="pre">run_viewer_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_viewer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.run_viewer_file" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Main script for visualizing a 3D voxel structure.</dt><dd><ul class="simple">
 <li><p>Load the voxel data from a file.</p></li>
@@ -242,9 +252,12 @@ This argument is optional.</p></li>
 </dl>
 </dd></dl>
 
+</section>
+<section id="solver-function">
+<h2>Solver Function<a class="headerlink" href="#solver-function" title="Permalink to this heading"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_solver_data">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_solver_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_tolerance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_solver_data" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.run_solver_data">
+<span class="sig-prename descclassname"><span class="pre">pypeec.</span></span><span class="sig-name descname"><span class="pre">run_solver_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_tolerance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.run_solver_data" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Main script for solving a problem with the PEEC solver.</dt><dd><ul class="simple">
 <li><p>Get the voxel data as an argument.</p></li>
@@ -272,8 +285,8 @@ This argument is optional.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_solver_file">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_solver_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_solution</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_solver_file" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.run_solver_file">
+<span class="sig-prename descclassname"><span class="pre">pypeec.</span></span><span class="sig-name descname"><span class="pre">run_solver_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_solution</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.run_solver_file" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Main script for solving a problem with the PEEC solver.</dt><dd><ul class="simple">
 <li><p>Load the voxel data from a file.</p></li>
@@ -299,9 +312,12 @@ This output file is written by this function (JSON or Pickle format).</p></li>
 </dl>
 </dd></dl>
 
+</section>
+<section id="plotter-function">
+<h2>Plotter Function<a class="headerlink" href="#plotter-function" title="Permalink to this heading"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_plotter_data">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_plotter_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_plotter</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_plotter_data" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.run_plotter_data">
+<span class="sig-prename descclassname"><span class="pre">pypeec.</span></span><span class="sig-name descname"><span class="pre">run_plotter_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_plotter</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.run_plotter_data" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Main script for plotting the solution of a PEEC problem.</dt><dd><ul class="simple">
 <li><p>Get the solution data as an argument.</p></li>
@@ -337,8 +353,8 @@ This argument is optional.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pypeec.main.run_plotter_file">
-<span class="sig-prename descclassname"><span class="pre">pypeec.main.</span></span><span class="sig-name descname"><span class="pre">run_plotter_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_plotter</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.main.run_plotter_file" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypeec.run_plotter_file">
+<span class="sig-prename descclassname"><span class="pre">pypeec.</span></span><span class="sig-name descname"><span class="pre">run_plotter_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_plotter</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.run_plotter_file" title="Permalink to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>Main script for plotting the solution of a PEEC problem.</dt><dd><ul class="simple">
 <li><p>Load the solution data from a file.</p></li>
@@ -375,6 +391,48 @@ This argument is optional.</p></li>
 </dl>
 </dd></dl>
 
+</section>
+<section id="command-line">
+<h2>Command Line<a class="headerlink" href="#command-line" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.run_arguments">
+<span class="sig-prename descclassname"><span class="pre">pypeec.</span></span><span class="sig-name descname"><span class="pre">run_arguments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.run_arguments" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>User script for running PyPEEC with given arguments.</dt><dd><ul class="simple">
+<li><p>The script offers a CLI for the mesher, solver, viewer, and plotter.</p></li>
+<li><p>The script can also be used to extract data (examples or documentation).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>argv</strong> (<em>list</em>) – List with the command line arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>status</strong> – The status exit code of the script.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypeec.run_script">
+<span class="sig-prename descclassname"><span class="pre">pypeec.</span></span><span class="sig-name descname"><span class="pre">run_script</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypeec.run_script" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>User script for running PyPEEC with the command line arguments.</dt><dd><ul class="simple">
+<li><p>The script offers a CLI for the mesher, solver, viewer, and plotter.</p></li>
+<li><p>The script can also be used to extract data (examples or documentation).</p></li>
+</ul>
+</dd>
+</dl>
+<p>The script is installed with the package.
+The name of the command line script is “pypeec”.
+Exit the program with “sys.exit()” with a status exit code.</p>
+</dd></dl>
+
+</section>
 </section>
 
 

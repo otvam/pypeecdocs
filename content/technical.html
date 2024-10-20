@@ -37,7 +37,7 @@
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                5.0.1
+                5.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -62,7 +62,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Details</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#logger-configuration-file">Logger Configuration File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logger-and-data-serialization">Logger and Data Serialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#packaging-and-environment">Packaging and Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tests-and-coverage">Tests and Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a></li>
@@ -72,7 +72,7 @@
 <li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="format.html">File Formats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">API Doc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Doc</a></li>
 </ul>
 
         </div>
@@ -104,11 +104,11 @@
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading"></a></h2>
 <p><strong>PyPEEC</strong> is entirely programmed in <strong>Python 3</strong> and has the following dependencies:</p>
 <ul class="simple">
-<li><p>PyYAML (configuration file format)</p></li>
-<li><p>NumPy, SciPy, and Joblib (numerical libraries)</p></li>
-<li><p>Pillow (for the mesher, image manipulation)</p></li>
-<li><p>Shapely and Rasterio (for the mesher, 2D shape manipulation)</p></li>
-<li><p>VTK and PyVista (for the mesher, 3D shape manipulation)</p></li>
+<li><p>scilogger, scisave, and jsonschema (logging and serialization)</p></li>
+<li><p>NumPy, SciPy, and Joblib (basic numerical computing libraries)</p></li>
+<li><p>Shapely and Rasterio (only used for the mesher, 2D shape manipulation)</p></li>
+<li><p>Pillow (only used for the mesher, 2D image manipulation)</p></li>
+<li><p>VTK and PyVista (only used for for the mesher, 3D shape manipulation)</p></li>
 </ul>
 <p>Additionally, the following <strong>libraries</strong> are used for the <strong>plotter</strong> and <strong>viewer</strong>:</p>
 <ul class="simple">
@@ -164,15 +164,18 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <li><p>CPython 3.12</p></li>
 </ul>
 </section>
-<section id="logger-configuration-file">
-<h2>Logger Configuration File<a class="headerlink" href="#logger-configuration-file" title="Permalink to this heading"></a></h2>
+<section id="logger-and-data-serialization">
+<h2>Logger and Data Serialization<a class="headerlink" href="#logger-and-data-serialization" title="Permalink to this heading"></a></h2>
+<p>For the logger, PyPEEC is using <strong>SciLogger</strong>:</p>
 <ul class="simple">
-<li><p>The default logger configuration file is located in <code class="docutils literal notranslate"><span class="pre">pypeec/data/logger.ini</span></code>.</p></li>
-<li><p>A custom logger configuration file can set with an environment variable.</p></li>
-<li><p>The logger configuration file is written as a Python ConfigParser INI file.</p></li>
-<li><p>If the <code class="docutils literal notranslate"><span class="pre">PYTHONLOGGER</span></code> variable is not set, the default configuration is kept.</p></li>
-<li><p>If the <code class="docutils literal notranslate"><span class="pre">PYTHONLOGGER</span></code> variable is is set, the default configuration is replaced.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">PYTHONLOGGER</span></code> variable should contain a path towards the YAML configuration.</p></li>
+<li><p>Custom logger configuration files can be set with the  <code class="docutils literal notranslate"><span class="pre">SCILOGGER</span></code> environment variable.</p></li>
+<li><p>More information about the logging module: <a class="reference external" href="https://github.com/otvam/scilogger">https://github.com/otvam/scilogger</a></p></li>
+</ul>
+<p>For the serialization, PyPEEC is using <strong>SciSave</strong>:</p>
+<ul class="simple">
+<li><p>The input/configuration files are either JSON or YAML files.</p></li>
+<li><p>The output/data files are either JSON or Pickle files.</p></li>
+<li><p>More information about the serialization module: <a class="reference external" href="https://github.com/otvam/scisave">https://github.com/otvam/scisave</a></p></li>
 </ul>
 </section>
 <section id="packaging-and-environment">
@@ -218,13 +221,15 @@ For large changes, please first discuss the change you wish to make in the issue
 <h2>Bug report<a class="headerlink" href="#bug-report" title="Permalink to this heading"></a></h2>
 <p>Please include a clear and concise description of what the bug is.
 Ideally, provide a minimal working example for the bug.</p>
-<p>Additionally, please report the following parameters:
-* The version of the PyPEEC you are using.
-* The platform/hardware you are using.
-* The version of Python and of the relevant dependencies.
-* For PyVista related bugs, please include the <code class="docutils literal notranslate"><span class="pre">pyvista.Report</span></code> output.
-* For NumPy related bugs, please include the <code class="docutils literal notranslate"><span class="pre">numpy.show_config</span></code> output.
-* For SciPy related bugs, please include the <code class="docutils literal notranslate"><span class="pre">scipy.show_config</span></code> output.</p>
+<p>Additionally, please report the following parameters:</p>
+<ul class="simple">
+<li><p>The version of the PyPEEC you are using.</p></li>
+<li><p>The platform/hardware you are using.</p></li>
+<li><p>The version of Python and of the relevant dependencies.</p></li>
+<li><p>For PyVista related bugs, please include the <code class="docutils literal notranslate"><span class="pre">pyvista.Report</span></code> output.</p></li>
+<li><p>For NumPy related bugs, please include the <code class="docutils literal notranslate"><span class="pre">numpy.show_config</span></code> output.</p></li>
+<li><p>For SciPy related bugs, please include the <code class="docutils literal notranslate"><span class="pre">scipy.show_config</span></code> output.</p></li>
+</ul>
 </section>
 </section>
 
