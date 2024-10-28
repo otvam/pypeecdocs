@@ -1,23 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>File Formats &mdash; PyPEEC</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>File Formats &mdash; PyPEEC - 5.2.0 5.2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="canonical" href="https://pypeec.otvam.ch/content/format.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=943b15a8"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="API Doc" href="api.html" />
@@ -32,13 +32,10 @@
 
           
           
-          <a href="../index.html">
-            
+          <a href="../index.html" class="icon icon-home">
+            PyPEEC - 5.2.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                5.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -78,7 +75,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC</a>
+          <a href="../index.html">PyPEEC - 5.2.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -96,20 +93,20 @@
            <div itemprop="articleBody">
              
   <section id="file-formats">
-<h1>File Formats<a class="headerlink" href="#file-formats" title="Permalink to this heading"></a></h1>
+<h1>File Formats<a class="headerlink" href="#file-formats" title="Link to this heading"></a></h1>
 <section id="pypeec-workflow">
-<h2>PyPEEC Workflow<a class="headerlink" href="#pypeec-workflow" title="Permalink to this heading"></a></h2>
+<h2>PyPEEC Workflow<a class="headerlink" href="#pypeec-workflow" title="Link to this heading"></a></h2>
 <figure class="align-default" id="id1">
 <img alt="../_images/workflow.png" src="../_images/workflow.png" />
 <figcaption>
 <p><span class="caption-text">Description of the PyPEEC workflow (mesher, viewer, solver, and plotter).
 The input files (geometry, problem, tolerance, plotter, and viewer) are either in JSON or YAML formats.
-The output files (voxel and solution) are either in JSON or Pickle formats.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+The output files (voxel and solution) are either in JSON or Pickle formats.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="geometry-file-format">
-<h2>Geometry File Format<a class="headerlink" href="#geometry-file-format" title="Permalink to this heading"></a></h2>
+<h2>Geometry File Format<a class="headerlink" href="#geometry-file-format" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">file_geometry</span></code> file format is used by the mesher.
 This file contains the definition of the voxel structure.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># mesher type</span>
@@ -211,7 +208,7 @@ This file contains the definition of the voxel structure.</p>
 </pre></div>
 </div>
 <section id="definition-from-index-arrays">
-<h3>Definition from Index Arrays<a class="headerlink" href="#definition-from-index-arrays" title="Permalink to this heading"></a></h3>
+<h3>Definition from Index Arrays<a class="headerlink" href="#definition-from-index-arrays" title="Link to this heading"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># voxel definition type (&quot;voxel&quot; for index arrays)</span>
 <span class="s">&quot;mesh_type&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;voxel&quot;</span>
 
@@ -238,7 +235,7 @@ This file contains the definition of the voxel structure.</p>
 </div>
 </section>
 <section id="definition-from-2d-vector-shapes">
-<h3>Definition from 2D Vector Shapes<a class="headerlink" href="#definition-from-2d-vector-shapes" title="Permalink to this heading"></a></h3>
+<h3>Definition from 2D Vector Shapes<a class="headerlink" href="#definition-from-2d-vector-shapes" title="Link to this heading"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># voxel definition type (&quot;shape&quot; for 2D vector shapes)</span>
 <span class="s">&quot;mesh_type&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;shape&quot;</span>
 
@@ -343,7 +340,7 @@ This file contains the definition of the voxel structure.</p>
 </div>
 </section>
 <section id="definition-from-png-files">
-<h3>Definition from PNG Files<a class="headerlink" href="#definition-from-png-files" title="Permalink to this heading"></a></h3>
+<h3>Definition from PNG Files<a class="headerlink" href="#definition-from-png-files" title="Link to this heading"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># voxel definition type (&quot;png&quot; for PNG files)</span>
 <span class="s">&quot;mesh_type&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;png&quot;</span>
 
@@ -382,7 +379,7 @@ This file contains the definition of the voxel structure.</p>
 </div>
 </section>
 <section id="definition-from-stl-files">
-<h3>Definition from STL Files<a class="headerlink" href="#definition-from-stl-files" title="Permalink to this heading"></a></h3>
+<h3>Definition from STL Files<a class="headerlink" href="#definition-from-stl-files" title="Link to this heading"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># voxel definition type (&quot;stl&quot; for STL files)</span>
 <span class="s">&quot;mesh_type&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;stl&quot;</span>
 
@@ -416,7 +413,7 @@ This file contains the definition of the voxel structure.</p>
 </section>
 </section>
 <section id="problem-file-format">
-<h2>Problem File Format<a class="headerlink" href="#problem-file-format" title="Permalink to this heading"></a></h2>
+<h2>Problem File Format<a class="headerlink" href="#problem-file-format" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">file_problem</span></code> file format is used by the solver.
 This file contains the definition of the magnetic problem to be solved.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># material definition</span>
@@ -561,7 +558,7 @@ This file contains the definition of the magnetic problem to be solved.</p>
 </div>
 </section>
 <section id="other-file-formats">
-<h2>Other File Formats<a class="headerlink" href="#other-file-formats" title="Permalink to this heading"></a></h2>
+<h2>Other File Formats<a class="headerlink" href="#other-file-formats" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">file_tolerance</span></code> format is documented in <code class="docutils literal notranslate"><span class="pre">examples/config/tolerance.yaml</span></code>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">file_viewer</span></code> format is documented in <code class="docutils literal notranslate"><span class="pre">examples/config/viewer.yaml</span></code>.</p></li>

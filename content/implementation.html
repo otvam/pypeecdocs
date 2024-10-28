@@ -1,23 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Implementation &mdash; PyPEEC</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>Implementation &mdash; PyPEEC - 5.2.0 5.2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="canonical" href="https://pypeec.otvam.ch/content/implementation.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=943b15a8"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Known Issues" href="warnings.html" />
@@ -32,13 +32,10 @@
 
           
           
-          <a href="../index.html">
-            
+          <a href="../index.html" class="icon icon-home">
+            PyPEEC - 5.2.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                5.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -76,7 +73,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC</a>
+          <a href="../index.html">PyPEEC - 5.2.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -94,9 +91,9 @@
            <div itemprop="articleBody">
              
   <section id="implementation">
-<h1>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading"></a></h1>
+<h1>Implementation<a class="headerlink" href="#implementation" title="Link to this heading"></a></h1>
 <section id="fft-accelerated-peec-method">
-<h2>FFT-Accelerated PEEC Method<a class="headerlink" href="#fft-accelerated-peec-method" title="Permalink to this heading"></a></h2>
+<h2>FFT-Accelerated PEEC Method<a class="headerlink" href="#fft-accelerated-peec-method" title="Link to this heading"></a></h2>
 <p>There are two main categories of field simulation methods:</p>
 <ul class="simple">
 <li><p>Differential equation based method (FEM, FD, etc.)</p></li>
@@ -142,7 +139,7 @@ voxels can be solved in a few minutes on a laptop computer.</p>
 </ul>
 </section>
 <section id="numerical-optimization">
-<h2>Numerical Optimization<a class="headerlink" href="#numerical-optimization" title="Permalink to this heading"></a></h2>
+<h2>Numerical Optimization<a class="headerlink" href="#numerical-optimization" title="Link to this heading"></a></h2>
 <p>The code is reasonably optimized, leveraging NumPy and SciPy for the heavy operations.
 All the code is vectorized, no loops are used for the array/matrix/tensor operations.
 Sparse matrix algebra is used wherever appropriate to speed up the code and limit the memory consumption.

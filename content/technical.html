@@ -1,23 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Technical Details &mdash; PyPEEC</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>Technical Details &mdash; PyPEEC - 5.2.0 5.2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="canonical" href="https://pypeec.otvam.ch/content/technical.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=943b15a8"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Implementation" href="implementation.html" />
@@ -32,13 +32,10 @@
 
           
           
-          <a href="../index.html">
-            
+          <a href="../index.html" class="icon icon-home">
+            PyPEEC - 5.2.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                5.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -81,7 +78,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC</a>
+          <a href="../index.html">PyPEEC - 5.2.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -99,9 +96,9 @@
            <div itemprop="articleBody">
              
   <section id="technical-details">
-<h1>Technical Details<a class="headerlink" href="#technical-details" title="Permalink to this heading"></a></h1>
+<h1>Technical Details<a class="headerlink" href="#technical-details" title="Link to this heading"></a></h1>
 <section id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading"></a></h2>
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
 <p><strong>PyPEEC</strong> is entirely programmed in <strong>Python 3</strong> and has the following dependencies:</p>
 <ul class="simple">
 <li><p>scilogger, scisave, and jsonschema (logging and serialization)</p></li>
@@ -127,7 +124,7 @@
 Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 </section>
 <section id="supported-platforms">
-<h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this heading"></a></h2>
+<h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Link to this heading"></a></h2>
 <p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong> on x86/x64:</p>
 <ul class="simple">
 <li><p>Linux / RedHat 7.9 on x86/x64</p></li>
@@ -135,11 +132,13 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <li><p>Linux / Debian 12.4 on x86/x64</p></li>
 <li><p>Linux / Ubuntu 20.04 on x86/x64</p></li>
 <li><p>Linux / Ubuntu 22.04 on x86/x64</p></li>
+<li><p>Linux / Ubuntu 24.04 on x86/x64</p></li>
 </ul>
 <p>The following <strong>platforms</strong> and systems have been  <strong>partially tested</strong>:</p>
 <ul class="simple">
 <li><p>Apple / macOS Monterey 12 on x86/x64</p></li>
-<li><p>Apple / macOS Ventura 13 on M1 Pro</p></li>
+<li><p>Apple / macOS Ventura 13 on ARM64</p></li>
+<li><p>Apple / macOS Sonoma 14 on ARM64</p></li>
 <li><p>MS Windows / Pro 10 on x86/x64</p></li>
 <li><p>MS Windows / Pro 11 on x86/x64</p></li>
 </ul>
@@ -152,20 +151,19 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 </ul>
 <p>The following <strong>platforms</strong> are passing the <strong>automated tests</strong>:</p>
 <ul class="simple">
-<li><p>Linux / Ubuntu 22.04 on x86/x64</p></li>
-<li><p>Microsoft / Windows Server 2022 on x86/x64</p></li>
-<li><p>Apple / macOS Monterey 12 on x86/x64</p></li>
+<li><p>Linux / Ubuntu 22.04 on x86/x64 / Conda / PyPi</p></li>
+<li><p>Microsoft / Windows Server 2022 on x86/x64 / Conda / PyPi</p></li>
+<li><p>Apple / macOS Sonoma 14 on ARM64 / Conda</p></li>
 </ul>
 <p>The following <strong>Python version</strong> are passing the <strong>automated tests</strong>:</p>
 <ul class="simple">
-<li><p>CPython 3.9</p></li>
 <li><p>CPython 3.10</p></li>
 <li><p>CPython 3.11</p></li>
 <li><p>CPython 3.12</p></li>
 </ul>
 </section>
 <section id="logger-and-data-serialization">
-<h2>Logger and Data Serialization<a class="headerlink" href="#logger-and-data-serialization" title="Permalink to this heading"></a></h2>
+<h2>Logger and Data Serialization<a class="headerlink" href="#logger-and-data-serialization" title="Link to this heading"></a></h2>
 <p>For the logger, PyPEEC is using <strong>SciLogger</strong>:</p>
 <ul class="simple">
 <li><p>Custom logger configuration files can be set with the  <code class="docutils literal notranslate"><span class="pre">SCILOGGER</span></code> environment variable.</p></li>
@@ -179,7 +177,7 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 </ul>
 </section>
 <section id="packaging-and-environment">
-<h2>Packaging and Environment<a class="headerlink" href="#packaging-and-environment" title="Permalink to this heading"></a></h2>
+<h2>Packaging and Environment<a class="headerlink" href="#packaging-and-environment" title="Link to this heading"></a></h2>
 <p>The following files are describing the package, documentation, and dependencies:</p>
 <ul class="simple">
 <li><p>List of Python dependencies (pinned versions): <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></li>
@@ -197,7 +195,7 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 </ul>
 </section>
 <section id="tests-and-coverage">
-<h2>Tests and Coverage<a class="headerlink" href="#tests-and-coverage" title="Permalink to this heading"></a></h2>
+<h2>Tests and Coverage<a class="headerlink" href="#tests-and-coverage" title="Link to this heading"></a></h2>
 <p>PyPEEC is using different tests to check for potential regressions:</p>
 <ul class="simple">
 <li><p>The tests are located in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder.</p></li>
@@ -213,12 +211,12 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 </ul>
 </section>
 <section id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading"></a></h2>
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h2>
 <p>PyPEEC is welcoming contributions (code, documentation, example, benchmark, test, tutorial, etc.) !
 For large changes, please first discuss the change you wish to make in the issue tracker.</p>
 </section>
 <section id="bug-report">
-<h2>Bug report<a class="headerlink" href="#bug-report" title="Permalink to this heading"></a></h2>
+<h2>Bug report<a class="headerlink" href="#bug-report" title="Link to this heading"></a></h2>
 <p>Please include a clear and concise description of what the bug is.
 Ideally, provide a minimal working example for the bug.</p>
 <p>Additionally, please report the following parameters:</p>

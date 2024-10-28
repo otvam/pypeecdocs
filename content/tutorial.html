@@ -1,23 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial &mdash; PyPEEC</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>Tutorial &mdash; PyPEEC - 5.2.0 5.2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="canonical" href="https://pypeec.otvam.ch/content/tutorial.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=943b15a8"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Examples" href="examples.html" />
@@ -32,13 +32,10 @@
 
           
           
-          <a href="../index.html">
-            
+          <a href="../index.html" class="icon icon-home">
+            PyPEEC - 5.2.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                5.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -76,7 +73,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC</a>
+          <a href="../index.html">PyPEEC - 5.2.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -94,9 +91,9 @@
            <div itemprop="articleBody">
              
   <section id="tutorial">
-<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h1>
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading"></a></h1>
 <section id="extracting-the-data">
-<h2>Extracting the Data<a class="headerlink" href="#extracting-the-data" title="Permalink to this heading"></a></h2>
+<h2>Extracting the Data<a class="headerlink" href="#extracting-the-data" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install PyPEEC</span>
 <span class="c1">#   - With a Python Environment</span>
 <span class="c1">#   - With a Conda Environment</span>
@@ -113,12 +110,12 @@ pypeec<span class="w"> </span>documentation<span class="w"> </span>documentation
 </div>
 </section>
 <section id="solving-a-problem">
-<h2>Solving a Problem<a class="headerlink" href="#solving-a-problem" title="Permalink to this heading"></a></h2>
+<h2>Solving a Problem<a class="headerlink" href="#solving-a-problem" title="Link to this heading"></a></h2>
 <p>This tutorial demonstrates how PyPEEC can be used to simulate a four-layer PCB coil.
 The coil has two terminals and the simulation is done in the frequency domain.
 All the command are executed inside the virtual environment in the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder.</p>
 <section id="mesher-building-and-meshing-the-geometry">
-<h3>Mesher: Building and Meshing the Geometry<a class="headerlink" href="#mesher-building-and-meshing-the-geometry" title="Permalink to this heading"></a></h3>
+<h3>Mesher: Building and Meshing the Geometry<a class="headerlink" href="#mesher-building-and-meshing-the-geometry" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the mesher</span>
 <span class="c1">#   - geometry.yaml - contains the geometry description (input)</span>
 <span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (output)</span>
@@ -184,7 +181,7 @@ pypeec<span class="w"> </span>mesher<span class="w"> </span><span class="se">\</
 </div>
 </section>
 <section id="viewer-plot-the-geometry-and-mesh">
-<h3>Viewer: Plot the Geometry and Mesh<a class="headerlink" href="#viewer-plot-the-geometry-and-mesh" title="Permalink to this heading"></a></h3>
+<h3>Viewer: Plot the Geometry and Mesh<a class="headerlink" href="#viewer-plot-the-geometry-and-mesh" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the viewer</span>
 <span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (input)</span>
 <span class="c1">#   - viewer.yaml - contains the plot configuration (input)</span>
@@ -198,18 +195,18 @@ pypeec<span class="w"> </span>viewer<span class="w"> </span><span class="se">\</
 <figure class="align-default" id="id1">
 <img alt="../_images/viewer_domain.png" src="../_images/viewer_domain.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing which the different domains.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Plot showing which the different domains.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id2">
 <img alt="../_images/viewer_connection.png" src="../_images/viewer_connection.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing which domains are interconnected.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Plot showing which domains are interconnected.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="solver-solve-the-peec-problem">
-<h3>Solver: Solve the PEEC Problem<a class="headerlink" href="#solver-solve-the-peec-problem" title="Permalink to this heading"></a></h3>
+<h3>Solver: Solve the PEEC Problem<a class="headerlink" href="#solver-solve-the-peec-problem" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the solver</span>
 <span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (input)</span>
 <span class="c1">#   - problem.yaml - contains the magnetic problem description (input)</span>
@@ -421,7 +418,7 @@ pypeec<span class="w"> </span>solver<span class="w"> </span><span class="se">\</
 </div>
 </section>
 <section id="plotter-plot-the-solution">
-<h3>Plotter: Plot the Solution<a class="headerlink" href="#plotter-plot-the-solution" title="Permalink to this heading"></a></h3>
+<h3>Plotter: Plot the Solution<a class="headerlink" href="#plotter-plot-the-solution" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the plotter</span>
 <span class="c1">#   - solution.json.gz - contains the problem solution (input)</span>
 <span class="c1">#   - plotter.yaml - contains the plot configuration (input)</span>
@@ -435,25 +432,25 @@ pypeec<span class="w"> </span>plotter<span class="w"> </span><span class="se">\<
 <figure class="align-default" id="id3">
 <img alt="../_images/plotter_V_c_norm.png" src="../_images/plotter_V_c_norm.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing the electric potential.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Plot showing the electric potential.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id4">
 <img alt="../_images/plotter_J_c_norm.png" src="../_images/plotter_J_c_norm.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing the current density.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Plot showing the current density.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id5">
 <img alt="../_images/plotter_H_p_norm.png" src="../_images/plotter_H_p_norm.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing the generated magnetic field.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Plot showing the generated magnetic field.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id6">
 <img alt="../_images/plotter_residuum.png" src="../_images/plotter_residuum.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing the equation system residuum.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Plot showing the equation system residuum.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
