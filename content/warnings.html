@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Known Issues &mdash; PyPEEC - 5.2.0 5.2.0 documentation</title>
+  <title>Known Issues &mdash; PyPEEC</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/warnings.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=943b15a8"></script>
+      <script src="../_static/documentation_options.js?v=f0f4c5ec"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.2.0
+            PyPEEC - 5.2.1
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -74,7 +74,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.2.0</a>
+          <a href="../index.html">PyPEEC - 5.2.1</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -126,13 +126,13 @@ The problem is solved with used-provided <strong>conflict</strong> resolution ru
 <h2>Library Issues<a class="headerlink" href="#library-issues" title="Link to this heading"></a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The <strong>plotting code</strong> is probably sensitive to the environment (platform and the version of the libraries).
+<p>The <strong>plotting code</strong> is probably sensitive to the environment (platform and version of the libraries).
 Therefore, these dependencies are minimized and insulated from the rest of the code.
 The plotting code (viewer and plotter) is separated from the simulation code (mesher and solver).</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>Jupyter</strong> is not included in the package dependencies.
+<p><strong>Jupyter</strong> is not included in the default package dependencies.
 Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.
 Jupyter support is optional, PyPEEC is fully functional without Jupyter.</p>
 </div>
@@ -144,8 +144,8 @@ GPU support is optional, PyPEEC is fully functional without GPU support.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>FFTW, UMFPACK, PyAMG, and MKL/PARDISO</strong> are not included in the package dependencies.
-These libraries can be tricky to install, especially on MS Windows.
+<p><strong>FFTW, UMFPACK, PyAMG, and MKL/PARDISO</strong> are not included in the default package dependencies.
+These libraries can be tricky to install, especially on MS Windows or Apple MacOS.
 Make sure that these libraries are compiled with multithreading support.
 FFTW, UMFPACK, PyAMG, and MKL/PARDISO are optional, PyPEEC is fully functional without them.</p>
 </div>
