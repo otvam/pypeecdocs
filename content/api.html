@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/api.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=dc7552f9"></script>
+      <script src="../_static/documentation_options.js?v=86fd29b2"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -32,7 +32,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.2.4
+            PyPEEC - 5.3.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -60,7 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="format.html">File Formats</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Doc</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#main-packages">Main Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-of-packages">List of Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mesher-function">Mesher Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#viewer-function">Viewer Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#solver-function">Solver Function</a></li>
@@ -76,7 +76,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.2.4</a>
+          <a href="../index.html">PyPEEC - 5.3.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -95,36 +95,42 @@
              
   <section id="api-doc">
 <h1>API Doc<a class="headerlink" href="#api-doc" title="Link to this heading"></a></h1>
-<section id="main-packages">
-<h2>Main Packages<a class="headerlink" href="#main-packages" title="Link to this heading"></a></h2>
+<section id="list-of-packages">
+<h2>List of Packages<a class="headerlink" href="#list-of-packages" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec</span></code></p></td>
 <td><p>Main PyPEEC package.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.run</span></code></p></td>
+<tr class="row-even"><td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.run</span></code></p></td>
 <td><p>Mesher, solver, viewer, and plotter.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.utils</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.utils</span></code></p></td>
 <td><p>Various independent utils for data manipulation.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_check</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.data</span></code></p></td>
+<td><p>Modules containing all the static data.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_check</span></code></p></td>
 <td><p>Library for checking the integrity of the input data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_matrix</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_matrix</span></code></p></td>
 <td><p>Library for handling and manipulating matrices.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_plot</span></code></p></td>
+<td><p>Modules used by the viewer and plotter.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_mesher</span></code></p></td>
 <td><p>Modules used by the mesher.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_solver</span></code></p></td>
 <td><p>Modules used by the solver.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.lib_visualization</span></code></p></td>
-<td><p>Modules used by the viewer and plotter.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pypeec.data</span></code></p></td>
-<td><p>Modules containing the static data.</p></td>
 </tr>
 </tbody>
 </table>
@@ -141,17 +147,24 @@
 </ul>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data_geometry</strong> (<em>data</em>) – The dict describes the geometry, meshing and resampling process.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>data_voxel</strong> – The dict describes the voxel structure.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>data</p>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>data_geometry<span class="classifier">data</span></dt><dd><ul class="simple">
+<li><p>The dict describes the geometry, meshing and resampling process.</p></li>
+</ul>
 </dd>
 </dl>
+</section>
+<section id="returns">
+<h3>Returns<a class="headerlink" href="#returns" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>data_voxel<span class="classifier">data</span></dt><dd><ul class="simple">
+<li><p>The dict describes the meshed voxel structure.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
 </dd></dl>
 
 <dl class="py function">
@@ -164,16 +177,21 @@
 </ul>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>file_geometry</strong> (<em>filename</em>) – The file content describes the geometry, meshing and resampling process.
-This input file is loaded by this function (JSON or YAML format).</p></li>
-<li><p><strong>file_voxel</strong> (<em>filename</em>) – The file content describes the voxel structure.
-This output file is written by this function (JSON or Pickle format).</p></li>
+<section id="id1">
+<h3>Parameters<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>file_geometry<span class="classifier">filename</span></dt><dd><ul class="simple">
+<li><p>The file content describes the geometry, meshing and resampling process.</p></li>
+<li><p>This input file is loaded by this function (JSON or YAML format).</p></li>
+</ul>
+</dd>
+<dt>file_voxel<span class="classifier">filename</span></dt><dd><ul class="simple">
+<li><p>The file content describes the meshed voxel structure.</p></li>
+<li><p>This output file is created by this function (JSON or Pickle format).</p></li>
 </ul>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 </section>
@@ -185,32 +203,46 @@ This output file is written by this function (JSON or Pickle format).</p></li>
 <dd><dl class="simple">
 <dt>Main script for visualizing a 3D voxel structure.</dt><dd><ul class="simple">
 <li><p>Get the voxel data as an argument.</p></li>
-<li><p>Get the point data as an argument.</p></li>
 <li><p>Get the viewer data as an argument.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_voxel</strong> (<em>data</em>) – The dict describes the voxel structure.</p></li>
-<li><p><strong>data_viewer</strong> (<em>data</em>) – The dict describes the different plots to be created.</p></li>
-<li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
-If None, all the plots are shown (default).
-This argument is optional.</p></li>
-<li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
-If “nb”, the plots are rendered within the Jupyter notebook.
-If “save”, the plots are not shown but saved as screenshots.
-If “none”, the plots are not shown (test mode).
-This argument is optional.</p></li>
-<li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
-The current directory is used as the default directory.
-This argument is optional.</p></li>
-<li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
-This argument is optional.</p></li>
+<section id="id2">
+<h3>Parameters<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>data_voxel<span class="classifier">data</span></dt><dd><ul class="simple">
+<li><p>The dict describes the meshed voxel structure.</p></li>
+</ul>
+</dd>
+<dt>data_viewer: data</dt><dd><ul class="simple">
+<li><p>The dict describes the different plots to be created.</p></li>
+</ul>
+</dd>
+<dt>tag_plot<span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>The list describes plots to be shown.</p></li>
+<li><p>If None or omitted: all the plots are shown.</p></li>
+</ul>
+</dd>
+<dt>plot_mode<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>If “qt”, the Qt framework is used for the rendering.</p></li>
+<li><p>If “nb”, the plots are rendered within the Jupyter notebook.</p></li>
+<li><p>If “save”, the plots are not shown but saved as screenshots.</p></li>
+<li><p>If “debug”, the plots are not shown (test mode).</p></li>
+<li><p>If None or omitted: the Qt framework is used.</p></li>
+</ul>
+</dd>
+<dt>folder<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>Folder name for saving the screenshots.</p></li>
+<li><p>If None or omitted: the current directory is used.</p></li>
+</ul>
+</dd>
+<dt>name<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>Prepended at the beginning of the screenshot filenames.</p></li>
+<li><p>If None or omitted: the original filenames are used.</p></li>
 </ul>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 <dl class="py function">
@@ -219,34 +251,46 @@ This argument is optional.</p></li>
 <dd><dl class="simple">
 <dt>Main script for visualizing a 3D voxel structure.</dt><dd><ul class="simple">
 <li><p>Load the voxel data from a file.</p></li>
-<li><p>Load the point data from a file.</p></li>
 <li><p>Load the viewer data from a file.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>file_voxel</strong> (<em>filename</em>) – The file content describes the voxel structure.
-This input file is loaded by this function (JSON or Pickle format).</p></li>
-<li><p><strong>file_viewer</strong> (<em>filename</em>) – The file content describes the different plots to be created.
-This input file is loaded by this function (JSON or YAML format).</p></li>
-<li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
-If None, all the plots are shown (default).
-This argument is optional.</p></li>
-<li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
-If “nb”, the plots are rendered within the Jupyter notebook.
-If “save”, the plots are not shown but saved as screenshots.
-If “none”, the plots are not shown (test mode).
-This argument is optional.</p></li>
-<li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
-The current directory is used as the default directory.
-This argument is optional.</p></li>
-<li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
-This argument is optional.</p></li>
+<section id="id3">
+<h3>Parameters<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>file_voxel<span class="classifier">filename</span></dt><dd><ul class="simple">
+<li><p>The file content describes the meshed voxel structure.</p></li>
+<li><p>This input file is loaded by this function (JSON or Pickle format).</p></li>
+</ul>
+</dd>
+<dt>file_viewer: filename</dt><dd><p>The file content describes the different plots to be created.
+This input file is loaded by this function (JSON or YAML format).</p>
+</dd>
+<dt>tag_plot<span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>The list describes plots to be shown.</p></li>
+<li><p>If None or omitted: all the plots are shown.</p></li>
+</ul>
+</dd>
+<dt>plot_mode<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>If “qt”, the Qt framework is used for the rendering.</p></li>
+<li><p>If “nb”, the plots are rendered within the Jupyter notebook.</p></li>
+<li><p>If “save”, the plots are not shown but saved as screenshots.</p></li>
+<li><p>If “debug”, the plots are not shown (test mode).</p></li>
+<li><p>If None or omitted: the Qt framework is used.</p></li>
+</ul>
+</dd>
+<dt>folder<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>Folder name for saving the screenshots.</p></li>
+<li><p>If None or omitted: the current directory is used.</p></li>
+</ul>
+</dd>
+<dt>name<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>Prepended at the beginning of the screenshot filenames.</p></li>
+<li><p>If None or omitted: the original filenames are used.</p></li>
 </ul>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 </section>
@@ -264,21 +308,32 @@ This argument is optional.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_voxel</strong> (<em>data</em>) – The dict describes the voxel structure.</p></li>
-<li><p><strong>data_problem</strong> (<em>data</em>) – The dict describes the problem to be solved.</p></li>
-<li><p><strong>data_tolerance</strong> (<em>data</em>) – The dict describes the numerical options.</p></li>
+<section id="id4">
+<h3>Parameters<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>data_voxel<span class="classifier">data</span></dt><dd><ul class="simple">
+<li><p>The dict describes the meshed voxel structure.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>data_solution</strong> – The dict describes the problem solution.</p>
+<dt>data_problem: data</dt><dd><ul class="simple">
+<li><p>The dict describes the problem to be solved.</p></li>
+</ul>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>data</p>
+<dt>data_tolerance: data</dt><dd><ul class="simple">
+<li><p>The dict describes the numerical options.</p></li>
+</ul>
 </dd>
 </dl>
+</section>
+<section id="id5">
+<h3>Returns<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>data_solution<span class="classifier">data</span></dt><dd><ul class="simple">
+<li><p>The dict describes the problem solution.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
 </dd></dl>
 
 <dl class="py function">
@@ -293,20 +348,31 @@ This argument is optional.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>file_voxel</strong> (<em>filename</em>) – The file content describes the voxel structure.
-This input file is loaded by this function (JSON or Pickle format).</p></li>
-<li><p><strong>file_problem</strong> (<em>filename</em>) – The file content describes the problem to be solved.
-This input file is loaded by this function (JSON or YAML format).</p></li>
-<li><p><strong>file_tolerance</strong> (<em>filename</em>) – The file content describes the numerical options.
-This input file is loaded by this function (JSON or YAML format).</p></li>
-<li><p><strong>file_solution</strong> (<em>filename</em>) – The file content describes the problem solution.
-This output file is written by this function (JSON or Pickle format).</p></li>
+<section id="id6">
+<h3>Parameters<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>file_voxel<span class="classifier">filename</span></dt><dd><ul class="simple">
+<li><p>The file content describes the meshed voxel structure.</p></li>
+<li><p>This input file is loaded by this function (JSON or Pickle format).</p></li>
+</ul>
+</dd>
+<dt>file_problem: filename</dt><dd><ul class="simple">
+<li><p>The file content describes the problem to be solved.</p></li>
+<li><p>This input file is loaded by this function (JSON or YAML format).</p></li>
+</ul>
+</dd>
+<dt>file_tolerance: filename</dt><dd><ul class="simple">
+<li><p>The file content describes the numerical options.</p></li>
+<li><p>This input file is loaded by this function (JSON or YAML format).</p></li>
+</ul>
+</dd>
+<dt>file_solution<span class="classifier">filename</span></dt><dd><ul class="simple">
+<li><p>The file content describes the problem solution.</p></li>
+<li><p>This output file is created by this function (JSON or Pickle format).</p></li>
 </ul>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 </section>
@@ -318,35 +384,51 @@ This output file is written by this function (JSON or Pickle format).</p></li>
 <dd><dl class="simple">
 <dt>Main script for plotting the solution of a PEEC problem.</dt><dd><ul class="simple">
 <li><p>Get the solution data as an argument.</p></li>
-<li><p>Get the point data as an argument.</p></li>
 <li><p>Get the plotter data as an argument.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_solution</strong> (<em>data</em>) – The dict describes the problem solution.</p></li>
-<li><p><strong>data_plotter</strong> (<em>data</em>) – The dict describes the different plots to be created.</p></li>
-<li><p><strong>tag_sweep</strong> (<em>list</em>) – The list describes sweeps to be shown.
-If None, all the sweeps are shown (default).
-This argument is optional.</p></li>
-<li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
-If None, all the plots are shown (default).
-This argument is optional.</p></li>
-<li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
-If “nb”, the plots are rendered within the Jupyter notebook.
-If “save”, the plots are not shown but saved as screenshots.
-If “none”, the plots are not shown (test mode).
-This argument is optional.</p></li>
-<li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
-The current directory is used as the default directory.
-This argument is optional.</p></li>
-<li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
-This argument is optional.</p></li>
+<section id="id7">
+<h3>Parameters<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>data_solution<span class="classifier">data</span></dt><dd><ul class="simple">
+<li><p>The dict describes the problem solution.</p></li>
+</ul>
+</dd>
+<dt>data_plotter<span class="classifier">data</span></dt><dd><ul class="simple">
+<li><p>The dict describes the different plots to be created.</p></li>
+</ul>
+</dd>
+<dt>tag_sweep<span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>The list describes the solver sweeps to be shown.</p></li>
+<li><p>If None or omitted: all the sweeps are shown.</p></li>
+</ul>
+</dd>
+<dt>tag_plot<span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>The list describes plots to be shown.</p></li>
+<li><p>If None or omitted: all the plots are shown.</p></li>
+</ul>
+</dd>
+<dt>plot_mode<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>If “qt”, the Qt framework is used for the rendering.</p></li>
+<li><p>If “nb”, the plots are rendered within the Jupyter notebook.</p></li>
+<li><p>If “save”, the plots are not shown but saved as screenshots.</p></li>
+<li><p>If “debug”, the plots are not shown (test mode).</p></li>
+<li><p>If None or omitted: the Qt framework is used.</p></li>
+</ul>
+</dd>
+<dt>folder<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>Folder name for saving the screenshots.</p></li>
+<li><p>If None or omitted: the current directory is used.</p></li>
+</ul>
+</dd>
+<dt>name<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>Prepended at the beginning of the screenshot filenames.</p></li>
+<li><p>If None or omitted: the original filenames are used.</p></li>
 </ul>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 <dl class="py function">
@@ -355,37 +437,53 @@ This argument is optional.</p></li>
 <dd><dl class="simple">
 <dt>Main script for plotting the solution of a PEEC problem.</dt><dd><ul class="simple">
 <li><p>Load the solution data from a file.</p></li>
-<li><p>Load the point data from a file.</p></li>
 <li><p>Load the plotter data from a file.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>file_solution</strong> (<em>filename</em>) – The dict describes the problem solution.
-This input file is loaded by this function (JSON or Pickle format).</p></li>
-<li><p><strong>file_plotter</strong> (<em>filename</em>) – The dict describes the different plots to be created.
-This input file is loaded by this function (JSON or YAML format).</p></li>
-<li><p><strong>tag_sweep</strong> (<em>list</em>) – The list describes sweeps to be shown.
-If None, all the sweeps are shown (default).
-This argument is optional.</p></li>
-<li><p><strong>tag_plot</strong> (<em>list</em>) – The list describes plots to be shown.
-If None, all the plots are shown (default).
-This argument is optional.</p></li>
-<li><p><strong>plot_mode</strong> (<em>string</em>) – If “qt”, the Qt framework is used for the rendering (default).
-If “nb”, the plots are rendered within the Jupyter notebook.
-If “save”, the plots are not shown but saved as screenshots.
-If “none”, the plots are not shown (test mode).
-This argument is optional.</p></li>
-<li><p><strong>folder</strong> (<em>string</em>) – Folder name for saving the screenshots.
-The current directory is used as the default directory.
-This argument is optional.</p></li>
-<li><p><strong>name</strong> (<em>string</em>) – Prepended at the beginning of the screenshot filenames.
-This argument is optional.</p></li>
+<section id="id8">
+<h3>Parameters<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>file_solution<span class="classifier">filename</span></dt><dd><ul class="simple">
+<li><p>The dict describes the problem solution.</p></li>
+<li><p>This input file is loaded by this function (JSON or Pickle format).</p></li>
+</ul>
+</dd>
+<dt>file_plotter<span class="classifier">filename</span></dt><dd><ul class="simple">
+<li><p>The dict describes the different plots to be created.</p></li>
+<li><p>This input file is loaded by this function (JSON or YAML format).</p></li>
+</ul>
+</dd>
+<dt>tag_sweep<span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>The list describes the solver sweeps to be shown.</p></li>
+<li><p>If None or omitted: all the sweeps are shown.</p></li>
+</ul>
+</dd>
+<dt>tag_plot<span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>The list describes plots to be shown.</p></li>
+<li><p>If None or omitted: all the plots are shown.</p></li>
+</ul>
+</dd>
+<dt>plot_mode<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>If “qt”, the Qt framework is used for the rendering.</p></li>
+<li><p>If “nb”, the plots are rendered within the Jupyter notebook.</p></li>
+<li><p>If “save”, the plots are not shown but saved as screenshots.</p></li>
+<li><p>If “debug”, the plots are not shown (test mode).</p></li>
+<li><p>If None or omitted: the Qt framework is used.</p></li>
+</ul>
+</dd>
+<dt>folder<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>Folder name for saving the screenshots.</p></li>
+<li><p>If None or omitted: the current directory is used.</p></li>
+</ul>
+</dd>
+<dt>name<span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>Prepended at the beginning of the screenshot filenames.</p></li>
+<li><p>If None or omitted: the original filenames are used.</p></li>
 </ul>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 </section>
@@ -401,17 +499,24 @@ This argument is optional.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>argv</strong> (<em>list</em>) – List with the command line arguments.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>status</strong> – The status exit code of the script.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
+<section id="id9">
+<h3>Parameters<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>argv<span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>List with the command line arguments.</p></li>
+</ul>
 </dd>
 </dl>
+</section>
+<section id="id10">
+<h3>Returns<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>status<span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>The status exit code of the script.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
 </dd></dl>
 
 <dl class="py function">
@@ -426,7 +531,7 @@ This argument is optional.</p></li>
 </dl>
 <p>The script is installed with the package.
 The name of the command line script is “pypeec”.
-Exit the program with “sys.exit()” with a status code.</p>
+Exit the program with “sys.exit()” and a status exit code.</p>
 </dd></dl>
 
 </section>

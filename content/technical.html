@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/technical.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=dc7552f9"></script>
+      <script src="../_static/documentation_options.js?v=86fd29b2"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.2.4
+            PyPEEC - 5.3.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -78,7 +78,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.2.4</a>
+          <a href="../index.html">PyPEEC - 5.3.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -115,7 +115,7 @@
 <p>The following <strong>optional packages</strong> can be used for speeding up the solver:</p>
 <ul class="simple">
 <li><p>PyAMG (pure Python solver)</p></li>
-<li><p>UMFPACK (available through SciKits)</p></li>
+<li><p>MKL/FFT (available through mkl_fft)</p></li>
 <li><p>MKL/PARDISO (available through Pydiso)</p></li>
 <li><p>FFTW (available through pyFFTW)</p></li>
 <li><p>CuPy (using GPUs through CUDA)</p></li>
@@ -125,14 +125,14 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 </section>
 <section id="supported-platforms">
 <h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Link to this heading"></a></h2>
-<p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong> on x86/x64:</p>
+<p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong> on x86/x64/glibc:</p>
 <ul class="simple">
-<li><p>Linux / RedHat 7.9 on x86/x64</p></li>
-<li><p>Linux / RedHat 8.7 on x86/x64</p></li>
-<li><p>Linux / Debian 12.4 on x86/x64</p></li>
-<li><p>Linux / Ubuntu 20.04 on x86/x64</p></li>
-<li><p>Linux / Ubuntu 22.04 on x86/x64</p></li>
-<li><p>Linux / Ubuntu 24.04 on x86/x64</p></li>
+<li><p>Linux / RedHat 7.9 on x86/x64/glibc</p></li>
+<li><p>Linux / RedHat 8.7 on x86/x64/glibc</p></li>
+<li><p>Linux / Debian 12.4 on x86/x64/glibc</p></li>
+<li><p>Linux / Ubuntu 20.04 on x86/x64/glibc</p></li>
+<li><p>Linux / Ubuntu 22.04 on x86/x64/glibc</p></li>
+<li><p>Linux / Ubuntu 24.04 on x86/x64/glibc</p></li>
 </ul>
 <p>The following <strong>platforms</strong> and systems have been  <strong>partially tested</strong>:</p>
 <ul class="simple">
@@ -167,23 +167,23 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <p>For the logger, PyPEEC is using <strong>SciLogger</strong>:</p>
 <ul class="simple">
 <li><p>Custom logger configuration files can be set with the  <code class="docutils literal notranslate"><span class="pre">SCILOGGER</span></code> environment variable.</p></li>
-<li><p>More information about the logging module: <a class="reference external" href="https://github.com/otvam/scilogger">https://github.com/otvam/scilogger</a></p></li>
+<li><p>More information on the logging module: <a class="reference external" href="https://github.com/otvam/scilogger">https://github.com/otvam/scilogger</a></p></li>
 </ul>
 <p>For the serialization, PyPEEC is using <strong>SciSave</strong>:</p>
 <ul class="simple">
 <li><p>The input/configuration files are either JSON or YAML files.</p></li>
 <li><p>The output/data files are either JSON or Pickle files.</p></li>
-<li><p>More information about the serialization module: <a class="reference external" href="https://github.com/otvam/scisave">https://github.com/otvam/scisave</a></p></li>
+<li><p>Pickle is faster than JSON for large output/data files.</p></li>
+<li><p>More information on the serialization module: <a class="reference external" href="https://github.com/otvam/scisave">https://github.com/otvam/scisave</a></p></li>
 </ul>
 </section>
 <section id="packaging-and-environment">
 <h2>Packaging and Environment<a class="headerlink" href="#packaging-and-environment" title="Link to this heading"></a></h2>
 <p>The following files are describing the package, documentation, and dependencies:</p>
 <ul class="simple">
-<li><p>List of Python dependencies (pinned versions): <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></li>
-<li><p>Package definition with dependencies (minimum versions): <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
-<li><p>Conda file with the minimum requirements for PyPEEC: <code class="docutils literal notranslate"><span class="pre">conda_base.yaml</span></code></p></li>
-<li><p>Conda file including the optional and development packages: <code class="docutils literal notranslate"><span class="pre">conda_dev.yaml</span></code></p></li>
+<li><p>Definition of the Python package: <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+<li><p>Conda file including the optional and development packages: <code class="docutils literal notranslate"><span class="pre">conda.yaml</span></code></p></li>
+<li><p>Python dependencies excluding the optional and development packages: <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></li>
 <li><p>Conda feedstock recipe: <a class="reference external" href="https://github.com/conda-forge/pypeec-feedstock">https://github.com/conda-forge/pypeec-feedstock</a></p></li>
 <li><p>The examples and the tutorial are located in the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder.</p></li>
 <li><p>The Sphinx documentation is located in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder.</p></li>

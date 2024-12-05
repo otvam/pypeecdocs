@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/implementation.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=dc7552f9"></script>
+      <script src="../_static/documentation_options.js?v=86fd29b2"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.2.4
+            PyPEEC - 5.3.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -73,7 +73,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.2.4</a>
+          <a href="../index.html">PyPEEC - 5.3.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -155,21 +155,22 @@ Wherever possible, multithreading/multiprocessing is used for exploiting multico
 <li><p>The factorization of the preconditioner sparse matrix can be done with several algorithms.</p>
 <ul>
 <li><p>SuperLU is typically slower but is always available (integrated with SciPy).</p></li>
-<li><p>UMFPACK is typically faster than SuperLU (available through SciKits).</p></li>
-<li><p>MKL/PARDISO is typically faster than UMFPACK (available through Pydiso).</p></li>
+<li><p>MKL/PARDISO is typically faster than SuperLU (available through Pydiso).</p></li>
 <li><p>PyAMG is typically slow but uses less memory (risk of convergence issues).</p></li>
 </ul>
 </li>
 <li><p>Two different iterative solvers are available for the dense matrices.</p>
 <ul>
 <li><p>GMRES - Generalized Minimal RESidual algorithm</p></li>
-<li><p>GCROT - Flexible GCROT(m,k) algorithm</p></li>
+<li><p>GCROT - Flexible GCROT(m,k) algorithm (often faster)</p></li>
 </ul>
 </li>
 <li><p>The FFTs for computing matrix-vector product can be done with several algorithms.</p>
 <ul>
+<li><p>NumPy FFT library is always available (integrated with NumPy)</p></li>
 <li><p>SciPy FFT library is always available (integrated with SciPy)</p></li>
 <li><p>FFTW has to be installed separately (available through pyFFTW)</p></li>
+<li><p>MKL/FFT has to be installed separately (available through mkl_fft)</p></li>
 <li><p>CuPy is extremely fast but require GPUs compatible with the CUDA toolkit</p></li>
 </ul>
 </li>
