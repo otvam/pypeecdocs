@@ -50,8 +50,10 @@
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#available-packages">Available Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-online-with-binder">Test Online With Binder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-a-python-environment">Using a Python Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-a-conda-environment">Using a Conda Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-docker-image">Using the Docker Image</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
@@ -102,12 +104,28 @@
 <p>The following <strong>optional libraries are not included</strong> is the package:</p>
 <ul class="simple">
 <li><p><strong>HPC libraries</strong> - FFTW, PyAMG, MKL/FFT, and MKL/PARDISO</p></li>
-<li><p><strong>Notebook support</strong> - Jupyter, IPyWidgets, and Trame</p></li>
+<li><p><strong>Notebook support</strong> - JupyterLab, IPyWidgets, Trame, and ipympl</p></li>
 <li><p><strong>GPU libraries</strong> - CuPy and CUDA</p></li>
 </ul>
-<p>PyPEEC packages are generic (architecture and system independent).
-However, some dependencies are architecture and system dependent.
-The optional HPC libraries are usually easier to install through Conda.</p>
+<p>Some <strong>important remarks</strong> about the PyPEEC <strong>packages</strong>:</p>
+<ul class="simple">
+<li><p>PyPEEC packages are architecture and system independent.</p></li>
+<li><p>Some dependencies are architecture and system dependent.</p></li>
+<li><p>The optional HPC libraries are usually easier to install through Conda.</p></li>
+<li><p>The Jupyter libraries are usually easier to install through Conda.</p></li>
+</ul>
+</section>
+<section id="test-online-with-binder">
+<h2>Test Online With Binder<a class="headerlink" href="#test-online-with-binder" title="Link to this heading"></a></h2>
+<p><strong>PyPEEC</strong> can be <strong>tested online without installation</strong>:</p>
+<ul class="simple">
+<li><p>The online test service is provided by Binder.</p></li>
+<li><p>The link will open a JupyterLab instance with PyPEEC.</p></li>
+<li><p>The PyPEEC tutorial and examples are included.</p></li>
+<li><p>The Binder instance is only intended for test purposes.</p></li>
+<li><p>The Binder instance is very slow and memory limited.</p></li>
+<li><p><a class="reference external" href="https://mybinder.org/v2/gh/otvam/pypeec/main?labpath=notebook.ipynb">Launch PyPEEC with Binder</a></p></li>
+</ul>
 </section>
 <section id="using-a-python-environment">
 <h2>Using a Python Environment<a class="headerlink" href="#using-a-python-environment" title="Link to this heading"></a></h2>
@@ -122,7 +140,7 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <span class="c1"># Activate the Python Virtual Environment</span>
 <span class="nb">source</span><span class="w"> </span>venv/bin/activate
 
-<span class="c1"># Install PyPEEC from PyPi</span>
+<span class="c1"># Install PyPEEC from PyPI</span>
 python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pypeec
 
 <span class="c1"># Check that PyPEEC is available</span>
@@ -145,6 +163,26 @@ mamba<span class="w"> </span>activate<span class="w"> </span>pypeec
 
 <span class="c1"># Check that PyPEEC is available</span>
 pypeec<span class="w"> </span>--version
+</pre></div>
+</div>
+</section>
+<section id="using-the-docker-image">
+<h2>Using the Docker Image<a class="headerlink" href="#using-the-docker-image" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># A Docker Image is also available through GHCR</span>
+<span class="c1">#   - Contains an Ubuntu image with PyPEEC and Jupyter</span>
+<span class="c1">#   - The PyPEEC tutorial and examples are included</span>
+<span class="c1">#   - The image is only intended for test purposes</span>
+
+<span class="c1"># Pull the Docker image</span>
+docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/otvam/pypeec:latest
+
+<span class="c1"># Run the Docker image</span>
+docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;ghcr.io/otvam/pypeec:latest&quot;</span><span class="w"> </span><span class="s2">&quot;start-notebook.py&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--NotebookApp.password<span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>--NotebookApp.token<span class="o">=</span><span class="s2">&quot;&quot;</span>
+
+<span class="c1"># Access Jupyter inside the Docker image</span>
+xdg-open<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8888/lab/tree/notebook.ipynb&quot;</span>
 </pre></div>
 </div>
 </section>

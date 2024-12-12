@@ -62,8 +62,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#logger-and-data-serialization">Logger and Data Serialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#packaging-and-environment">Packaging and Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tests-and-coverage">Tests and Coverage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bug-report">Bug report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing-and-bug-report">Contributing and Bug Report</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
@@ -99,7 +98,7 @@
 <h1>Technical Details<a class="headerlink" href="#technical-details" title="Link to this heading"></a></h1>
 <section id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
-<p><strong>PyPEEC</strong> is entirely programmed in <strong>Python 3</strong> and has the following dependencies:</p>
+<p><strong>PyPEEC</strong> is entirely programmed in <strong>Python 3</strong> and has the following <strong>dependencies</strong>:</p>
 <ul class="simple">
 <li><p>SciLogger, SciSave, and jsonschema (logging and serialization)</p></li>
 <li><p>NumPy, SciPy, and Joblib (basic numerical computing libraries)</p></li>
@@ -112,61 +111,43 @@
 <li><p>Matplotlib and PyQt5 (2D plots)</p></li>
 <li><p>VTK, PyVista, PyVistaQt, and PyQt5 (3D plots)</p></li>
 </ul>
-<p>The following <strong>optional packages</strong> can be used for speeding up the solver:</p>
+<p>The following <strong>optional packages</strong> can be used for <strong>speeding up</strong> the solver:</p>
 <ul class="simple">
-<li><p>PyAMG (pure Python solver)</p></li>
+<li><p>PyAMG (Python Algebraic Multigrid)</p></li>
 <li><p>MKL/FFT (available through mkl_fft)</p></li>
 <li><p>MKL/PARDISO (available through Pydiso)</p></li>
 <li><p>FFTW (available through pyFFTW)</p></li>
 <li><p>CuPy (using GPUs through CUDA)</p></li>
 </ul>
-<p>If you deploy PyPEEC on computing nodes, the GUI libraries (Matplotlib, PyVistaQt, PyQt5) are not required.
-Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
+<p>The following <strong>optional packages</strong> are required for <strong>Jupyter notebooks</strong>:</p>
+<ul class="simple">
+<li><p>JupyterLab</p></li>
+<li><p>IPyWidgets</p></li>
+<li><p>Trame / ipympl</p></li>
+</ul>
 </section>
 <section id="supported-platforms">
 <h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Link to this heading"></a></h2>
-<p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong> on x86/x64/glibc:</p>
+<p>PyPEEC is known to <strong>work</strong> with the following <strong>platforms</strong>:</p>
 <ul class="simple">
-<li><p>Linux / RedHat 7.9 on x86/x64/glibc</p></li>
-<li><p>Linux / RedHat 8.7 on x86/x64/glibc</p></li>
-<li><p>Linux / Debian 12.4 on x86/x64/glibc</p></li>
-<li><p>Linux / Ubuntu 20.04 on x86/x64/glibc</p></li>
-<li><p>Linux / Ubuntu 22.04 on x86/x64/glibc</p></li>
-<li><p>Linux / Ubuntu 24.04 on x86/x64/glibc</p></li>
+<li><p>Linux on x86/x64/glibc</p></li>
+<li><p>Apple macOS on x86/x64</p></li>
+<li><p>Apple macOS on ARM64</p></li>
+<li><p>MS Windows on x86/x64</p></li>
 </ul>
-<p>The following <strong>platforms</strong> and systems have been  <strong>partially tested</strong>:</p>
+<p>Some more <strong>details</strong> on the supported <strong>platforms</strong>:</p>
 <ul class="simple">
-<li><p>Apple macOS Monterey 12 on x86/x64</p></li>
-<li><p>Apple macOS Ventura 13 on ARM64</p></li>
-<li><p>Apple macOS Sonoma 14 on ARM64</p></li>
-<li><p>MS Windows / Pro 10 on x86/x64</p></li>
-<li><p>MS Windows / Pro 11 on x86/x64</p></li>
-</ul>
-<p>The following <strong>GPUs</strong> have been tested (CUDA / CuPy compatible):</p>
-<ul class="simple">
-<li><p>NVIDIA RTX 2070</p></li>
-<li><p>NVIDIA RTX 3090</p></li>
-<li><p>NVIDIA T4 Tensor</p></li>
-<li><p>NVIDIA Tesla K80</p></li>
-</ul>
-<p>The following <strong>platforms</strong> are passing the <strong>automated tests</strong>:</p>
-<ul class="simple">
-<li><p>Linux / Ubuntu 22.04 on x86/x64</p></li>
-<li><p>Microsoft / Windows Server 2022 on x86/x64</p></li>
-<li><p>Apple / macOS Sonoma 14 on ARM64</p></li>
-</ul>
-<p>The following <strong>Python version</strong> are passing the <strong>automated tests</strong>:</p>
-<ul class="simple">
-<li><p>CPython 3.10</p></li>
-<li><p>CPython 3.11</p></li>
-<li><p>CPython 3.12</p></li>
+<li><p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong> on x86/x64/glibc.</p></li>
+<li><p>PyPEEC is a <strong>pure-python package</strong> and should work on any platform.</p></li>
+<li><p>Any <strong>CUDA and CuPy</strong> compatible <strong>GPU</strong> is supported.</p></li>
+<li><p>Compatible <strong>Python versions</strong>: 3.10, 3.11, and 3.12</p></li>
 </ul>
 </section>
 <section id="logger-and-data-serialization">
 <h2>Logger and Data Serialization<a class="headerlink" href="#logger-and-data-serialization" title="Link to this heading"></a></h2>
-<p>For the logger, PyPEEC is using <strong>SciLogger</strong>:</p>
+<p>For the logging, PyPEEC is using <strong>SciLogger</strong>:</p>
 <ul class="simple">
-<li><p>Custom logger configuration files can be set with the  <code class="docutils literal notranslate"><span class="pre">SCILOGGER</span></code> environment variable.</p></li>
+<li><p>The logger configuration files can be set with the  <code class="docutils literal notranslate"><span class="pre">SCILOGGER</span></code> environment variable.</p></li>
 <li><p>More information on the logging module: <a class="reference external" href="https://github.com/otvam/scilogger">https://github.com/otvam/scilogger</a></p></li>
 </ul>
 <p>For the serialization, PyPEEC is using <strong>SciSave</strong>:</p>
@@ -179,14 +160,18 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 </section>
 <section id="packaging-and-environment">
 <h2>Packaging and Environment<a class="headerlink" href="#packaging-and-environment" title="Link to this heading"></a></h2>
-<p>The following files are describing the package, documentation, and dependencies:</p>
+<p>The following files are describing the packages and dependencies:</p>
 <ul class="simple">
 <li><p>Definition of the Python package: <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
-<li><p>Conda file including the optional and development packages: <code class="docutils literal notranslate"><span class="pre">conda.yaml</span></code></p></li>
-<li><p>Python dependencies excluding the optional and development packages: <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></li>
+<li><p>Dockerfile and dependencies for building the Docker image: <code class="docutils literal notranslate"><span class="pre">docker</span></code></p></li>
 <li><p>Conda feedstock recipe: <a class="reference external" href="https://github.com/conda-forge/pypeec-feedstock">https://github.com/conda-forge/pypeec-feedstock</a></p></li>
-<li><p>The examples and the tutorial are located in the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder.</p></li>
-<li><p>The Sphinx documentation is located in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder.</p></li>
+</ul>
+<p>The development environment is defined in <code class="docutils literal notranslate"><span class="pre">conda.yaml</span></code>:</p>
+<ul class="simple">
+<li><p>Contains all the required and optional dependencies.</p></li>
+<li><p>Contains the packaging/development tools.</p></li>
+<li><p>All the version number are pinned.</p></li>
+<li><p>Tested with Linux x86/x64/glibc.</p></li>
 </ul>
 <p>The following scripts are used to build the package, documentation, and releases:</p>
 <ul class="simple">
@@ -209,21 +194,35 @@ Inside Jupyter notebooks, IPyWidgets and Trame are used for the rendering.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_tests.sh</span></code>: run all the integration tests.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_coverage.sh</span></code>: run a code coverage analysis.</p></li>
 </ul>
-</section>
-<section id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h2>
-<p>PyPEEC is welcoming contributions (code, documentation, example, benchmark, test, tutorial, etc.)!
-For large changes, please first discuss the change you wish to make in the issue tracker.</p>
-</section>
-<section id="bug-report">
-<h2>Bug report<a class="headerlink" href="#bug-report" title="Link to this heading"></a></h2>
-<p>Please include a clear and concise description of what the bug is.
-Ideally, provide a minimal working example for the bug.</p>
-<p>Additionally, please report the following parameters:</p>
+<p>The following <strong>automated tests</strong> are performed:</p>
 <ul class="simple">
-<li><p>The version of the PyPEEC you are using.</p></li>
-<li><p>The platform/hardware you are using.</p></li>
-<li><p>The version of Python and of the relevant dependencies.</p></li>
+<li><p>Test the latest version of the released Conda and PyPI pakages</p></li>
+<li><p>Test the Conda and PyPI environments with the current Git code</p></li>
+</ul>
+<p>The following <strong>platforms</strong> are considered for the <strong>automated tests</strong>:</p>
+<ul class="simple">
+<li><p>Linux / Ubuntu on x86/x64</p></li>
+<li><p>Microsoft / Windows on x86/x64</p></li>
+<li><p>Apple / macOS on ARM64</p></li>
+</ul>
+<p>The following <strong>Python versions</strong> are considered for the <strong>automated tests</strong>:</p>
+<ul class="simple">
+<li><p>CPython 3.10</p></li>
+<li><p>CPython 3.11</p></li>
+<li><p>CPython 3.12</p></li>
+</ul>
+</section>
+<section id="contributing-and-bug-report">
+<h2>Contributing and Bug Report<a class="headerlink" href="#contributing-and-bug-report" title="Link to this heading"></a></h2>
+<p>PyPEEC is gladly accepting contributions (code, benchmark, packages, or tests).
+Non-code contributions (documentation, examples, or tutorials) are particularly welcomed.
+For large contributions, please first discuss the changes in the issue tracker.</p>
+<p>For the bug reports, please report the following information:</p>
+<ul class="simple">
+<li><p>The <strong>version of PyPEEC and Python</strong>.</p></li>
+<li><p>The <strong>operating system/platform/hardware</strong>.</p></li>
+<li><p>A <strong>clear and concise description</strong> of the bug.</p></li>
+<li><p>A <strong>minimal working example</strong> for the bug.</p></li>
 <li><p>For PyVista related bugs, please include the <code class="docutils literal notranslate"><span class="pre">pyvista.Report</span></code> output.</p></li>
 <li><p>For NumPy related bugs, please include the <code class="docutils literal notranslate"><span class="pre">numpy.show_config</span></code> output.</p></li>
 <li><p>For SciPy related bugs, please include the <code class="docutils literal notranslate"><span class="pre">scipy.show_config</span></code> output.</p></li>

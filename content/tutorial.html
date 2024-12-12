@@ -50,8 +50,12 @@
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#extracting-the-data">Extracting the Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#solving-a-problem">Solving a Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-setup">Step 1: Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-introduction">Step 2: Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-mesher">Step 3: Mesher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-viewer">Step 4: Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-solver">Step 5: Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-6-plotter">Step 6: Plotter</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
@@ -92,8 +96,8 @@
              
   <section id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading"></a></h1>
-<section id="extracting-the-data">
-<h2>Extracting the Data<a class="headerlink" href="#extracting-the-data" title="Link to this heading"></a></h2>
+<section id="step-1-setup">
+<h2>Step 1: Setup<a class="headerlink" href="#step-1-setup" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install PyPEEC</span>
 <span class="c1">#   - With a Python Environment</span>
 <span class="c1">#   - With a Conda Environment</span>
@@ -109,13 +113,20 @@ pypeec<span class="w"> </span>documentation<span class="w"> </span>documentation
 </pre></div>
 </div>
 </section>
-<section id="solving-a-problem">
-<h2>Solving a Problem<a class="headerlink" href="#solving-a-problem" title="Link to this heading"></a></h2>
+<section id="step-2-introduction">
+<h2>Step 2: Introduction<a class="headerlink" href="#step-2-introduction" title="Link to this heading"></a></h2>
 <p>This tutorial demonstrates how PyPEEC can be used to simulate a four-layer PCB coil.
 The coil has two terminals and the simulation is done in the frequency domain.
-All the command are executed inside the virtual environment in the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder.</p>
-<section id="mesher-building-and-meshing-the-geometry">
-<h3>Mesher: Building and Meshing the Geometry<a class="headerlink" href="#mesher-building-and-meshing-the-geometry" title="Link to this heading"></a></h3>
+All the command are executed inside the virtual environment from the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder.</p>
+<figure class="align-default" id="id1">
+<img alt="../_images/geometry.png" src="../_images/geometry.png" />
+<figcaption>
+<p><span class="caption-text">Geometry of the considered four-layer PCB coil.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-3-mesher">
+<h2>Step 3: Mesher<a class="headerlink" href="#step-3-mesher" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the mesher</span>
 <span class="c1">#   - geometry.yaml - contains the geometry description (input)</span>
 <span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (output)</span>
@@ -180,8 +191,8 @@ pypeec<span class="w"> </span>mesher<span class="w"> </span><span class="se">\</
 </pre></div>
 </div>
 </section>
-<section id="viewer-plot-the-geometry-and-mesh">
-<h3>Viewer: Plot the Geometry and Mesh<a class="headerlink" href="#viewer-plot-the-geometry-and-mesh" title="Link to this heading"></a></h3>
+<section id="step-4-viewer">
+<h2>Step 4: Viewer<a class="headerlink" href="#step-4-viewer" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the viewer</span>
 <span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (input)</span>
 <span class="c1">#   - viewer.yaml - contains the plot configuration (input)</span>
@@ -192,21 +203,21 @@ pypeec<span class="w"> </span>viewer<span class="w"> </span><span class="se">\</
 <span class="w">    </span>--tag_plot<span class="w"> </span>domain<span class="w"> </span>graph
 </pre></div>
 </div>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id2">
 <img alt="../_images/viewer_domain.png" src="../_images/viewer_domain.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing which the different domains.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-text">Plot showing which the different domains.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id3">
 <img alt="../_images/viewer_connection.png" src="../_images/viewer_connection.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing which domains are interconnected.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-text">Plot showing which domains are interconnected.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
-<section id="solver-solve-the-peec-problem">
-<h3>Solver: Solve the PEEC Problem<a class="headerlink" href="#solver-solve-the-peec-problem" title="Link to this heading"></a></h3>
+<section id="step-5-solver">
+<h2>Step 5: Solver<a class="headerlink" href="#step-5-solver" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the solver</span>
 <span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (input)</span>
 <span class="c1">#   - problem.yaml - contains the magnetic problem description (input)</span>
@@ -417,8 +428,8 @@ pypeec<span class="w"> </span>solver<span class="w"> </span><span class="se">\</
 </pre></div>
 </div>
 </section>
-<section id="plotter-plot-the-solution">
-<h3>Plotter: Plot the Solution<a class="headerlink" href="#plotter-plot-the-solution" title="Link to this heading"></a></h3>
+<section id="step-6-plotter">
+<h2>Step 6: Plotter<a class="headerlink" href="#step-6-plotter" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the plotter</span>
 <span class="c1">#   - solution.json.gz - contains the problem solution (input)</span>
 <span class="c1">#   - plotter.yaml - contains the plot configuration (input)</span>
@@ -429,31 +440,30 @@ pypeec<span class="w"> </span>plotter<span class="w"> </span><span class="se">\<
 <span class="w">    </span>--tag_plot<span class="w"> </span>V_c_norm<span class="w"> </span>J_c_norm<span class="w"> </span>H_p_norm<span class="w"> </span>residuum
 </pre></div>
 </div>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="id4">
 <img alt="../_images/plotter_V_c_norm.png" src="../_images/plotter_V_c_norm.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing the electric potential.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id4">
-<img alt="../_images/plotter_J_c_norm.png" src="../_images/plotter_J_c_norm.png" />
-<figcaption>
-<p><span class="caption-text">Plot showing the current density.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-text">Plot showing the electric potential.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id5">
-<img alt="../_images/plotter_H_p_norm.png" src="../_images/plotter_H_p_norm.png" />
+<img alt="../_images/plotter_J_c_norm.png" src="../_images/plotter_J_c_norm.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing the generated magnetic field.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-text">Plot showing the current density.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id6">
-<img alt="../_images/plotter_residuum.png" src="../_images/plotter_residuum.png" />
+<img alt="../_images/plotter_H_p_norm.png" src="../_images/plotter_H_p_norm.png" />
 <figcaption>
-<p><span class="caption-text">Plot showing the equation system residuum.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-text">Plot showing the generated magnetic field.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-</section>
+<figure class="align-default" id="id7">
+<img alt="../_images/plotter_residuum.png" src="../_images/plotter_residuum.png" />
+<figcaption>
+<p><span class="caption-text">Plot showing the equation system residuum.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 
