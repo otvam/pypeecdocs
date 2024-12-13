@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/install.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=e232f9f6"></script>
+      <script src="../_static/documentation_options.js?v=4f62893a"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.3.1
+            PyPEEC - 5.3.2
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -76,7 +76,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.3.1</a>
+          <a href="../index.html">PyPEEC - 5.3.2</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -168,17 +168,20 @@ pypeec<span class="w"> </span>--version
 </section>
 <section id="using-the-docker-image">
 <h2>Using the Docker Image<a class="headerlink" href="#using-the-docker-image" title="Link to this heading"></a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># A Docker Image is also available through GHCR</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># A Dockerfile is also available for building an image</span>
 <span class="c1">#   - Contains an Ubuntu image with PyPEEC and Jupyter</span>
 <span class="c1">#   - The PyPEEC tutorial and examples are included</span>
 <span class="c1">#   - The image is only intended for test purposes</span>
 
-<span class="c1"># Pull the Docker image</span>
-docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/otvam/pypeec:latest
+<span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:otvam/pypeec.git
+
+<span class="c1"># Build the Docker image</span>
+docker<span class="w"> </span>build<span class="w"> </span>--tag<span class="w"> </span><span class="s2">&quot;pypeec:latest&quot;</span><span class="w"> </span>.
 
 <span class="c1"># Run the Docker image</span>
 docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="s2">&quot;ghcr.io/otvam/pypeec:latest&quot;</span><span class="w"> </span><span class="s2">&quot;start-notebook.py&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;pypeec:latest&quot;</span><span class="w"> </span><span class="s2">&quot;start-notebook.py&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--NotebookApp.password<span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>--NotebookApp.token<span class="o">=</span><span class="s2">&quot;&quot;</span>
 
 <span class="c1"># Access Jupyter inside the Docker image</span>
