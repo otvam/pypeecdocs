@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/format.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=2bad597e"></script>
+      <script src="../_static/documentation_options.js?v=faaf9df4"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.3.3
+            PyPEEC - 5.4.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -75,7 +75,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.3.3</a>
+          <a href="../index.html">PyPEEC - 5.4.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -250,9 +250,12 @@ The output files (voxel and solution) are either in JSON or Pickle formats.</spa
 <span class="w">    </span><span class="c1">#   - cz: coordinates of the voxel structure center for the z direction  (null for centering)</span>
 <span class="w">    </span><span class="c1">#   - simplify: tolerance for simplifying the shapes (null for disabling simplification)</span>
 <span class="w">    </span><span class="c1">#   - construct: grid size for constructing the shapes (null for default grid size)</span>
-<span class="w">    </span><span class="c1">#   - xy_min: array with the lower corner coordinates of the voxel structure (x and y directions)</span>
-<span class="w">    </span><span class="c1">#   - xy_max: array with the upper corner coordinates of the voxel structure (x and y directions)</span>
-<span class="w">    </span><span class="c1">#   - alternatively, the xy_min/xy_max can be set to null and the shape bounds are kept</span>
+<span class="w">    </span><span class="c1">#   - xy_min: array with the lower corner coordinates of the voxel structure</span>
+<span class="w">    </span><span class="c1">#       - vector with the x and y coordinates</span>
+<span class="w">    </span><span class="c1">#       - if null, the shape bounds are used</span>
+<span class="w">    </span><span class="c1">#   - xy_max: array with the upper corner coordinates of the voxel structure</span>
+<span class="w">    </span><span class="c1">#       - vector with the x and y coordinates</span>
+<span class="w">    </span><span class="c1">#       - if null, the shape bounds are used</span>
 <span class="w">    </span><span class="s">&quot;param&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">        </span><span class="s">&quot;dx&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50.0e-6</span>
 <span class="w">        </span><span class="s">&quot;dy&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50.0e-6</span>
@@ -389,13 +392,20 @@ The output files (voxel and solution) are either in JSON or Pickle formats.</spa
 <span class="s">&quot;data_voxelize&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">    </span><span class="c1"># definition of the voxel structure</span>
 <span class="w">    </span><span class="c1">#   - d: array with the voxel dimensions (x, y, and z directions)</span>
-<span class="w">    </span><span class="c1">#   - xyz_min: array with the lower corner coordinates of the voxel structure (x, y, and z directions)</span>
-<span class="w">    </span><span class="c1">#   - xyz_max: array with the upper corner coordinates of the voxel structure (x, y, and z directions)</span>
-<span class="w">    </span><span class="c1">#   - alternatively, the xyz_min/xyz_max can be set to null and the STL mesh bounds are kept</span>
+<span class="w">    </span><span class="c1">#   - xyz_min: array with the lower corner coordinates of the voxel structure</span>
+<span class="w">    </span><span class="c1">#       - vector with the x, y, and z coordinates</span>
+<span class="w">    </span><span class="c1">#       - if null, the STL mesh bounds are used</span>
+<span class="w">    </span><span class="c1">#   - xyz_max: array with the upper corner coordinates of the voxel structure</span>
+<span class="w">    </span><span class="c1">#       - vector with the x, y, and z coordinates</span>
+<span class="w">    </span><span class="c1">#       - if null, the STL mesh bounds are used</span>
+<span class="w">    </span><span class="c1">#   - strict: boolean parameters for checking the STL mesh integrity</span>
+<span class="w">    </span><span class="c1">#       - if true, the STL mesh should represent a closed surface</span>
+<span class="w">    </span><span class="c1">#       - if false, the surface status of the STL mesh is not checked</span>
 <span class="w">    </span><span class="s">&quot;param&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">        </span><span class="s">&quot;d&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">10.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10.0e-3</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="s">&quot;xyz_min&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-20e-3</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="s">&quot;xyz_max&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+20e-3</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="s">&quot;strict&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
 <span class="w">    </span><span class="c1"># definition of the STL files of the different domains</span>
 <span class="w">    </span><span class="c1">#   - dict with the domain name and the STL files</span>
