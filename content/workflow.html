@@ -15,12 +15,12 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/workflow.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9e604db0"></script>
+      <script src="../_static/documentation_options.js?v=e869a1ee"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Technical Details" href="technical.html" />
+    <link rel="next" title="PEEC Method" href="method.html" />
     <link rel="prev" title="Gallery" href="gallery.html" /> 
 </head>
 
@@ -28,12 +28,12 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #137e9c" >
+        <div class="wy-side-nav-search"  style="background: #7a9aa3" >
 
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.4.1
+            PyPEEC - 5.5.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -63,10 +63,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="method.html">PEEC Method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technical.html">Technical Details</a></li>
-<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formats.html">File Formats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="format.html">File Formats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Doc</a></li>
 </ul>
 
@@ -74,9 +74,9 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.4.1</a>
+          <a href="../index.html">PyPEEC - 5.5.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -112,13 +112,14 @@ The output files (voxel and solution) are either in JSON or Pickle formats.</spa
 <li><p><strong>mesher</strong></p>
 <ul>
 <li><p>Create the voxel structure</p></li>
-<li><p>Import the geometry from voxel files</p></li>
-<li><p>Import the geometry from STL files</p></li>
+<li><p>Draw the geometry from voxel indices</p></li>
+<li><p>Create the geometry from 3D STL files</p></li>
 <li><p>Create the geometry with stacked PNG files</p></li>
 <li><p>Draw the geometry with stacked 2D vector shapes</p></li>
 <li><p>Assign different domain names to the voxels</p></li>
 <li><p>Resampling (refine) the voxel structure</p></li>
-<li><p>Construct the graph of the structure and detect connected components</p></li>
+<li><p>Construct the graph of the structure</p></li>
+<li><p>Check the integrity of the voxel structure</p></li>
 </ul>
 </li>
 <li><p><strong>viewer</strong></p>
@@ -134,10 +135,10 @@ The output files (voxel and solution) are either in JSON or Pickle formats.</spa
 <li><p>Computation of the Green and coupling tensors</p></li>
 <li><p>Computation of the resistance, inductance, and potential matrices</p></li>
 <li><p>Computation of the electric-magnetic coupling matrices</p></li>
-<li><p>Creation of the equation system</p></li>
-<li><p>Extraction of a sparse pre-conditioner</p></li>
+<li><p>Creation of the equation system describing the PEEC problem</p></li>
+<li><p>Extraction of a sparse pre-conditioner for the dense system</p></li>
+<li><p>Check the condition number of the equation system</p></li>
 <li><p>Extraction of a matrix-vector linear operator for the full system</p></li>
-<li><p>Check the condition number of the system</p></li>
 <li><p>Solve the equation system with the pre-conditioner and the linear operator</p></li>
 <li><p>Extract the solution (terminal voltages and currents, scalar fields, and vector fields)</p></li>
 </ul>

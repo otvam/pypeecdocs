@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- =================== -->
-  <!-- PyPEEC - sitemap.xm -->
-  <!-- =================== -->
+  <!-- ==================== -->
+  <!-- PyPEEC - sitemap.xml -->
+  <!-- ==================== -->
 
   <!-- index -->
   <url>
     <loc>https://pypeec.otvam.ch/</loc>
     <priority>1.00</priority>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2025-01-03</lastmod>
   </url>
 
   <!-- main pages -->
   <url>
     <loc>https://pypeec.otvam.ch/content/about.html</loc>
     <priority>0.80</priority>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2025-01-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/install.html</loc>
     <priority>0.80</priority>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2025-01-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/tutorial.html</loc>
     <priority>0.80</priority>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2025-01-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/examples.html</loc>
     <priority>0.80</priority>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2025-01-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/gallery.html</loc>
     <priority>0.80</priority>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2025-01-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/workflow.html</loc>
     <priority>0.80</priority>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2025-01-03</lastmod>
   </url>
 
   <!-- secondary pages -->
   <url>
-    <loc>https://pypeec.otvam.ch/content/technical.html</loc>
-    <priority>0.50</priority>
-    <lastmod>2024-12-20</lastmod>
+    <loc>https://pypeec.otvam.ch/content/method.html</loc>
+    <priority>0.40</priority>
+    <lastmod>2025-01-03</lastmod>
   </url>
   <url>
-    <loc>https://pypeec.otvam.ch/content/implementation.html</loc>
-    <priority>0.50</priority>
-    <lastmod>2024-12-20</lastmod>
+    <loc>https://pypeec.otvam.ch/content/technical.html</loc>
+    <priority>0.40</priority>
+    <lastmod>2025-01-03</lastmod>
+  </url>
+  <url>
+    <loc>https://pypeec.otvam.ch/content/formats.html</loc>
+    <priority>0.40</priority>
+    <lastmod>2025-01-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/warnings.html</loc>
-    <priority>0.50</priority>
-    <lastmod>2024-12-20</lastmod>
-  </url>
-  <url>
-    <loc>https://pypeec.otvam.ch/content/format.html</loc>
-    <priority>0.50</priority>
-    <lastmod>2024-12-20</lastmod>
+    <priority>0.40</priority>
+    <lastmod>2025-01-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/api.html</loc>
-    <priority>0.50</priority>
-    <lastmod>2024-12-20</lastmod>
+    <priority>0.40</priority>
+    <lastmod>2025-01-03</lastmod>
   </url>
 
 </urlset>

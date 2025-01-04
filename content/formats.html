@@ -12,28 +12,28 @@
 
   
     <link rel="shortcut icon" href="../_static/icon.png"/>
-    <link rel="canonical" href="https://pypeec.otvam.ch/content/format.html" />
+    <link rel="canonical" href="https://pypeec.otvam.ch/content/formats.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9e604db0"></script>
+      <script src="../_static/documentation_options.js?v=e869a1ee"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API Doc" href="api.html" />
-    <link rel="prev" title="Known Issues" href="warnings.html" /> 
+    <link rel="next" title="Known Issues" href="warnings.html" />
+    <link rel="prev" title="Technical Details" href="technical.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #137e9c" >
+        <div class="wy-side-nav-search"  style="background: #7a9aa3" >
 
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.4.1
+            PyPEEC - 5.5.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -56,9 +56,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="method.html">PEEC Method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technical.html">Technical Details</a></li>
-<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">File Formats</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#pypeec-workflow">PyPEEC Workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#geometry-file-format">Geometry File Format</a></li>
@@ -66,6 +65,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#other-file-formats">Other File Formats</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Doc</a></li>
 </ul>
 
@@ -73,9 +73,9 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.4.1</a>
+          <a href="../index.html">PyPEEC - 5.5.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -112,7 +112,7 @@ The output files (voxel and solution) are either in JSON or Pickle formats.</spa
 <li><p>This file contains the definition of the voxel structure.</p></li>
 </ul>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># mesher type</span>
-<span class="c1">#   - &quot;voxel&quot; for index arrays</span>
+<span class="c1">#   - &quot;voxel&quot; for voxel index arrays</span>
 <span class="c1">#   - &quot;shape&quot; for 2D vector shapes</span>
 <span class="c1">#   - &quot;png&quot; for PNG files</span>
 <span class="c1">#   - &quot;stl&quot; for STL files</span>
@@ -123,13 +123,13 @@ The output files (voxel and solution) are either in JSON or Pickle formats.</spa
 <span class="c1">#   - format definition is located in separate files</span>
 <span class="s">&quot;data_voxelize&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 
-<span class="c1"># parameters for checking the validity of the point cloud</span>
+<span class="c1"># parameters defining the point cloud</span>
 <span class="s">&quot;data_point&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">    </span><span class="c1"># check (or not) the validity of the point cloud</span>
 <span class="w">    </span><span class="s">&quot;check_cloud&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
-<span class="w">    </span><span class="c1"># enforce (or not) the validity of all the provided points</span>
-<span class="w">    </span><span class="s">&quot;full_cloud&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="c1"># remove (or not) the invalid points from the cloud</span>
+<span class="w">    </span><span class="s">&quot;filter_cloud&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
 <span class="w">    </span><span class="c1"># 2D array containing the points used for magnetic field evaluation</span>
 <span class="w">    </span><span class="c1">#   - the number of points (n_pts) can be zero.</span>
@@ -398,14 +398,26 @@ The output files (voxel and solution) are either in JSON or Pickle formats.</spa
 <span class="w">    </span><span class="c1">#   - xyz_max: array with the upper corner coordinates of the voxel structure</span>
 <span class="w">    </span><span class="c1">#       - vector with the x, y, and z coordinates</span>
 <span class="w">    </span><span class="c1">#       - if null, the STL mesh bounds are used</span>
-<span class="w">    </span><span class="c1">#   - strict: boolean parameters for checking the STL mesh integrity</span>
+<span class="w">    </span><span class="c1">#   - check: boolean parameters for checking the STL mesh integrity</span>
 <span class="w">    </span><span class="c1">#       - if true, the STL mesh should represent a closed surface</span>
 <span class="w">    </span><span class="c1">#       - if false, the surface status of the STL mesh is not checked</span>
+<span class="w">    </span><span class="c1">#   - tol: distance between the voxel boundaries and the voxelization test points</span>
+<span class="w">    </span><span class="c1">#       - if non-zero, a clearance is respected between the test points and the voxel boundary</span>
+<span class="w">    </span><span class="c1">#       - if equal to zero, test points can be located on the voxel boundary</span>
+<span class="w">    </span><span class="c1">#   - thr: threshold for the voxelization (in order to keep/exclude voxels)</span>
+<span class="w">    </span><span class="c1">#       - the fraction of test points located inside the shape is computed for each voxel</span>
+<span class="w">    </span><span class="c1">#       - if the fraction is greater than the threshold, the voxel is added to the structure</span>
+<span class="w">    </span><span class="c1">#   - pts: number of test points used for the voxelization (for each voxel)</span>
+<span class="w">    </span><span class="c1">#       - if greater than one, several points are used (pts^3 points are created)</span>
+<span class="w">    </span><span class="c1">#       - if one, a single test point is used (in the center the voxel)</span>
 <span class="w">    </span><span class="s">&quot;param&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">        </span><span class="s">&quot;d&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">10.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10.0e-3</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="s">&quot;xyz_min&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-20e-3</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="s">&quot;xyz_max&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+20e-3</span><span class="p p-Indicator">]</span>
-<span class="w">        </span><span class="s">&quot;strict&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="s">&quot;check&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="s">&quot;tol&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0e-3</span>
+<span class="w">        </span><span class="s">&quot;thr&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="w">        </span><span class="s">&quot;pts&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 
 <span class="w">    </span><span class="c1"># definition of the STL files of the different domains</span>
 <span class="w">    </span><span class="c1">#   - dict with the domain name and the STL files</span>

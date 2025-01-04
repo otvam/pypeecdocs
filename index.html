@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/index.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=9e604db0"></script>
+      <script src="_static/documentation_options.js?v=e869a1ee"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -27,12 +27,12 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #137e9c" >
+        <div class="wy-side-nav-search"  style="background: #7a9aa3" >
 
           
           
           <a href="#" class="icon icon-home">
-            PyPEEC - 5.4.1
+            PyPEEC - 5.5.0
               <img src="_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -55,10 +55,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="content/method.html">PEEC Method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/technical.html">Technical Details</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/formats.html">File Formats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/warnings.html">Known Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/format.html">File Formats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/api.html">API Doc</a></li>
 </ul>
 
@@ -66,9 +66,9 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">PyPEEC - 5.4.1</a>
+          <a href="#">PyPEEC - 5.5.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -124,16 +124,16 @@ The code is written in <strong>Python</strong> and is fully <strong>open source<
 <p><strong>PyPEEC</strong> features the following <strong>characteristics</strong>:</p>
 <ul class="simple">
 <li><p><strong>PEEC method</strong> with <strong>FFT acceleration</strong></p></li>
-<li><p>Representation of the <strong>geometry</strong> with <strong>3D voxels</strong></p></li>
-<li><p><strong>Multithreading</strong> and <strong>GPU acceleration</strong> are available</p></li>
 <li><p><strong>Fast</strong> with <strong>moderate memory</strong> requirements</p></li>
+<li><p>Representation of the <strong>geometry</strong> with <strong>3D voxels</strong></p></li>
+<li><p><strong>Parallel processing</strong> and <strong>GPU acceleration</strong> are available</p></li>
 <li><p>Import the <strong>geometry</strong> from <strong>STL</strong>, <strong>PNG</strong>, and <strong>GERBER</strong> files</p></li>
 <li><p>Draw the <strong>geometry</strong> with stacked 2D <strong>vector shapes</strong> or <strong>voxel indices</strong></p></li>
 <li><p><strong>Pure Python</strong> and <strong>open source</strong> implementation</p></li>
-<li><p>Advanced <strong>plotting</strong> capabilities</p></li>
-<li><p>Can be used from the <strong>command line</strong></p></li>
-<li><p>Can be used with <strong>Jupyter notebooks</strong></p></li>
-<li><p>Compatible with <strong>ParaView visualizations</strong></p></li>
+<li><p>Can be used from the <strong>command line</strong> pr with an <strong>API</strong></p></li>
+<li><p>Advanced <strong>plotting and visualization</strong> capabilities</p></li>
+<li><p>Compatible with <strong>Jupyter notebooks</strong></p></li>
+<li><p>Compatible with <strong>ParaView</strong></p></li>
 </ul>
 <p><strong>PyPEEC</strong> solves the following <strong>3D quasi-magnetostatic problems</strong>:</p>
 <ul class="simple">
@@ -141,7 +141,6 @@ The code is written in <strong>Python</strong> and is fully <strong>open source<
 <li><p>Conductive and magnetic domains (ideal or lossy)</p></li>
 <li><p>Isotropic, anisotropic, lumped, and distributed materials</p></li>
 <li><p>Connection of current and voltage sources</p></li>
-<li><p>Extraction of the loss and energy densities</p></li>
 <li><p>Extraction of the current density, flux density, and potential</p></li>
 <li><p>Extraction of the terminal voltage, current, and power</p></li>
 <li><p>Computation of the free-space magnetic near-field</p></li>
@@ -150,7 +149,10 @@ The code is written in <strong>Python</strong> and is fully <strong>open source<
 <ul class="simple">
 <li><p>No capacitive effects</p></li>
 <li><p>No dielectric domains</p></li>
+<li><p>No force computations</p></li>
 <li><p>No advanced boundaries conditions</p></li>
+<li><p>No domain decomposition techniques</p></li>
+<li><p>No hierarchical matrix techniques</p></li>
 <li><p>No model order reduction techniques</p></li>
 <li><p>Limited to voxel geometries</p></li>
 </ul>

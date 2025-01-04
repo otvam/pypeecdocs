@@ -15,25 +15,25 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/technical.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9e604db0"></script>
+      <script src="../_static/documentation_options.js?v=e869a1ee"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Implementation" href="implementation.html" />
-    <link rel="prev" title="Workflow" href="workflow.html" /> 
+    <link rel="next" title="File Formats" href="formats.html" />
+    <link rel="prev" title="PEEC Method" href="method.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #137e9c" >
+        <div class="wy-side-nav-search"  style="background: #7a9aa3" >
 
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.4.1
+            PyPEEC - 5.5.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -56,18 +56,17 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Doc</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="method.html">PEEC Method</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Details</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies-and-platforms">Dependencies and Platforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#logger-and-data-serialization">Logger and Data Serialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#packaging-and-environment">Packaging and Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tests-and-coverage">Tests and Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#contributing-and-bug-report">Contributing and Bug Report</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formats.html">File Formats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="warnings.html">Known Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="format.html">File Formats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Doc</a></li>
 </ul>
 
@@ -75,9 +74,9 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #137e9c" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.4.1</a>
+          <a href="../index.html">PyPEEC - 5.5.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -96,8 +95,8 @@
              
   <section id="technical-details">
 <h1>Technical Details<a class="headerlink" href="#technical-details" title="Link to this heading"></a></h1>
-<section id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
+<section id="dependencies-and-platforms">
+<h2>Dependencies and Platforms<a class="headerlink" href="#dependencies-and-platforms" title="Link to this heading"></a></h2>
 <p><strong>PyPEEC</strong> is entirely programmed in <strong>Python 3</strong> and has the following <strong>dependencies</strong>:</p>
 <ul class="simple">
 <li><p>SciLogger, SciSave, and jsonschema (logging and serialization)</p></li>
@@ -125,9 +124,6 @@
 <li><p>IPyWidgets</p></li>
 <li><p>Trame / ipympl</p></li>
 </ul>
-</section>
-<section id="supported-platforms">
-<h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Link to this heading"></a></h2>
 <p>PyPEEC is known to <strong>work</strong> with the following <strong>platforms</strong>:</p>
 <ul class="simple">
 <li><p>Linux on x86/x64/glibc</p></li>
@@ -139,8 +135,8 @@
 <ul class="simple">
 <li><p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong> on x86/x64/glibc.</p></li>
 <li><p>PyPEEC is a <strong>pure-python package</strong> and should work on any platform.</p></li>
-<li><p>Any <strong>CUDA and CuPy</strong> compatible <strong>GPU</strong> is supported.</p></li>
 <li><p>Compatible <strong>Python versions</strong>: 3.10, 3.11, 3.12, and 3.13</p></li>
+<li><p>Any <strong>CUDA and CuPy</strong> compatible <strong>GPU</strong> is supported.</p></li>
 </ul>
 </section>
 <section id="logger-and-data-serialization">
