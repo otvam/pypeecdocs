@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/tutorial.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=8ca671aa"></script>
+      <script src="../_static/documentation_options.js?v=21f60166"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.5.1
+            PyPEEC - 5.5.2
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -77,7 +77,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.5.1</a>
+          <a href="../index.html">PyPEEC - 5.5.2</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -127,12 +127,28 @@ All the command are executed inside the virtual environment from the <code class
 </section>
 <section id="step-3-mesher">
 <h2>Step 3: Mesher<a class="headerlink" href="#step-3-mesher" title="Link to this heading"></a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the mesher</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the mesher from the command line</span>
 <span class="c1">#   - geometry.yaml - contains the geometry description (input)</span>
 <span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (output)</span>
+
 pypeec<span class="w"> </span>mesher<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--geometry<span class="w"> </span>tutorial/geometry.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.json.gz
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the mesher from the Python interpreter</span>
+<span class="c1">#   - geometry.yaml - contains the geometry description (input)</span>
+<span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (output)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pypeec</span>
+
+<span class="n">file_geometry</span> <span class="o">=</span> <span class="s2">&quot;tutorial/geometry.yaml&quot;</span>
+<span class="n">file_voxel</span> <span class="o">=</span> <span class="s2">&quot;tutorial/voxel.json.gz&quot;</span>
+
+<span class="n">pypeec</span><span class="o">.</span><span class="n">run_mesher_file</span><span class="p">(</span>
+    <span class="n">file_geometry</span><span class="o">=</span><span class="n">file_geometry</span><span class="p">,</span>
+    <span class="n">file_voxel</span><span class="o">=</span><span class="n">file_voxel</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>00:00:00.00 : MAIN     : INFO     : load the input data
@@ -193,14 +209,32 @@ pypeec<span class="w"> </span>mesher<span class="w"> </span><span class="se">\</
 </section>
 <section id="step-4-viewer">
 <h2>Step 4: Viewer<a class="headerlink" href="#step-4-viewer" title="Link to this heading"></a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the viewer</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the viewer from the command line</span>
 <span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (input)</span>
 <span class="c1">#   - viewer.yaml - contains the plot configuration (input)</span>
 <span class="c1">#   - tag_plot - list of plots to be shown (defined in viewer.yaml)</span>
+
 pypeec<span class="w"> </span>viewer<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.json.gz<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--viewer<span class="w"> </span>config/viewer.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tag_plot<span class="w"> </span>domain<span class="w"> </span>graph
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the viewer from the Python interpreter</span>
+<span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (input)</span>
+<span class="c1">#   - viewer.yaml - contains the plot configuration (input)</span>
+<span class="c1">#   - tag_plot - list of plots to be shown (defined in viewer.yaml)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pypeec</span>
+
+<span class="n">file_voxel</span> <span class="o">=</span> <span class="s2">&quot;tutorial/voxel.json.gz&quot;</span>
+<span class="n">file_viewer</span> <span class="o">=</span> <span class="s2">&quot;config/viewer.yaml&quot;</span>
+
+<span class="n">pypeec</span><span class="o">.</span><span class="n">run_viewer_file</span><span class="p">(</span>
+    <span class="n">file_voxel</span><span class="o">=</span><span class="n">file_voxel</span><span class="p">,</span>
+    <span class="n">file_viewer</span><span class="o">=</span><span class="n">file_viewer</span><span class="p">,</span>
+    <span class="n">tag_plot</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;domain&quot;</span><span class="p">,</span> <span class="s2">&quot;graph&quot;</span><span class="p">],</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <figure class="align-default" id="id2">
@@ -218,16 +252,38 @@ pypeec<span class="w"> </span>viewer<span class="w"> </span><span class="se">\</
 </section>
 <section id="step-5-solver">
 <h2>Step 5: Solver<a class="headerlink" href="#step-5-solver" title="Link to this heading"></a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the solver</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the solver from the command line</span>
 <span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (input)</span>
 <span class="c1">#   - problem.yaml - contains the magnetic problem description (input)</span>
 <span class="c1">#   - tolerance.yaml - contains the solver numerical tolerances (input)</span>
 <span class="c1">#   - solution.json.gz - contains the problem solution (output)</span>
+
 pypeec<span class="w"> </span>solver<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--voxel<span class="w"> </span>tutorial/voxel.json.gz<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--problem<span class="w"> </span>tutorial/problem.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tolerance<span class="w"> </span>config/tolerance.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--solution<span class="w"> </span>tutorial/solution.json.gz
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the solver from the Python interpreter</span>
+<span class="c1">#   - voxel.json.gz - contains the meshed voxel structure (input)</span>
+<span class="c1">#   - problem.yaml - contains the magnetic problem description (input)</span>
+<span class="c1">#   - tolerance.yaml - contains the solver numerical tolerances (input)</span>
+<span class="c1">#   - solution.json.gz - contains the problem solution (output)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pypeec</span>
+
+<span class="n">file_voxel</span> <span class="o">=</span> <span class="s2">&quot;tutorial/voxel.json.gz&quot;</span>
+<span class="n">file_solution</span> <span class="o">=</span> <span class="s2">&quot;tutorial/solution.json.gz&quot;</span>
+<span class="n">file_problem</span> <span class="o">=</span> <span class="s2">&quot;tutorial/problem.yaml&quot;</span>
+<span class="n">file_tolerance</span> <span class="o">=</span> <span class="s2">&quot;config/tolerance.yaml&quot;</span>
+
+<span class="n">pypeec</span><span class="o">.</span><span class="n">run_solver_file</span><span class="p">(</span>
+    <span class="n">file_voxel</span><span class="o">=</span><span class="n">file_voxel</span><span class="p">,</span>
+    <span class="n">file_problem</span><span class="o">=</span><span class="n">file_problem</span><span class="p">,</span>
+    <span class="n">file_tolerance</span><span class="o">=</span><span class="n">file_tolerance</span><span class="p">,</span>
+    <span class="n">file_solution</span><span class="o">=</span><span class="n">file_solution</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>00:00:00.00 : MAIN     : INFO     : load the input data
@@ -430,14 +486,32 @@ pypeec<span class="w"> </span>solver<span class="w"> </span><span class="se">\</
 </section>
 <section id="step-6-plotter">
 <h2>Step 6: Plotter<a class="headerlink" href="#step-6-plotter" title="Link to this heading"></a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the plotter</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the plotter from the command line</span>
 <span class="c1">#   - solution.json.gz - contains the problem solution (input)</span>
 <span class="c1">#   - plotter.yaml - contains the plot configuration (input)</span>
 <span class="c1">#   - tag_plot - list of plots to be shown (defined in plotter.yaml)</span>
+
 pypeec<span class="w"> </span>plotter<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--solution<span class="w"> </span>tutorial/solution.json.gz<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--plotter<span class="w"> </span>config/plotter.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tag_plot<span class="w"> </span>V_c_norm<span class="w"> </span>J_c_norm<span class="w"> </span>H_p_norm<span class="w"> </span>residuum
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the plotter from the Python interpreter</span>
+<span class="c1">#   - solution.json.gz - contains the problem solution (input)</span>
+<span class="c1">#   - plotter.yaml - contains the plot configuration (input)</span>
+<span class="c1">#   - tag_plot - list of plots to be shown (defined in plotter.yaml)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pypeec</span>
+
+<span class="n">file_solution</span> <span class="o">=</span> <span class="s2">&quot;tutorial/solution.json.gz&quot;</span>
+<span class="n">file_plotter</span> <span class="o">=</span> <span class="s2">&quot;config/plotter.yaml&quot;</span>
+
+<span class="n">pypeec</span><span class="o">.</span><span class="n">run_plotter_file</span><span class="p">(</span>
+    <span class="n">file_solution</span><span class="o">=</span><span class="n">file_solution</span><span class="p">,</span>
+    <span class="n">file_plotter</span><span class="o">=</span><span class="n">file_plotter</span><span class="p">,</span>
+    <span class="n">tag_plot</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;V_c_norm&quot;</span><span class="p">,</span> <span class="s2">&quot;J_c_norm&quot;</span><span class="p">,</span> <span class="s2">&quot;H_p_norm&quot;</span><span class="p">,</span> <span class="s2">&quot;residuum&quot;</span><span class="p">],</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <figure class="align-default" id="id4">

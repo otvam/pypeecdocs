@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/formats.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=8ca671aa"></script>
+      <script src="../_static/documentation_options.js?v=21f60166"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.5.1
+            PyPEEC - 5.5.2
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -75,7 +75,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.5.1</a>
+          <a href="../index.html">PyPEEC - 5.5.2</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -401,21 +401,18 @@ The output files (voxel and solution) are either in JSON or Pickle formats.</spa
 <span class="w">    </span><span class="c1">#   - check: boolean parameters for checking the STL mesh integrity</span>
 <span class="w">    </span><span class="c1">#       - if true, the STL mesh should represent a closed surface</span>
 <span class="w">    </span><span class="c1">#       - if false, the surface status of the STL mesh is not checked</span>
-<span class="w">    </span><span class="c1">#   - tol: distance between the voxel boundaries and the voxelization test points</span>
-<span class="w">    </span><span class="c1">#       - if non-zero, a clearance is respected between the test points and the voxel boundary</span>
-<span class="w">    </span><span class="c1">#       - if equal to zero, test points can be located on the voxel boundary</span>
 <span class="w">    </span><span class="c1">#   - thr: threshold for the voxelization (in order to keep/exclude voxels)</span>
-<span class="w">    </span><span class="c1">#       - the fraction of test points located inside the shape is computed for each voxel</span>
+<span class="w">    </span><span class="c1">#       - the volume fraction located inside the STL mesh is computed for each voxel</span>
 <span class="w">    </span><span class="c1">#       - if the fraction is greater than the threshold, the voxel is added to the structure</span>
 <span class="w">    </span><span class="c1">#   - pts: number of test points used for the voxelization (for each voxel)</span>
 <span class="w">    </span><span class="c1">#       - if greater than one, several points are used (pts^3 points are created)</span>
-<span class="w">    </span><span class="c1">#       - if one, a single test point is used (in the center the voxel)</span>
+<span class="w">    </span><span class="c1">#       - if equal to one, a single test point is used (in the center the voxel)</span>
+<span class="w">    </span><span class="c1">#       - the Gauss-Legendre quadrature is used to span the points</span>
 <span class="w">    </span><span class="s">&quot;param&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">        </span><span class="s">&quot;d&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">10.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10.0e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10.0e-3</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="s">&quot;xyz_min&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-20e-3</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="s">&quot;xyz_max&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+20e-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+20e-3</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="s">&quot;check&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">        </span><span class="s">&quot;tol&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0e-3</span>
 <span class="w">        </span><span class="s">&quot;thr&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
 <span class="w">        </span><span class="s">&quot;pts&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 
