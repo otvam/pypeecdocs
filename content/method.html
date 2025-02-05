@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/method.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=21f60166"></script>
+      <script src="../_static/documentation_options.js?v=4539d122"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.5.2
+            PyPEEC - 5.5.3
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -76,7 +76,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.5.2</a>
+          <a href="../index.html">PyPEEC - 5.5.3</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -162,7 +162,7 @@ It can be seen that the current distribution is concentrated towards the edges o
 <h2>FFT-Accelerated PEEC Method<a class="headerlink" href="#fft-accelerated-peec-method" title="Link to this heading"></a></h2>
 <p>Several methods can be used to mitigate the dense matrix problem (domain decomposition, hierarchical matrix, multipole method, etc.).
 PyPEEC is using the FFT-accelerated method proposed in 2022 (<a class="reference external" href="https://doi.org/10.1109/TPEL.2021.3092431">paper</a>).
-This method relies on the translational invariance of the mutual inductance coefficients.
+This variant of the PEEC method relies on the translational invariance of the mutual inductance coefficients.
 In other word, the mutual inductance between two cells is only dependent on their relative positions to each other.
 Therefore, if a regular voxel structure is used for the discretization, many coefficients are identical (<a class="reference internal" href="#fig-5"><span class="std std-ref">Fig. 5</span></a>).</p>
 <figure class="align-default" id="id5">
@@ -183,8 +183,14 @@ Hence, the computational cost and memory requirement for generating and storing 
 </figcaption>
 </figure>
 <p>With all the repeated coefficients, the inductance matrix is a a block-Toeplitz Toeplitz-block matrix.
-For such matrices, the matrix-vector multiplications can be done with Fast Fourier Transforms.
-Hence, the computational complexity of multiplications is reduced from O(n^2) to O(n*log(n)).</p>
+For such matrices, the matrix-vector multiplications can be done with Fast Fourier Transforms (<a class="reference internal" href="#fig-7"><span class="std std-ref">Fig. 7</span></a>).
+Hence, the Fast Fourier Transforms are reducing the computational complexity of multiplications from O(n^2) to O(n*log(n)).</p>
+<figure class="align-default" id="id7">
+<span id="fig-7"></span><img alt="../_images/peec_7.png" src="../_images/peec_7.png" />
+<figcaption>
+<p><span class="caption-text">Fig. 7 - Toeplitz matrix-vector multiplication with FFT.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>In summary, with a voxel structure, the PEEC method features the following advantages:</p>
 <ul class="simple">
 <li><p>Reduction of the number of independent inductance coefficients from O(n^2) to O(n).</p></li>
