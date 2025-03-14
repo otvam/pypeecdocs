@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/technical.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=a027e6bf"></script>
+      <script src="../_static/documentation_options.js?v=df23e5c0"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.5.4
+            PyPEEC - 5.6.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -76,7 +76,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.5.4</a>
+          <a href="../index.html">PyPEEC - 5.6.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -99,7 +99,7 @@
 <h2>Dependencies and Platforms<a class="headerlink" href="#dependencies-and-platforms" title="Link to this heading"></a></h2>
 <p><strong>PyPEEC</strong> is entirely programmed in <strong>Python 3</strong> and has the following <strong>dependencies</strong>:</p>
 <ul class="simple">
-<li><p>SciLogger, SciSave, and jsonschema (logging and serialization)</p></li>
+<li><p>SciLogger and SciSave (logging and serialization)</p></li>
 <li><p>NumPy, SciPy, and Joblib (basic numerical computing libraries)</p></li>
 <li><p>Shapely and Rasterio (only used for the mesher, 2D shape manipulation)</p></li>
 <li><p>Pillow (only used for the mesher, 2D image manipulation)</p></li>
@@ -127,6 +127,7 @@
 <p>PyPEEC is known to <strong>work</strong> with the following <strong>platforms</strong>:</p>
 <ul class="simple">
 <li><p>Linux on x86/x64/X11/glibc</p></li>
+<li><p>Linux on ARM64/X11/glibc</p></li>
 <li><p>Apple macOS on x86/x64</p></li>
 <li><p>Apple macOS on ARM64</p></li>
 <li><p>MS Windows on x86/x64</p></li>
@@ -149,8 +150,8 @@
 <p>For the serialization, PyPEEC is using <strong>SciSave</strong>:</p>
 <ul class="simple">
 <li><p>The input/configuration files are either JSON or YAML files.</p></li>
-<li><p>The output/data files are either JSON or Pickle files.</p></li>
-<li><p>Pickle is faster than JSON for large output/data files.</p></li>
+<li><p>The output/data files are either JSON or MessagePack or Pickle files.</p></li>
+<li><p>Pickle/MessagePack files are faster than JSON for large output/data files.</p></li>
 <li><p>More information on the serialization module: <a class="reference external" href="https://github.com/otvam/scisave">https://github.com/otvam/scisave</a></p></li>
 </ul>
 </section>
