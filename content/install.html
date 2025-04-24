@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/install.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bbec3584"></script>
+      <script src="../_static/documentation_options.js?v=cde5d9da"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.6.1
+            PyPEEC - 5.7.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -75,7 +75,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.6.1</a>
+          <a href="../index.html">PyPEEC - 5.7.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -97,20 +97,20 @@
 <section id="available-packages">
 <h2>Available Packages<a class="headerlink" href="#available-packages" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><strong>Python Package</strong> - available through PyPI</p></li>
-<li><p><strong>Conda Package</strong> - available through conda-forge</p></li>
-<li><p><strong>Dockerfile</strong> - Ubuntu image with PyPEEC and Jupyter</p></li>
+<li><p><strong>Python Package</strong> - Available through PyPI.</p></li>
+<li><p><strong>Conda Package</strong> - Available through conda-forge.</p></li>
+<li><p><strong>Dockerfile</strong> - Ubuntu image with PyPEEC and Jupyter.</p></li>
 </ul>
 <p>The following <strong>optional libraries are not included</strong> in the PyPI/Conda package:</p>
 <ul class="simple">
-<li><p><strong>HPC libraries</strong> - FFTW, PyAMG, MKL/FFT, and MKL/PARDISO</p></li>
-<li><p><strong>Notebook support</strong> - JupyterLab, IPyWidgets, Trame, and ipympl</p></li>
-<li><p><strong>GPU libraries</strong> - CuPy and CUDA</p></li>
+<li><p><strong>HPC libraries</strong> - FFTW, PyAMG, MKL/FFT, and MKL/PARDISO.</p></li>
+<li><p><strong>Notebook support</strong> - JupyterLab, IPyWidgets, and Trame.</p></li>
+<li><p><strong>GPU libraries</strong> - CuPy and CUDA.</p></li>
 </ul>
 <p>Some <strong>important remarks</strong> about the <strong>PyPI/Conda packages</strong>:</p>
 <ul class="simple">
-<li><p>PyPEEC packages are architecture and system independent.</p></li>
-<li><p>Some dependencies are architecture and system dependent.</p></li>
+<li><p>PyPEEC packages are architecture and system-independent.</p></li>
+<li><p>Some dependencies are architecture and system-dependent.</p></li>
 <li><p>The optional HPC/GPU libraries are usually easier to install through Conda.</p></li>
 <li><p>The Jupyter libraries are usually easier to install through Conda.</p></li>
 </ul>
@@ -122,10 +122,10 @@
 <span class="c1">#   - Supported versions: 3.10, 3.11, 3.12, and 3.13</span>
 <span class="c1">#   - Python executable: &quot;python&quot; or &quot;python3&quot;</span>
 
-<span class="c1"># Create a Python Virtual Environment</span>
+<span class="c1"># Create a Python virtual environment</span>
 python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
 
-<span class="c1"># Activate the Python Virtual Environment</span>
+<span class="c1"># Activate the Python environment</span>
 <span class="nb">source</span><span class="w"> </span>venv/bin/activate
 
 <span class="c1"># Install PyPEEC from PyPI</span>
@@ -143,10 +143,10 @@ pypeec<span class="w"> </span>--version
 <span class="c1">#   - Miniforge is sufficient for installing PyPEEC</span>
 <span class="c1">#   - Using mamba as a dependency solver is faster</span>
 
-<span class="c1"># Create a Conda Environment with a Python interpreter</span>
+<span class="c1"># Create a Conda environment with a Python interpreter</span>
 mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pypeec<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>pypeec
 
-<span class="c1"># Activate the Conda Environment</span>
+<span class="c1"># Activate the Conda environment</span>
 mamba<span class="w"> </span>activate<span class="w"> </span>pypeec
 
 <span class="c1"># Check that PyPEEC is available</span>

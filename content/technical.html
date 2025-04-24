@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/technical.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bbec3584"></script>
+      <script src="../_static/documentation_options.js?v=cde5d9da"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.6.1
+            PyPEEC - 5.7.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -76,7 +76,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.6.1</a>
+          <a href="../index.html">PyPEEC - 5.7.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -103,14 +103,14 @@
 <li><p>NumPy, SciPy, and Joblib (basic numerical computing libraries)</p></li>
 <li><p>Shapely and Rasterio (only used for the mesher, 2D shape manipulation)</p></li>
 <li><p>Pillow (only used for the mesher, 2D image manipulation)</p></li>
-<li><p>VTK and PyVista (only used for for the mesher, 3D shape manipulation)</p></li>
+<li><p>VTK and PyVista (only used for the mesher, 3D shape manipulation)</p></li>
 </ul>
 <p>Additionally, the following <strong>libraries</strong> are used for the <strong>plotter</strong> and <strong>viewer</strong>:</p>
 <ul class="simple">
 <li><p>Matplotlib and QtPy (2D plots)</p></li>
 <li><p>VTK, PyVista, PyVistaQt, and QtPy (3D plots)</p></li>
 </ul>
-<p>The following <strong>optional packages</strong> can be used for <strong>speeding up</strong> the solver:</p>
+<p>The following <strong>optional packages</strong> can be used to <strong>speed up</strong> the solver:</p>
 <ul class="simple">
 <li><p>PyAMG (Python Algebraic Multigrid)</p></li>
 <li><p>MKL/FFT (available through mkl_fft)</p></li>
@@ -120,9 +120,9 @@
 </ul>
 <p>The following <strong>optional packages</strong> are required for <strong>Jupyter notebooks</strong>:</p>
 <ul class="simple">
-<li><p>JupyterLab</p></li>
-<li><p>IPyWidgets</p></li>
-<li><p>Trame / ipympl</p></li>
+<li><p>JupyterLab / Server Proxy</p></li>
+<li><p>IPyWidgets / ipympl</p></li>
+<li><p>Trame / Vuetify / VTK</p></li>
 </ul>
 <p>PyPEEC is known to <strong>work</strong> with the following <strong>platforms</strong>:</p>
 <ul class="simple">
@@ -135,8 +135,8 @@
 <p>Some more <strong>details</strong> on the supported <strong>platforms</strong>:</p>
 <ul class="simple">
 <li><p>The main <strong>target platform</strong> of PyPEEC is <strong>Linux</strong> on x86/x64/X11/glibc.</p></li>
-<li><p>PyPEEC is a <strong>pure-python package</strong> and should work on any platform.</p></li>
-<li><p>Compatible <strong>Python versions</strong>: 3.10, 3.11, 3.12, and 3.13</p></li>
+<li><p>PyPEEC is a <strong>pure python package</strong> and should work on any platform.</p></li>
+<li><p>The following <strong>Python versions</strong> are compatible: 3.10, 3.11, 3.12, and 3.13.</p></li>
 <li><p>Any <strong>CUDA and CuPy</strong> compatible <strong>GPU</strong> is supported.</p></li>
 </ul>
 </section>
@@ -145,36 +145,36 @@
 <p>For the logging, PyPEEC is using <strong>SciLogger</strong>:</p>
 <ul class="simple">
 <li><p>The logger configuration files can be set with the  <code class="docutils literal notranslate"><span class="pre">SCILOGGER</span></code> environment variable.</p></li>
-<li><p>More information on the logging module: <a class="reference external" href="https://github.com/otvam/scilogger">https://github.com/otvam/scilogger</a></p></li>
+<li><p>More information on the logging module: <a class="reference external" href="https://github.com/otvam/scilogger">scilogger</a>.</p></li>
 </ul>
 <p>For the serialization, PyPEEC is using <strong>SciSave</strong>:</p>
 <ul class="simple">
 <li><p>The input/configuration files are either JSON or YAML files.</p></li>
-<li><p>The output/data files are either JSON or MessagePack or Pickle files.</p></li>
+<li><p>The output/data files are either JSON, MessagePack or Pickle files.</p></li>
 <li><p>Pickle/MessagePack files are faster than JSON for large output/data files.</p></li>
-<li><p>More information on the serialization module: <a class="reference external" href="https://github.com/otvam/scisave">https://github.com/otvam/scisave</a></p></li>
+<li><p>More information on the serialization module: <a class="reference external" href="https://github.com/otvam/scisave">scisave</a>.</p></li>
 </ul>
 </section>
 <section id="packaging-and-environment">
 <h2>Packaging and Environment<a class="headerlink" href="#packaging-and-environment" title="Link to this heading"></a></h2>
 <p>The following files are describing the packages and dependencies:</p>
 <ul class="simple">
-<li><p>Definition of the Python package: <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
-<li><p>Dockerfile for building the Docker image: <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code></p></li>
-<li><p>Conda feedstock recipe: <a class="reference external" href="https://github.com/conda-forge/pypeec-feedstock">https://github.com/conda-forge/pypeec-feedstock</a></p></li>
+<li><p>Definition of the Python package: <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p></li>
+<li><p>Dockerfile for building the Docker image: <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>.</p></li>
+<li><p>Feedstock recipe for conda-forge: <a class="reference external" href="https://github.com/conda-forge/pypeec-feedstock">feedstock</a>.</p></li>
 </ul>
 <p>The development environment is defined in <code class="docutils literal notranslate"><span class="pre">conda.yaml</span></code>:</p>
 <ul class="simple">
 <li><p>Contains all the required and optional dependencies.</p></li>
 <li><p>Contains the packaging/development tools.</p></li>
-<li><p>All the version number are pinned.</p></li>
+<li><p>All the version numbers are pinned.</p></li>
 <li><p>Tested with Linux x86/x64/X11/glibc.</p></li>
 </ul>
 <p>The following scripts are used for the packaging and releasing processes:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_clean.sh</span></code>: clean the all the autogenerated and temporary data.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_build.sh</span></code>: build the Python package and build the HTML documentation.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_release.sh</span></code>: create a release (tag, release, package, and documentation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_clean.sh</span></code> - Clean all the autogenerated and temporary data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_build.sh</span></code> - Build the Python package and build the HTML documentation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_release.sh</span></code> - Create a release (tag, release, package, and documentation).</p></li>
 </ul>
 </section>
 <section id="tests-and-coverage">
@@ -189,14 +189,14 @@
 </ul>
 <p>These files are used to run the code quality checks and the tests:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_ruff.sh</span></code>: run the code quality checks.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_tests.sh</span></code>: run all the integration tests.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_coverage.sh</span></code>: run a code coverage analysis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_ruff.sh</span></code> - Run the code quality checks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_tests.sh</span></code> - Run all the integration tests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/run_coverage.sh</span></code> - Run a code coverage analysis.</p></li>
 </ul>
 <p>The following <strong>automated tests</strong> are performed:</p>
 <ul class="simple">
-<li><p>Test the latest version of the released Conda and PyPI pakages</p></li>
-<li><p>Test the Conda and PyPI environments with the current Git code</p></li>
+<li><p>Test the latest version of the released Conda and PyPI packages.</p></li>
+<li><p>Test the Conda and PyPI environments with the current Git code.</p></li>
 </ul>
 <p>The following <strong>platforms</strong> are considered for the <strong>automated tests</strong>:</p>
 <ul class="simple">
@@ -223,9 +223,9 @@ For large contributions, please first discuss the changes in the issue tracker.<
 <li><p>The <strong>operating system/platform/hardware</strong>.</p></li>
 <li><p>A <strong>clear and concise description</strong> of the bug.</p></li>
 <li><p>A <strong>minimal working example</strong> for the bug.</p></li>
-<li><p>For PyVista related bugs, please include the <code class="docutils literal notranslate"><span class="pre">pyvista.Report</span></code> output.</p></li>
-<li><p>For NumPy related bugs, please include the <code class="docutils literal notranslate"><span class="pre">numpy.show_config</span></code> output.</p></li>
-<li><p>For SciPy related bugs, please include the <code class="docutils literal notranslate"><span class="pre">scipy.show_config</span></code> output.</p></li>
+<li><p>For PyVista-related bugs, please include the <code class="docutils literal notranslate"><span class="pre">pyvista.Report</span></code> output.</p></li>
+<li><p>For NumPy-related bugs, please include the <code class="docutils literal notranslate"><span class="pre">numpy.show_config</span></code> output.</p></li>
+<li><p>For SciPy-related bugs, please include the <code class="docutils literal notranslate"><span class="pre">scipy.show_config</span></code> output.</p></li>
 </ul>
 </section>
 </section>

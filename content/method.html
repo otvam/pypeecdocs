@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/method.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bbec3584"></script>
+      <script src="../_static/documentation_options.js?v=cde5d9da"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.6.1
+            PyPEEC - 5.7.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -76,7 +76,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.6.1</a>
+          <a href="../index.html">PyPEEC - 5.7.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -124,18 +124,18 @@ Finally, the circuit is solved and the current and voltage distribution is obtai
 <section id="peec-for-quasi-static-problems">
 <h2>PEEC for Quasi-Static Problems<a class="headerlink" href="#peec-for-quasi-static-problems" title="Link to this heading"></a></h2>
 <p>For the quasi-static solution (AC solution), the system cannot be represented with a purely resistive circuit.
-A natural step would be to extend the resistive circuit with self inductances (<a class="reference internal" href="#fig-3"><span class="std std-ref">Fig. 3</span></a>).
+A natural step would be to extend the resistive circuit with self-inductances (<a class="reference internal" href="#fig-3"><span class="std std-ref">Fig. 3</span></a>).
 However, the obtained current distribution is identical to the DC solution, which is incorrect.</p>
 <figure class="align-default" id="id3">
 <span id="fig-3"></span><img alt="../_images/peec_3.png" src="../_images/peec_3.png" />
 <figcaption>
-<p><span class="caption-text">Fig. 3 - Extension of the PEEC circuit with self inductances (incorrect solution).</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-text">Fig. 3 - Extension of the PEEC circuit with self-inductances (incorrect solution).</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>The reason behind this incorrect solution is linked to the Faraday’s law of induction.
+<p>The reason behind this incorrect solution is linked to Faraday’s law of induction.
 The magnetic field produced by the current of a cell is inducing a voltage in the neighboring cells.
-Therefore, self inductances are not sufficient, mutual inductances between the cells are also required.
-The updated equivalent circuit (<a class="reference internal" href="#fig-4"><span class="std std-ref">Fig. 4</span></a>) depicts the resistances, self inductances, and mutual inductances.
+Therefore, self-inductances are not sufficient, mutual inductances between the cells are also required.
+The updated equivalent circuit (<a class="reference internal" href="#fig-4"><span class="std std-ref">Fig. 4</span></a>) depicts the resistances, self-inductances, and mutual inductances.
 The obtained current distribution differs from the DC solution, which can be explained by the induced currents (eddy currents).
 It can be seen that the current distribution is concentrated towards the edges of the busbar (skin and proximity effects).</p>
 <figure class="align-default" id="id4">
@@ -144,9 +144,9 @@ It can be seen that the current distribution is concentrated towards the edges o
 <p><span class="caption-text">Fig. 4 - PEEC equivalent circuit and solution for the quasi-static problem.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>With this simple example, the main advantanges of the PEEC method are apparent:</p>
+<p>With this simple example, the main advantages of the PEEC method are apparent:</p>
 <ul class="simple">
-<li><p>Only the active materials are discretized (no need to mesh the free-space).</p></li>
+<li><p>Only the active materials are discretized (no need to mesh the free space).</p></li>
 <li><p>Intuitive understanding of the equation discretization process.</p></li>
 <li><p>Straightforward connection of external circuit elements.</p></li>
 </ul>
@@ -163,7 +163,7 @@ It can be seen that the current distribution is concentrated towards the edges o
 <p>Several methods can be used to mitigate the dense matrix problem (domain decomposition, hierarchical matrix, multipole method, etc.).
 PyPEEC is using the FFT-accelerated method proposed in 2022 (<a class="reference external" href="https://doi.org/10.1109/TPEL.2021.3092431">paper</a>).
 This variant of the PEEC method relies on the translational invariance of the mutual inductance coefficients.
-In other word, the mutual inductance between two cells is only dependent on their relative positions to each other.
+In other words, the mutual inductance between two cells is only dependent on their relative positions to each other.
 Therefore, if a regular voxel structure is used for the discretization, many coefficients are identical (<a class="reference internal" href="#fig-5"><span class="std std-ref">Fig. 5</span></a>).</p>
 <figure class="align-default" id="id5">
 <span id="fig-5"></span><img alt="../_images/peec_5.png" src="../_images/peec_5.png" />
@@ -182,9 +182,9 @@ Hence, the computational cost and memory requirement for generating and storing 
 <p><span class="caption-text">Fig. 6 - Illustration of the remapping of the inductance matrix coefficients.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>With all the repeated coefficients, the inductance matrix is a a block-Toeplitz Toeplitz-block matrix.
+<p>With all the repeated coefficients, the inductance matrix is a block-Toeplitz Toeplitz-block matrix.
 For such matrices, the matrix-vector multiplications can be done with Fast Fourier Transforms (<a class="reference internal" href="#fig-7"><span class="std std-ref">Fig. 7</span></a>).
-Hence, the Fast Fourier Transforms are reducing the computational complexity of multiplications from O(n^2) to O(n*log(n)).</p>
+Hence, the Fast Fourier Transforms reduce the computational complexity of multiplications from O(n^2) to O(n*log(n)).</p>
 <figure class="align-default" id="id7">
 <span id="fig-7"></span><img alt="../_images/peec_7.png" src="../_images/peec_7.png" />
 <figcaption>
@@ -201,7 +201,7 @@ Hence, the Fast Fourier Transforms are reducing the computational complexity of 
 </section>
 <section id="numerical-optimization">
 <h2>Numerical Optimization<a class="headerlink" href="#numerical-optimization" title="Link to this heading"></a></h2>
-<p>The code is reasonably optimized, leveraging NumPy and SciPy for the heavy operations.
+<p>The code is reasonably optimized, leveraging NumPy and SciPy for the numerical operations.
 All the code is vectorized, no loops are used for the array/matrix/tensor operations.
 Sparse matrix algebra is used wherever appropriate to speed up the code and limit the memory consumption.
 Wherever possible, multithreading/multiprocessing is used for exploiting multicore CPUs.</p>
@@ -215,8 +215,8 @@ Wherever possible, multithreading/multiprocessing is used for exploiting multico
 </li>
 <li><p>Two different approaches can be used to solve the equation system.</p>
 <ul>
-<li><p>direct - The electric and magnetic equations are solved together.</p></li>
-<li><p>segregated - The electric and magnetic equations are solved separately.</p></li>
+<li><p>Direct solver - The electric and magnetic equations are solved together.</p></li>
+<li><p>Segregated solver - The electric and magnetic equations are solved separately.</p></li>
 </ul>
 </li>
 <li><p>Different sparse factorization algorithms are available for the sparse preconditioner.</p>
@@ -232,13 +232,13 @@ Wherever possible, multithreading/multiprocessing is used for exploiting multico
 <li><p>GCROT - Flexible GCROT(m,k) algorithm (often faster).</p></li>
 </ul>
 </li>
-<li><p>The FFTs for computing matrix-vector product can be done with several algorithms.</p>
+<li><p>The FFTs used for the matrix-vector products can be done with several algorithms.</p>
 <ul>
 <li><p>NumPy FFT library is always available (integrated with NumPy).</p></li>
 <li><p>SciPy FFT library is always available (integrated with SciPy).</p></li>
 <li><p>FFTW has to be installed separately (available through pyFFTW).</p></li>
 <li><p>MKL/FFT has to be installed separately (available through mkl_fft).</p></li>
-<li><p>CuPy is extremely fast but require GPUs compatible with the CUDA toolkit.</p></li>
+<li><p>CuPy is extremely fast but requires GPUs compatible with the CUDA toolkit.</p></li>
 </ul>
 </li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">file_tolerance</span></code> input file is used to define all the numerical parameters:</p>

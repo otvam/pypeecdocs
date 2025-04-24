@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://pypeec.otvam.ch/content/formats.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=bbec3584"></script>
+      <script src="../_static/documentation_options.js?v=cde5d9da"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            PyPEEC - 5.6.1
+            PyPEEC - 5.7.0
               <img src="../_static/sphinx.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
@@ -75,7 +75,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #7a9aa3" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PyPEEC - 5.6.1</a>
+          <a href="../index.html">PyPEEC - 5.7.0</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -101,7 +101,7 @@
 <figcaption>
 <p><span class="caption-text">Description of the PyPEEC workflow (mesher, viewer, solver, and plotter).
 The input files (geometry, problem, tolerance, plotter, and viewer) are either in JSON or YAML formats.
-The output files (voxel and solution) are either in JSON or MessagePack or Pickle formats.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+The output files (voxel and solution) are either in JSON, MessagePack or Pickle formats.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -139,7 +139,7 @@ The output files (voxel and solution) are either in JSON or MessagePack or Pickl
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">+1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.0</span><span class="p p-Indicator">]</span>
-<span class="w">        </span><span class="p p-Indicator">-</span>
+
 <span class="c1"># control the resampling of the voxel structure</span>
 <span class="s">&quot;data_resampling&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">    </span><span class="c1"># reduce (or not) the voxel structure by removing unused voxels</span>
@@ -280,10 +280,10 @@ The output files (voxel and solution) are either in JSON or MessagePack or Pickl
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;n_layer&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;tag_layer&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;terminal&quot;</span><span class="p p-Indicator">}</span>
 
 <span class="w">    </span><span class="c1"># definition of the shapes composing the different domains</span>
-<span class="w">    </span><span class="c1">#   - dict with the domain name and a list of shape to be assembled</span>
+<span class="w">    </span><span class="c1">#   - dict with the domain name and a list of shapes to be assembled</span>
 <span class="w">    </span><span class="c1">#   - required information, the dict cannot be empty</span>
 <span class="w">    </span><span class="c1">#   - domain definition</span>
-<span class="w">    </span><span class="c1">#       - shape_layer: list of layer where the shape is located</span>
+<span class="w">    </span><span class="c1">#       - shape_layer: list of layers where the shape is located</span>
 <span class="w">    </span><span class="c1">#       - shape_operation: composition operation for assembling the shape (&quot;add&quot; or &quot;sub&quot;)</span>
 <span class="w">    </span><span class="c1">#       - shape_type: type of the shape (&quot;pad&quot; or &quot;trace&quot; or &quot;polygon&quot;)</span>
 <span class="w">    </span><span class="c1">#       - shape_data: data containing the shape geometry</span>
@@ -522,15 +522,15 @@ The output files (voxel and solution) are either in JSON or MessagePack or Pickl
 <span class="c1">#                   - &quot;lumped&quot; and &quot;anisotropic&quot;: array</span>
 <span class="c1">#                       - the array contains the anisotropic parameters</span>
 <span class="c1">#                       - the same parameters are used for all the voxels</span>
-<span class="c1">#                       - arrays with following size are used: (3)</span>
+<span class="c1">#                       - arrays with the following size are used: (3)</span>
 <span class="c1">#                   - &quot;distributed&quot; and &quot;isotropic&quot;: array</span>
 <span class="c1">#                       - the material parameters are isotropic</span>
 <span class="c1">#                       - different parameters are used for each voxel</span>
-<span class="c1">#                       - arrays with following size are used: (n_voxel)</span>
+<span class="c1">#                       - arrays with the following size are used: (n_voxel)</span>
 <span class="c1">#                   - &quot;distributed&quot; and &quot;anisotropic&quot;: 2D array</span>
 <span class="c1">#                       - the material parameters are anisotropic</span>
 <span class="c1">#                       - different parameters are used for each voxel</span>
-<span class="c1">#                       - arrays with following size are used: (n_voxel, 3)</span>
+<span class="c1">#                       - arrays with the following size are used: (n_voxel, 3)</span>
 <span class="c1">#           - source_val: source parameters</span>
 <span class="c1">#               - dict of dicts with the source name and the source definition</span>
 <span class="c1">#               - current source definition</span>
@@ -555,7 +555,7 @@ The output files (voxel and solution) are either in JSON or MessagePack or Pickl
 <span class="c1">#                   - &quot;distributed&quot;: array</span>
 <span class="c1">#                       - the source is using distributed parameters</span>
 <span class="c1">#                       - different parameters are used for each voxel</span>
-<span class="c1">#                       - arrays with following size are used: (n_voxel)</span>
+<span class="c1">#                       - arrays with the following size are used: (n_voxel)</span>
 <span class="s">&quot;sweep_solver&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">    </span><span class="s">&quot;sim_dc&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">        </span><span class="s">&quot;init&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
