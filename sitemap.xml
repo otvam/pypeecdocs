@@ -8,66 +8,66 @@
   <url>
     <loc>https://pypeec.otvam.ch/index.html</loc>
     <priority>1.00</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
 
   <!-- main pages -->
   <url>
     <loc>https://pypeec.otvam.ch/content/about.html</loc>
     <priority>0.80</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/install.html</loc>
     <priority>0.80</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/tutorial.html</loc>
     <priority>0.80</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/examples.html</loc>
     <priority>0.80</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/gallery.html</loc>
     <priority>0.80</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/workflow.html</loc>
     <priority>0.80</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
 
   <!-- secondary pages -->
   <url>
     <loc>https://pypeec.otvam.ch/content/method.html</loc>
     <priority>0.40</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/technical.html</loc>
     <priority>0.40</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/formats.html</loc>
     <priority>0.40</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/warnings.html</loc>
     <priority>0.40</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
   <url>
     <loc>https://pypeec.otvam.ch/content/api.html</loc>
     <priority>0.40</priority>
-    <lastmod>2025-08-07</lastmod>
+    <lastmod>2025-09-03</lastmod>
   </url>
 
 </urlset>
